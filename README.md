@@ -60,6 +60,8 @@ This architecture is illustrated in the following figure, and key implementation
 
 ![A simplified Luke's architectural design diagram](doc/images/architecture.png)
 
+*A simplified Luke's architectural design diagram, showing ROS nodes (red, green, blue and yellow) together with I/O devices (gray rectangles), and the data that is being passed between them (text on the arrows). All nodes with prefixes rp_ (green, blue and yellow) are the results of the work described below, the red nodes are parts of Kobuki/ROS/GFreenect/Kinect AUX libraries. Yellow, green and blue nodes represent the first, second and third Luke's competence levels (corresponding to obstacle avoidance, human tracking/photograph taking and state externalization behaviors).*
+
 *Layer I: Random Walking with Collision Avoidance*
 ---
 
