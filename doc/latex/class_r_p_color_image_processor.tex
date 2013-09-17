@@ -1,0 +1,156 @@
+\hypertarget{class_r_p_color_image_processor}{\section{\-R\-P\-Color\-Image\-Processor \-Class \-Reference}
+\label{class_r_p_color_image_processor}\index{\-R\-P\-Color\-Image\-Processor@{\-R\-P\-Color\-Image\-Processor}}
+}
+
+
+\-Color image processor class, which provides implementations for simple color image manipulation tasks.  
+
+
+
+
+{\ttfamily \#include $<$color\-\_\-image\-\_\-processor.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_color_image_processor_accdef8184c373b30dd97e7fb4aea91b9}{convert\-Color\-Image\-To\-Render\-Image} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&color\-\_\-image, cv\-::\-Mat \&render\-\_\-image)
+\item 
+void \hyperlink{class_r_p_color_image_processor_ac2571f36fd53d8725a60a311a4124430}{convert\-Color\-Image\-To\-Backpropagation\-Image} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&color\-\_\-image, cv\-::\-Mat \&render\-\_\-image, \hyperlink{class_r_p_bayesian_skin_classifier}{\-R\-P\-Bayesian\-Skin\-Classifier} \&skin\-\_\-classifier, const int skin\-\_\-likelihood\-\_\-ratio\-\_\-minimum)
+\item 
+void \hyperlink{class_r_p_color_image_processor_a1766a497e20c8e375a3c89ff3b259155}{create\-Skin\-Hue\-Training\-Example} (cv\-::\-Rect \&face\-\_\-rectangle, const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&color\-\_\-image, std\-::vector$<$ double $>$ \&hue\-\_\-histogram)
+\item 
+void \hyperlink{class_r_p_color_image_processor_a4f59934cb9fb920b76a621ebe94333c8}{create\-Non\-Skin\-Hue\-Training\-Example} (cv\-::\-Rect \&face\-\_\-rectangle, const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&color\-\_\-image, std\-::vector$<$ double $>$ \&hue\-\_\-histogram)
+\item 
+void \hyperlink{class_r_p_color_image_processor_a137e06bfcf21db64a099c0c74086c7ee}{create\-Histogram} (const cv\-::\-Mat \&histogram\-\_\-region, std\-::vector$<$ double $>$ \&histogram)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Color image processor class, which provides implementations for simple color image manipulation tasks. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 24 of file color\-\_\-image\-\_\-processor.\-hpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_color_image_processor_ac2571f36fd53d8725a60a311a4124430}{\index{\-R\-P\-Color\-Image\-Processor@{\-R\-P\-Color\-Image\-Processor}!convert\-Color\-Image\-To\-Backpropagation\-Image@{convert\-Color\-Image\-To\-Backpropagation\-Image}}
+\index{convert\-Color\-Image\-To\-Backpropagation\-Image@{convert\-Color\-Image\-To\-Backpropagation\-Image}!RPColorImageProcessor@{\-R\-P\-Color\-Image\-Processor}}
+\subsubsection[{convert\-Color\-Image\-To\-Backpropagation\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Image\-Processor\-::convert\-Color\-Image\-To\-Backpropagation\-Image} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{color\-\_\-image, }
+\item[{cv\-::\-Mat \&}]{render\-\_\-image, }
+\item[{{\bf \-R\-P\-Bayesian\-Skin\-Classifier} \&}]{skin\-\_\-classifier, }
+\item[{const int}]{skin\-\_\-likelihood\-\_\-ratio\-\_\-minimum}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_image_processor_ac2571f36fd53d8725a60a311a4124430}
+\-Converts the color \-R\-G\-B image provided by cv\-\_\-bridge into a backpropagation image, stored in an \-Open\-C\-V matrix. 
+\begin{DoxyParams}{\-Parameters}
+{\em color\-\_\-image} & \-Input color \-R\-G\-B image from cv\-\_\-bridge. \\
+\hline
+{\em render\-\_\-image} & \-Backpropagation image stored in an \-Open\-C\-V matrix. \\
+\hline
+{\em skin\-\_\-classifier} & \-Bayesian skin classifier. \\
+\hline
+{\em skin\-\_\-likelihood\-\_\-ratio\-\_\-minimum} & \-Minimum skin likelihood ratio (used as a threshold). \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 20 of file color\-\_\-image\-\_\-processor.\-cpp.
+
+\hypertarget{class_r_p_color_image_processor_accdef8184c373b30dd97e7fb4aea91b9}{\index{\-R\-P\-Color\-Image\-Processor@{\-R\-P\-Color\-Image\-Processor}!convert\-Color\-Image\-To\-Render\-Image@{convert\-Color\-Image\-To\-Render\-Image}}
+\index{convert\-Color\-Image\-To\-Render\-Image@{convert\-Color\-Image\-To\-Render\-Image}!RPColorImageProcessor@{\-R\-P\-Color\-Image\-Processor}}
+\subsubsection[{convert\-Color\-Image\-To\-Render\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Image\-Processor\-::convert\-Color\-Image\-To\-Render\-Image} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{color\-\_\-image, }
+\item[{cv\-::\-Mat \&}]{render\-\_\-image}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_image_processor_accdef8184c373b30dd97e7fb4aea91b9}
+\-Copies the color \-R\-G\-B image provided by cv\-\_\-bridge into an \-Open\-C\-V matrix. 
+\begin{DoxyParams}{\-Parameters}
+{\em color\-\_\-image} & \-Input color \-R\-G\-B image from cv\-\_\-bridge. \\
+\hline
+{\em render\-\_\-image} & \-Same \-R\-G\-B image copied to an \-Open\-C\-V matrix.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 14 of file color\-\_\-image\-\_\-processor.\-cpp.
+
+\hypertarget{class_r_p_color_image_processor_a137e06bfcf21db64a099c0c74086c7ee}{\index{\-R\-P\-Color\-Image\-Processor@{\-R\-P\-Color\-Image\-Processor}!create\-Histogram@{create\-Histogram}}
+\index{create\-Histogram@{create\-Histogram}!RPColorImageProcessor@{\-R\-P\-Color\-Image\-Processor}}
+\subsubsection[{create\-Histogram}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Image\-Processor\-::create\-Histogram} (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{histogram\-\_\-region, }
+\item[{std\-::vector$<$ double $>$ \&}]{histogram}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_image_processor_a137e06bfcf21db64a099c0c74086c7ee}
+\-Creates a histogram from a given region in an image. 
+\begin{DoxyParams}{\-Parameters}
+{\em histogram\-\_\-region} & \-Histogram region in an image. \\
+\hline
+{\em histogram} & \-Resultant histogram. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 38 of file color\-\_\-image\-\_\-processor.\-cpp.
+
+\hypertarget{class_r_p_color_image_processor_a4f59934cb9fb920b76a621ebe94333c8}{\index{\-R\-P\-Color\-Image\-Processor@{\-R\-P\-Color\-Image\-Processor}!create\-Non\-Skin\-Hue\-Training\-Example@{create\-Non\-Skin\-Hue\-Training\-Example}}
+\index{create\-Non\-Skin\-Hue\-Training\-Example@{create\-Non\-Skin\-Hue\-Training\-Example}!RPColorImageProcessor@{\-R\-P\-Color\-Image\-Processor}}
+\subsubsection[{create\-Non\-Skin\-Hue\-Training\-Example}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Image\-Processor\-::create\-Non\-Skin\-Hue\-Training\-Example} (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Rect \&}]{face\-\_\-rectangle, }
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{color\-\_\-image, }
+\item[{std\-::vector$<$ double $>$ \&}]{hue\-\_\-histogram}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_image_processor_a4f59934cb9fb920b76a621ebe94333c8}
+\-Creates a non-\/skin hue histogram from a given detected face rectangle in a given color image. 
+\begin{DoxyParams}{\-Parameters}
+{\em face\-\_\-rectangle} & \-Input detected face rectangle. \\
+\hline
+{\em color\-\_\-image} & \-Input color image. \\
+\hline
+{\em hue\-\_\-histogram} & \-Output non-\/skin hue histogram. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 100 of file color\-\_\-image\-\_\-processor.\-cpp.
+
+\hypertarget{class_r_p_color_image_processor_a1766a497e20c8e375a3c89ff3b259155}{\index{\-R\-P\-Color\-Image\-Processor@{\-R\-P\-Color\-Image\-Processor}!create\-Skin\-Hue\-Training\-Example@{create\-Skin\-Hue\-Training\-Example}}
+\index{create\-Skin\-Hue\-Training\-Example@{create\-Skin\-Hue\-Training\-Example}!RPColorImageProcessor@{\-R\-P\-Color\-Image\-Processor}}
+\subsubsection[{create\-Skin\-Hue\-Training\-Example}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Image\-Processor\-::create\-Skin\-Hue\-Training\-Example} (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Rect \&}]{face\-\_\-rectangle, }
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{color\-\_\-image, }
+\item[{std\-::vector$<$ double $>$ \&}]{hue\-\_\-histogram}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_image_processor_a1766a497e20c8e375a3c89ff3b259155}
+\-Creates a skin hue histogram from a given detected face rectangle in a given color image. 
+\begin{DoxyParams}{\-Parameters}
+{\em face\-\_\-rectangle} & \-Input detected face rectangle. \\
+\hline
+{\em color\-\_\-image} & \-Input color image. \\
+\hline
+{\em hue\-\_\-histogram} & \-Output skin hue histogram. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 69 of file color\-\_\-image\-\_\-processor.\-cpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/color\-\_\-image\-\_\-processor.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/color\-\_\-image\-\_\-processor.\-cpp\end{DoxyCompactItemize}

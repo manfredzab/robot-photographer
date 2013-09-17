@@ -1,0 +1,14 @@
+<launch>
+  <node name="kinect_aux_node" pkg="kinect_aux" type="kinect_aux_node"/>
+  <node ns="rp" name="obstacle_avoidance_node" pkg="rp_obstacle_avoidance" type="rp_obstacle_avoidance_node">
+    <param name="enabled"                value="true"  type="bool"/>   <!-- Node enabled flag -->
+    <param name="verbose_output_enabled" value="false" type="bool"/>   <!-- Verbose output enabled flag -->
+    <param name="focus_field_width"      value="0.45"  type="double"/> <!-- ROI width -->
+    <param name="focus_field_height"     value="1.4"   type="double"/> <!-- ROI heigh. -->
+    <param name="focus_field_depth"      value="0.7"   type="double"/> <!-- ROI depth -->
+    <param name="cloud_filter_size"      value="0.05"  type="double"/> <!-- Voxel filter grid size -->
+    <param name="smoothing_frame_limit"  value="1"     type="int"/>    <!-- Smoothing frame limit -->
+    <param name="max_invalid_depth_data" value="0.4"   type="double"/> <!-- Maximum allowed percentage
+                                                                            of invalid depth data -->
+  </node>
+</launch>

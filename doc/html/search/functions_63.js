@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['cameratimercallback',['cameraTimerCallback',['../class_r_p_autonomous_photography_node.html#aec82a219088e613768e554f5f9732a73',1,'RPAutonomousPhotographyNode']]],
+  ['centermostheadrectangleindex',['centermostHeadRectangleIndex',['../class_r_p_framing_node.html#aa2db07c46763d4b9e00ef82d56a11c5b',1,'RPFramingNode']]],
+  ['choosetwomessages',['chooseTwoMessages',['../class_r_p_state_externalization_node.html#a12e4f0e139c07024cc4563873263007c',1,'RPStateExternalizationNode']]],
+  ['clamprectangletoframe',['clampRectangleToFrame',['../class_r_p_utils.html#a52741e3f17e2c17e977a1c10bae7ab49',1,'RPUtils']]],
+  ['classify',['classify',['../class_r_p_kernel_logistic_regression_classifier.html#aba1607052f771fe0951842a07b0ab2f4',1,'RPKernelLogisticRegressionClassifier']]],
+  ['clearlocomotionmessage',['clearLocomotionMessage',['../class_r_p_locomotion_node.html#ae7b34004f4380cd69c005c880236e673',1,'RPLocomotionNode']]],
+  ['clearpublisheddrivingdirections',['clearPublishedDrivingDirections',['../class_r_p_navigation_node.html#a5d5dc9a15cb4d24f6b04382f4452ded1',1,'RPNavigationNode']]],
+  ['convertcolorimagetobackpropagationimage',['convertColorImageToBackpropagationImage',['../class_r_p_color_image_processor.html#ac2571f36fd53d8725a60a311a4124430',1,'RPColorImageProcessor']]],
+  ['convertcolorimagetorenderimage',['convertColorImageToRenderImage',['../class_r_p_color_image_processor.html#accdef8184c373b30dd97e7fb4aea91b9',1,'RPColorImageProcessor']]],
+  ['convertdepthimagetorenderimage',['convertDepthImageToRenderImage',['../class_r_p_depth_image_processor.html#aeb06512b13e61a0a1ea225eab32093f1',1,'RPDepthImageProcessor']]],
+  ['converttocameraimagecoordinates',['convertToCameraImageCoordinates',['../class_r_p_framing_node.html#a6d5f20f9074b914f657a038cd325272d',1,'RPFramingNode']]],
+  ['converttokinectcameracoordinates',['convertToKinectCameraCoordinates',['../class_r_p_framing_node.html#a8309f74244cb885c2538a33b10cc518d',1,'RPFramingNode']]],
+  ['copytocvimage',['copyToCvImage',['../class_r_p_utils.html#ae77cfd01ffcc5c89313213200b6bcc70',1,'RPUtils']]],
+  ['createhistogram',['createHistogram',['../class_r_p_color_image_processor.html#a137e06bfcf21db64a099c0c74086c7ee',1,'RPColorImageProcessor']]],
+  ['createnonskinhuetrainingexample',['createNonSkinHueTrainingExample',['../class_r_p_color_image_processor.html#a4f59934cb9fb920b76a621ebe94333c8',1,'RPColorImageProcessor']]],
+  ['createskinhuetrainingexample',['createSkinHueTrainingExample',['../class_r_p_color_image_processor.html#a1766a497e20c8e375a3c89ff3b259155',1,'RPColorImageProcessor']]],
+  ['croppointcloud',['cropPointCloud',['../class_r_p_obstacle_avoidance_node.html#a07f936f129797f6651a8cbb94201e64d',1,'RPObstacleAvoidanceNode']]]
+];

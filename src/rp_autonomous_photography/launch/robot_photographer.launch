@@ -1,0 +1,174 @@
+<launch>
+  <!-- ====================== TURTLEBOT LAUNCH BEGIN ====================== -->
+  <arg name="base"       value="$(optenv TURTLEBOT_BASE kobuki)"/>  <!-- create, rhoomba -->
+  <arg name="stacks"     value="$(optenv TURTLEBOT_STACKS hexagons)"/>  <!-- circles, hexagons -->
+  <arg name="3d_sensor"  value="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>  <!-- kinect, asus_xtion_pro -->
+
+  <param name="/use_sim_time" value="false"/>
+
+  <include file="$(find turtlebot_bringup)/launch/includes/_robot.launch">
+    <arg name="base" value="$(arg base)" />
+    <arg name="stacks" value="$(arg stacks)" />
+    <arg name="3d_sensor" value="$(arg 3d_sensor)" />
+  </include>
+  <include file="$(find turtlebot_bringup)/launch/includes/_mobile_base.launch">
+    <arg name="base" value="$(arg base)" />
+  </include>
+  <include file="$(find turtlebot_bringup)/launch/includes/_app_manager.launch"/>
+  <!-- ====================== TURTLEBOT LAUNCH END ====================== -->
+  
+  
+  <!-- ====================== OPENNI LAUNCH BEGIN ====================== -->
+  <arg name="ns" default="" /> <!-- if supplied, then should be fully resolved -->
+  <arg name="tf_prefix" default="$(arg ns)" />
+  <arg name="camera" default="camera" />
+  <arg name="rgb_frame_id"   default="$(arg tf_prefix)/$(arg camera)_rgb_optical_frame" />
+  <arg name="depth_frame_id" default="$(arg tf_prefix)/$(arg camera)_depth_optical_frame" />
+  <arg name="device_id" default="#1" />
+  <arg name="rgb_camera_info_url"   default="" />
+  <arg name="depth_camera_info_url" default="" />
+  <arg name="depth_registration" default="true" />
+
+  <!-- Arguments for remapping all device namespaces -->
+  <arg name="rgb"              default="rgb" />
+  <arg name="ir"               default="ir" />
+  <arg name="depth"            default="depth" />
+  <arg name="depth_registered" default="depth_registered" />
+  <arg name="projector"        default="projector" />
+
+  <arg name="load_driver" default="true" />
+  <arg name="publish_tf" default="true" />
+
+  <!-- Disable bond topics by default -->
+  <arg name="bond" default="false" /> <!-- DEPRECATED, use respawn arg instead -->
+  <arg name="respawn" default="$(arg bond)" />
+
+  <!-- Start nodelet manager in provided namespace -->
+  <arg name="manager" value="$(arg camera)_nodelet_manager" />
+  <arg name="debug" default="false" />
+  <include file="$(find freenect_launch)/launch/includes/manager.launch">
+    <arg name="name" value="$(arg manager)" />
+    <arg name="debug" value="$(arg debug)" />
+  </include>
+
+  <!-- figure out the resolved nodelet manager namespace -->
+  <arg name="resolved_manager" value="$(arg ns)/$(arg manager)" />
+
+  <!-- launch desired constellation of processing nodelets -->
+  <arg name="processing_constellation_file"
+    default="$(find freenect_launch)/launch/includes/processing.launch" />
+
+  <!-- enable libfreenect debug logging -->
+  <arg name="libfreenect_debug" default="false" />
+
+  <!-- enable diagnostics support for freenect_camera -->
+  <arg name="enable_rgb_diagnostics" default="false" />
+  <arg name="enable_ir_diagnostics" default="false" />
+  <arg name="enable_depth_diagnostics" default="false" />
+  <arg name="diagnostics_max_frequency" default="30.0" />
+  <arg name="diagnostics_min_frequency" default="30.0" />
+  <arg name="diagnostics_tolerance" default="0.05" />
+  <arg name="diagnostics_window_time" default="5.0" />
+ 
+  <!-- Push down all topics/nodelets into "camera" namespace -->
+  <group ns="$(arg camera)">
+
+    <!-- Load driver -->
+    <include if="$(arg load_driver)" file="$(find freenect_launch)/launch/includes/device.launch">
+      <!-- Could really use some syntactic sugar for this -->
+      <arg name="manager"               value="$(arg resolved_manager)" /> <!-- fully resolved -->
+      <arg name="device_id"             value="$(arg device_id)" />
+      <arg name="rgb_frame_id"          value="$(arg rgb_frame_id)" />
+      <arg name="depth_frame_id"        value="$(arg depth_frame_id)" />
+      <arg name="rgb_camera_info_url"   value="$(arg rgb_camera_info_url)" />
+      <arg name="depth_camera_info_url" value="$(arg depth_camera_info_url)" />
+      <arg name="depth_registration"    value="$(arg depth_registration)" />
+      <arg name="rgb"                   value="$(arg rgb)" />
+      <arg name="ir"                    value="$(arg ir)" />
+      <arg name="depth"                 value="$(arg depth)" />
+      <arg name="depth_registered"      value="$(arg depth_registered)" />
+      <arg name="projector"             value="$(arg projector)" />
+      <arg name="respawn"               value="$(arg respawn)" />
+      <arg name="libfreenect_debug"         value="$(arg libfreenect_debug)" />
+      <arg name="enable_rgb_diagnostics"    value="$(arg enable_rgb_diagnostics)" />
+      <arg name="enable_ir_diagnostics"     value="$(arg enable_ir_diagnostics)" />
+      <arg name="enable_depth_diagnostics"  value="$(arg enable_depth_diagnostics)" />
+      <arg name="diagnostics_max_frequency" value="$(arg diagnostics_max_frequency)" />
+      <arg name="diagnostics_min_frequency" value="$(arg diagnostics_min_frequency)" />
+      <arg name="diagnostics_tolerance"     value="$(arg diagnostics_tolerance)" />
+      <arg name="diagnostics_window_time"   value="$(arg diagnostics_window_time)" />
+    </include>
+
+    <!-- Load standard constellation of processing nodelets -->
+    <include file="$(arg processing_constellation_file)">
+      <arg name="manager"               value="$(arg resolved_manager)" /> <!-- Fully resolved -->
+      <arg name="rgb"                   value="$(arg rgb)" />
+      <arg name="ir"                    value="$(arg ir)" />
+      <arg name="depth"                 value="$(arg depth)" />
+      <arg name="depth_registered"      value="$(arg depth_registered)" />
+      <arg name="projector"             value="$(arg projector)" />
+      <arg name="respawn"               value="$(arg respawn)" />
+    </include>
+
+  </group> <!-- camera -->
+
+  <!-- Load reasonable defaults for the relative pose between cameras -->
+  <param name="tf_prefix" value="$(arg tf_prefix)" /> <!-- for static transform publisher -->
+  <include if="$(arg publish_tf)"
+	   file="$(find freenect_launch)/launch/kinect_frames.launch">
+    <arg name="camera" value="$(arg camera)" />
+  </include>
+  <!-- ====================== OPENNI LAUNCH END ====================== -->
+
+
+  <!-- ====================== STATE EXTERNALIZATION LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_state_externalization)/launch/state_externalization.launch"/>
+  <!-- ====================== LOCOMOTION LAUNCH END ====================== -->
+
+
+  <!-- ====================== STATE EXTERNALIZATION LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_display)/launch/display.launch"/>
+  <!-- ====================== DISPLAY LAUNCH END ====================== -->
+
+
+  <!-- ====================== SPEECH LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_speech)/launch/speech.launch"/>
+  <!-- ====================== SPEECH LAUNCH END ====================== -->
+
+
+  <!-- ====================== CAMERA LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_camera)/launch/camera.launch"/>
+  <!-- ====================== CAMERA LAUNCH END ====================== -->
+
+
+  <!-- ====================== UPLOADER LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_uploader)/launch/uploader.launch"/>
+  <!-- ====================== UPLOADER LAUNCH END ====================== -->
+
+
+  <!-- ====================== AUTONOMOUS PHOTOGRAPHY LAUNCH BEGIN ====================== -->
+  <node ns="rp" name="autonomous_photography_node" pkg="rp_autonomous_photography" type="rp_autonomous_photography_node" output="screen" respawn="true">
+  	<param name="time_between_pictures" value="45.0" type="double"/>
+  </node>  
+  <!-- ====================== AUTONOMOUS PHOTOGRAPHY LAUNCH END ====================== -->
+
+
+  <!-- ====================== OBSTACLE AVOIDANCE LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_obstacle_avoidance)/launch/obstacle_avoidance.launch"/>
+  <!-- ====================== OBSTACLE AVOIDANCE LAUNCH END ====================== -->
+  
+  
+  <!-- ====================== HEAD TRACKING LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_head_tracking)/launch/head_tracking.launch"/>
+  <!-- ====================== HEAD TRACKING LAUNCH END ====================== -->
+
+
+  <!-- ====================== FRAMING LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_framing)/launch/framing.launch"/>
+  <!-- ====================== FRAMING LAUNCH END ====================== -->
+
+
+  <!-- ====================== LOCOMOTION LAUNCH BEGIN ====================== -->
+  <include file="$(find rp_locomotion)/launch/locomotion.launch"/>
+  <!-- ====================== LOCOMOTION LAUNCH END ====================== -->
+</launch>

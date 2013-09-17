@@ -1,0 +1,10 @@
+﻿<xapCache source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\RPDisplay.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="12/06/2013 16:47:35">
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="08/06/2013 02:05:38" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Background.png" archivePath="Background.png" lastWriteTime="08/06/2013 02:07:10" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="08/06/2013 02:07:09" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\RPDisplay.dll" archivePath="RPDisplay.dll" lastWriteTime="12/06/2013 16:47:34" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\packages\ZXing.Net.0.11.0.1\lib\sl4-wp71\zxing.wp7.1.dll" archivePath="zxing.wp7.1.dll" lastWriteTime="12/06/2013 15:40:22" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Images\connect.png" archivePath="Images\connect.png" lastWriteTime="08/06/2013 00:38:46" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="08/06/2013 02:03:26" />
+  <file source="C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="12/06/2013 16:47:35" />
+</xapCache>

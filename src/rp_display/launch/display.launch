@@ -1,0 +1,5 @@
+<launch>
+  <node ns="rp" name="display_node" pkg="rp_display" type="rp_display_node" output="screen">
+  	<param name="display_device_port" value="8711" type="int"/>
+  </node>
+</launch>

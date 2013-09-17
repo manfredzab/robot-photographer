@@ -1,0 +1,507 @@
+\hypertarget{class_r_p_head_tracking_node}{\section{\-R\-P\-Head\-Tracking\-Node \-Class \-Reference}
+\label{class_r_p_head_tracking_node}\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}}
+}
+
+
+\-Robot photographer's head tracking node, which uses the colour and depth inputs from \-Kinect to detect and track humans in \-Luke's vicinity.  
+
+
+
+
+{\ttfamily \#include $<$head\-\_\-tracking.\-hpp$>$}
+
+
+
+\-Collaboration diagram for \-R\-P\-Head\-Tracking\-Node\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_r_p_head_tracking_node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_head_tracking_node_a08916811b44ea1c237c5ec607a37cc19}{\-R\-P\-Head\-Tracking\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_head_tracking_node_a47a74727765d3593c1d235dbd6cc8e34}{node})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_head_tracking_node_a6c538471c6e3cee05aba40395da2cab1}{sensor\-Input\-Callback} (const sensor\-\_\-msgs\-::\-Image\-::\-Const\-Ptr \&depth\-\_\-input\-\_\-image, const sensor\-\_\-msgs\-::\-Image\-::\-Const\-Ptr \&color\-\_\-input\-\_\-image)
+\item 
+void \hyperlink{class_r_p_head_tracking_node_ac3df16b7bdb28ca965510d3d11a3296c}{detect\-Heads} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&depth\-\_\-image, const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&color\-\_\-image)
+\item 
+void \hyperlink{class_r_p_head_tracking_node_a96cb4451897d847dbb65da5d0c7ccac4}{detect\-Faces} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&color\-\_\-image)
+\item 
+void \hyperlink{class_r_p_head_tracking_node_a75bafea5dac2bb6e259e7e5dc4fe0c68}{track\-Heads} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&depth\-\_\-image)
+\item 
+void \hyperlink{class_r_p_head_tracking_node_a58746f98c78d01ff274c9bb355d4434a}{publish\-Heads} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&depth\-\_\-image)
+\item 
+void \hyperlink{class_r_p_head_tracking_node_ace266a6c4445813c0f005f3e0162a790}{update\-State} (const \-Head\-Tracking\-State \hyperlink{class_r_p_head_tracking_node_abb89a5e3747c9ce5c046381c2e02b226}{state})
+\item 
+void \hyperlink{class_r_p_head_tracking_node_a4c52f5c1276087c82d7aad6395b7cf39}{get\-Static\-Parameters} ()
+\item 
+void \hyperlink{class_r_p_head_tracking_node_ac95a0006516c380ec0a3771aa6fe96f7}{get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters} ()
+\item 
+void \hyperlink{class_r_p_head_tracking_node_a8bf1d1dd8705693c57dc3f814114c4a5}{process\-Output\-Window\-Key\-Press} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::string \hyperlink{class_r_p_head_tracking_node_a55c8d0690666fd8ed95b0b8352cca591}{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}
+\item 
+bool \hyperlink{class_r_p_head_tracking_node_ae62a4e592ca4c05f2cd232ca745ad5ba}{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+int \hyperlink{class_r_p_head_tracking_node_a23eeb6a7ede14f9e47535ef7d6a435b0}{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N}
+\item 
+int \hyperlink{class_r_p_head_tracking_node_ad14b7ec4ecf2cb62091289fb530946be}{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T}
+\item 
+bool \hyperlink{class_r_p_head_tracking_node_ad53c9b618a197510b7065d3b9b28dcb1}{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+double \hyperlink{class_r_p_head_tracking_node_a049bad2b64bbfc0cb43b6a913c5e6617}{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T}
+\item 
+int \hyperlink{class_r_p_head_tracking_node_a8834e8b4fe75aa2908fd79e4021b0573}{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T}
+\item 
+double \hyperlink{class_r_p_head_tracking_node_a9dda8ff66eca7d0622a438b6c3b77fe9}{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}
+\item 
+bool \hyperlink{class_r_p_head_tracking_node_a164b614083d44aac085c856674170506}{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+bool \hyperlink{class_r_p_head_tracking_node_a70c083e7ca08af282d686198bd16a884}{\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+bool \hyperlink{class_r_p_head_tracking_node_acd8f3bddcd0db71ecda21f4b5a1858ee}{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+int \hyperlink{class_r_p_head_tracking_node_a0735dfefd230deabd81cc96d145205ed}{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S}
+\item 
+volatile bool \hyperlink{class_r_p_head_tracking_node_a1f2845c7ce72d1a8d117caebd1b1024f}{debug\-\_\-view\-\_\-enabled}
+\item 
+volatile bool \hyperlink{class_r_p_head_tracking_node_a90f29e5f81692d883b535c8ebcbf9cfc}{color\-\_\-view\-\_\-enabled}
+\item 
+volatile bool \hyperlink{class_r_p_head_tracking_node_ac8289f71606ec26d687bec74d981ff89}{backprojection\-\_\-view\-\_\-enabled}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_head_tracking_node_a47a74727765d3593c1d235dbd6cc8e34}{node}
+\item 
+\-Head\-Tracking\-State \hyperlink{class_r_p_head_tracking_node_abb89a5e3747c9ce5c046381c2e02b226}{state}
+\item 
+uint32\-\_\-t \hyperlink{class_r_p_head_tracking_node_aec215913fa33464a7fd8e068b8947d61}{current\-\_\-tracking\-\_\-frame\-\_\-number}
+\item 
+std\-::string \hyperlink{class_r_p_head_tracking_node_aa31ed34346bf9e26ecd127893d7107af}{frame\-\_\-id}
+\item 
+std\-::vector$<$ \hyperlink{struct_head}{\-Head} $>$ \hyperlink{class_r_p_head_tracking_node_a8f5e4f1e1a4ba7f043b7f35f21a141d2}{heads}
+\item 
+cv\-::\-Mat \hyperlink{class_r_p_head_tracking_node_a48e694794e0093a3f096cc66519ab2d9}{render\-\_\-image}
+\item 
+\hyperlink{class_r_p_depth_head_detector}{\-R\-P\-Depth\-Head\-Detector} \hyperlink{class_r_p_head_tracking_node_af8c98fb4b2589bd038006d9f5d682f58}{depth\-\_\-head\-\_\-detector}
+\item 
+\hyperlink{class_r_p_depth_head_tracker}{\-R\-P\-Depth\-Head\-Tracker} \hyperlink{class_r_p_head_tracking_node_aeb67f2aec1bc4819304ebea3da893c36}{depth\-\_\-head\-\_\-tracker}
+\item 
+\hyperlink{class_r_p_depth_image_processor}{\-R\-P\-Depth\-Image\-Processor} \hyperlink{class_r_p_head_tracking_node_adf69f6a784f12825b110d0a852954ef9}{depth\-\_\-image\-\_\-processor}
+\item 
+\hyperlink{class_r_p_color_image_processor}{\-R\-P\-Color\-Image\-Processor} \hyperlink{class_r_p_head_tracking_node_a74e4f88862813f99d7de88bc8b563efb}{color\-\_\-image\-\_\-processor}
+\item 
+\hyperlink{class_r_p_color_face_detector}{\-R\-P\-Color\-Face\-Detector} \hyperlink{class_r_p_head_tracking_node_a4e92e10df6588934cbebd6011a68aada}{color\-\_\-face\-\_\-detector}
+\item 
+\hyperlink{class_r_p_kernel_logistic_regression_classifier}{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier} \hyperlink{class_r_p_head_tracking_node_a9753532076085f324715162e3e1da2a6}{face\-\_\-hue\-\_\-classifier}
+\item 
+int \hyperlink{class_r_p_head_tracking_node_a57e407d25d6c24ebfaa9a612b63b0a07}{face\-\_\-hue\-\_\-sample\-\_\-count}
+\item 
+\hyperlink{class_r_p_bayesian_skin_classifier}{\-R\-P\-Bayesian\-Skin\-Classifier} \hyperlink{class_r_p_head_tracking_node_a0e3291a73d232c4725902b829cd40b2b}{skin\-\_\-classifier}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_head_tracking_node_ae463557050c7ea460f519106bbecaec2}{heads\-\_\-publisher}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_head_tracking_node_a2d99f169c031cc19c178c74b462c8c43}{state\-\_\-publisher}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's head tracking node, which uses the colour and depth inputs from \-Kinect to detect and track humans in \-Luke's vicinity. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 51 of file head\-\_\-tracking.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_head_tracking_node_a08916811b44ea1c237c5ec607a37cc19}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}}
+\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-R\-P\-Head\-Tracking\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Head\-Tracking\-Node\-::\-R\-P\-Head\-Tracking\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_head_tracking_node_a08916811b44ea1c237c5ec607a37cc19}
+\-Default head detection and tracking node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 38 of file head\-\_\-tracking.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_head_tracking_node_a96cb4451897d847dbb65da5d0c7ccac4}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!detect\-Faces@{detect\-Faces}}
+\index{detect\-Faces@{detect\-Faces}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{detect\-Faces}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::detect\-Faces} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{color\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a96cb4451897d847dbb65da5d0c7ccac4}
+\-Detects faces in a given color image. 
+\begin{DoxyParams}{\-Parameters}
+{\em color\-\_\-image} & \-Input color image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 351 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_ac3df16b7bdb28ca965510d3d11a3296c}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!detect\-Heads@{detect\-Heads}}
+\index{detect\-Heads@{detect\-Heads}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{detect\-Heads}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::detect\-Heads} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&}]{depth\-\_\-image, }
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&}]{color\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ac3df16b7bdb28ca965510d3d11a3296c}
+\-Detects heads in a given depth image (potentially using color cues for detected head verification). 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-image} & \-Input depth image. \\
+\hline
+{\em color\-\_\-image} & \-Input color image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 246 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_ac95a0006516c380ec0a3771aa6fe96f7}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters@{get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters}}
+\index{get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters@{get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::get\-Dynamic\-Head\-Detection\-And\-Tracking\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ac95a0006516c380ec0a3771aa6fe96f7}
+\-Gets dynamic head detection and tracking overridable parameters from the parameter server. 
+
+\-Definition at line 115 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_a4c52f5c1276087c82d7aad6395b7cf39}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!get\-Static\-Parameters@{get\-Static\-Parameters}}
+\index{get\-Static\-Parameters@{get\-Static\-Parameters}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{get\-Static\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::get\-Static\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a4c52f5c1276087c82d7aad6395b7cf39}
+\-Gets static overridable parameters from the parameter server. 
+
+\-Definition at line 104 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_a8bf1d1dd8705693c57dc3f814114c4a5}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!process\-Output\-Window\-Key\-Press@{process\-Output\-Window\-Key\-Press}}
+\index{process\-Output\-Window\-Key\-Press@{process\-Output\-Window\-Key\-Press}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{process\-Output\-Window\-Key\-Press}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::process\-Output\-Window\-Key\-Press} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a8bf1d1dd8705693c57dc3f814114c4a5}
+\-Processes key presses for the \-G\-U\-I output window. 
+
+\-Definition at line 420 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_a58746f98c78d01ff274c9bb355d4434a}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!publish\-Heads@{publish\-Heads}}
+\index{publish\-Heads@{publish\-Heads}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{publish\-Heads}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::publish\-Heads} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{depth\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a58746f98c78d01ff274c9bb355d4434a}
+\-Publishes detected/tracked heads in a current depth image. 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-image} & \-Current depth image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 231 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_a6c538471c6e3cee05aba40395da2cab1}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!sensor\-Input\-Callback@{sensor\-Input\-Callback}}
+\index{sensor\-Input\-Callback@{sensor\-Input\-Callback}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{sensor\-Input\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::sensor\-Input\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image\-::\-Const\-Ptr \&}]{depth\-\_\-input\-\_\-image, }
+\item[{const sensor\-\_\-msgs\-::\-Image\-::\-Const\-Ptr \&}]{color\-\_\-input\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a6c538471c6e3cee05aba40395da2cab1}
+\-Callback for the depth and color inputs from \-R\-G\-B-\/\-D sensor. 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-input\-\_\-image} & \-Input depth image. \\
+\hline
+{\em color\-\_\-input\-\_\-image} & \-Input color image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 125 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_a75bafea5dac2bb6e259e7e5dc4fe0c68}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!track\-Heads@{track\-Heads}}
+\index{track\-Heads@{track\-Heads}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{track\-Heads}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::track\-Heads} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&}]{depth\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a75bafea5dac2bb6e259e7e5dc4fe0c68}
+\-Tracks detected heads in a given depth image. 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-image} & \-Input depth image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 388 of file head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_head_tracking_node_ace266a6c4445813c0f005f3e0162a790}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!update\-State@{update\-State}}
+\index{update\-State@{update\-State}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{update\-State}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Head\-Tracking\-Node\-::update\-State} (
+\begin{DoxyParamCaption}
+\item[{const \-Head\-Tracking\-State}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ace266a6c4445813c0f005f3e0162a790}
+\-Updates the node's state. 
+\begin{DoxyParams}{\-Parameters}
+{\em state} & \-Desired new state. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 220 of file head\-\_\-tracking.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_head_tracking_node_ac8289f71606ec26d687bec74d981ff89}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!backprojection\-\_\-view\-\_\-enabled@{backprojection\-\_\-view\-\_\-enabled}}
+\index{backprojection\-\_\-view\-\_\-enabled@{backprojection\-\_\-view\-\_\-enabled}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{backprojection\-\_\-view\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Head\-Tracking\-Node\-::backprojection\-\_\-view\-\_\-enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ac8289f71606ec26d687bec74d981ff89}
+\-Skin probability backprojection view enabled flag. 
+
+\-Definition at line 84 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a4e92e10df6588934cbebd6011a68aada}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!color\-\_\-face\-\_\-detector@{color\-\_\-face\-\_\-detector}}
+\index{color\-\_\-face\-\_\-detector@{color\-\_\-face\-\_\-detector}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{color\-\_\-face\-\_\-detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Color\-Face\-Detector} {\bf \-R\-P\-Head\-Tracking\-Node\-::color\-\_\-face\-\_\-detector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a4e92e10df6588934cbebd6011a68aada}
+\-Face detector from color data. 
+
+\-Definition at line 100 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a74e4f88862813f99d7de88bc8b563efb}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!color\-\_\-image\-\_\-processor@{color\-\_\-image\-\_\-processor}}
+\index{color\-\_\-image\-\_\-processor@{color\-\_\-image\-\_\-processor}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{color\-\_\-image\-\_\-processor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Color\-Image\-Processor} {\bf \-R\-P\-Head\-Tracking\-Node\-::color\-\_\-image\-\_\-processor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a74e4f88862813f99d7de88bc8b563efb}
+\-Color image processor. 
+
+\-Definition at line 99 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a90f29e5f81692d883b535c8ebcbf9cfc}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!color\-\_\-view\-\_\-enabled@{color\-\_\-view\-\_\-enabled}}
+\index{color\-\_\-view\-\_\-enabled@{color\-\_\-view\-\_\-enabled}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{color\-\_\-view\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Head\-Tracking\-Node\-::color\-\_\-view\-\_\-enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a90f29e5f81692d883b535c8ebcbf9cfc}
+\-Color view enabled flag. 
+
+\-Definition at line 83 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_aec215913fa33464a7fd8e068b8947d61}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!current\-\_\-tracking\-\_\-frame\-\_\-number@{current\-\_\-tracking\-\_\-frame\-\_\-number}}
+\index{current\-\_\-tracking\-\_\-frame\-\_\-number@{current\-\_\-tracking\-\_\-frame\-\_\-number}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{current\-\_\-tracking\-\_\-frame\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-R\-P\-Head\-Tracking\-Node\-::current\-\_\-tracking\-\_\-frame\-\_\-number}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_aec215913fa33464a7fd8e068b8947d61}
+\-Current frame number. 
+
+\-Definition at line 89 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a1f2845c7ce72d1a8d117caebd1b1024f}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!debug\-\_\-view\-\_\-enabled@{debug\-\_\-view\-\_\-enabled}}
+\index{debug\-\_\-view\-\_\-enabled@{debug\-\_\-view\-\_\-enabled}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{debug\-\_\-view\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Head\-Tracking\-Node\-::debug\-\_\-view\-\_\-enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a1f2845c7ce72d1a8d117caebd1b1024f}
+\-Debug view enabled flag. 
+
+\-Definition at line 82 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_af8c98fb4b2589bd038006d9f5d682f58}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!depth\-\_\-head\-\_\-detector@{depth\-\_\-head\-\_\-detector}}
+\index{depth\-\_\-head\-\_\-detector@{depth\-\_\-head\-\_\-detector}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{depth\-\_\-head\-\_\-detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Depth\-Head\-Detector} {\bf \-R\-P\-Head\-Tracking\-Node\-::depth\-\_\-head\-\_\-detector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_af8c98fb4b2589bd038006d9f5d682f58}
+\hyperlink{struct_head}{\-Head} detector from depth data. 
+
+\-Definition at line 96 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_aeb67f2aec1bc4819304ebea3da893c36}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!depth\-\_\-head\-\_\-tracker@{depth\-\_\-head\-\_\-tracker}}
+\index{depth\-\_\-head\-\_\-tracker@{depth\-\_\-head\-\_\-tracker}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{depth\-\_\-head\-\_\-tracker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Depth\-Head\-Tracker} {\bf \-R\-P\-Head\-Tracking\-Node\-::depth\-\_\-head\-\_\-tracker}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_aeb67f2aec1bc4819304ebea3da893c36}
+\hyperlink{struct_head}{\-Head} tracker using depth data. 
+
+\-Definition at line 97 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_adf69f6a784f12825b110d0a852954ef9}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!depth\-\_\-image\-\_\-processor@{depth\-\_\-image\-\_\-processor}}
+\index{depth\-\_\-image\-\_\-processor@{depth\-\_\-image\-\_\-processor}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{depth\-\_\-image\-\_\-processor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Depth\-Image\-Processor} {\bf \-R\-P\-Head\-Tracking\-Node\-::depth\-\_\-image\-\_\-processor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_adf69f6a784f12825b110d0a852954ef9}
+\-Depth image processor. 
+
+\-Definition at line 98 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a70c083e7ca08af282d686198bd16a884}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Head\-Tracking\-Node\-::\-D\-E\-P\-T\-H\-\_\-\-S\-H\-A\-D\-O\-W\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a70c083e7ca08af282d686198bd16a884}
+\-Depth shadow filter enabled flag \-O\-P. 
+
+\-Definition at line 75 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a9753532076085f324715162e3e1da2a6}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!face\-\_\-hue\-\_\-classifier@{face\-\_\-hue\-\_\-classifier}}
+\index{face\-\_\-hue\-\_\-classifier@{face\-\_\-hue\-\_\-classifier}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{face\-\_\-hue\-\_\-classifier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier} {\bf \-R\-P\-Head\-Tracking\-Node\-::face\-\_\-hue\-\_\-classifier}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a9753532076085f324715162e3e1da2a6}
+\-Kernel logistic regression classifier for face/non-\/face hue classification. 
+
+\-Definition at line 101 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a57e407d25d6c24ebfaa9a612b63b0a07}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!face\-\_\-hue\-\_\-sample\-\_\-count@{face\-\_\-hue\-\_\-sample\-\_\-count}}
+\index{face\-\_\-hue\-\_\-sample\-\_\-count@{face\-\_\-hue\-\_\-sample\-\_\-count}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{face\-\_\-hue\-\_\-sample\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Head\-Tracking\-Node\-::face\-\_\-hue\-\_\-sample\-\_\-count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a57e407d25d6c24ebfaa9a612b63b0a07}
+\-Gathered face hue sample count. 
+
+\-Definition at line 104 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a8834e8b4fe75aa2908fd79e4021b0573}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T@{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T}}
+\index{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T@{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Head\-Tracking\-Node\-::\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-S\-A\-M\-P\-L\-E\-S\-\_\-\-L\-I\-M\-I\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a8834e8b4fe75aa2908fd79e4021b0573}
+\-Face hue sample limit \-O\-P for \-K\-L\-R classifier training. 
+
+\-Definition at line 67 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_aa31ed34346bf9e26ecd127893d7107af}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!frame\-\_\-id@{frame\-\_\-id}}
+\index{frame\-\_\-id@{frame\-\_\-id}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{frame\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Head\-Tracking\-Node\-::frame\-\_\-id}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_aa31ed34346bf9e26ecd127893d7107af}
+\-Frame \-I\-D (same as \-Kinect's \-R\-G\-B camera \-I\-D). 
+
+\-Definition at line 90 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_ae62a4e592ca4c05f2cd232ca745ad5ba}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Head\-Tracking\-Node\-::\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ae62a4e592ca4c05f2cd232ca745ad5ba}
+\-G\-U\-I output enabled flag \-O\-P. 
+
+\-Definition at line 56 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a8f5e4f1e1a4ba7f043b7f35f21a141d2}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!heads@{heads}}
+\index{heads@{heads}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{heads}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Head}$>$ {\bf \-R\-P\-Head\-Tracking\-Node\-::heads}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a8f5e4f1e1a4ba7f043b7f35f21a141d2}
+\-Detected/tracked head rectangles. 
+
+\-Definition at line 92 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_ae463557050c7ea460f519106bbecaec2}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!heads\-\_\-publisher@{heads\-\_\-publisher}}
+\index{heads\-\_\-publisher@{heads\-\_\-publisher}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{heads\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Head\-Tracking\-Node\-::heads\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ae463557050c7ea460f519106bbecaec2}
+\-Detected heads publisher. 
+
+\-Definition at line 107 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_ad53c9b618a197510b7065d3b9b28dcb1}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Head\-Tracking\-Node\-::\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ad53c9b618a197510b7065d3b9b28dcb1}
+\-K\-L\-R classifier enabled \-O\-P. 
+
+\-Definition at line 64 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a049bad2b64bbfc0cb43b6a913c5e6617}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T@{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T}}
+\index{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T@{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Head\-Tracking\-Node\-::\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-T\-R\-A\-I\-N\-I\-N\-G\-\_\-\-T\-I\-M\-E\-\_\-\-L\-I\-M\-I\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a049bad2b64bbfc0cb43b6a913c5e6617}
+\-K\-L\-R classifier training time limit \-O\-P. 
+
+\-Definition at line 65 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a47a74727765d3593c1d235dbd6cc8e34}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!node@{node}}
+\index{node@{node}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Head\-Tracking\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a47a74727765d3593c1d235dbd6cc8e34}
+\-Node's handle. 
+
+\-Definition at line 86 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_ad14b7ec4ecf2cb62091289fb530946be}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T}}
+\index{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Head\-Tracking\-Node\-::\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-D\-E\-T\-E\-C\-T\-I\-O\-N\-\_\-\-M\-I\-S\-S\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-H\-E\-A\-D\-\_\-\-I\-S\-\_\-\-L\-O\-S\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_ad14b7ec4ecf2cb62091289fb530946be}
+\-Number of head detector's misses for a given head until head is declared lost (\-O\-P). 
+
+\-Definition at line 60 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a23eeb6a7ede14f9e47535ef7d6a435b0}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N}}
+\index{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Head\-Tracking\-Node\-::\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-F\-R\-A\-M\-E\-S\-\_\-\-U\-N\-T\-I\-L\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-R\-E\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a23eeb6a7ede14f9e47535ef7d6a435b0}
+\-Number of frames until head detector is reinitialized \-O\-P. 
+
+\-Definition at line 58 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a48e694794e0093a3f096cc66519ab2d9}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!render\-\_\-image@{render\-\_\-image}}
+\index{render\-\_\-image@{render\-\_\-image}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{render\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat {\bf \-R\-P\-Head\-Tracking\-Node\-::render\-\_\-image}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a48e694794e0093a3f096cc66519ab2d9}
+\-Image for output rendering. 
+
+\-Definition at line 94 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a0e3291a73d232c4725902b829cd40b2b}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!skin\-\_\-classifier@{skin\-\_\-classifier}}
+\index{skin\-\_\-classifier@{skin\-\_\-classifier}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{skin\-\_\-classifier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Bayesian\-Skin\-Classifier} {\bf \-R\-P\-Head\-Tracking\-Node\-::skin\-\_\-classifier}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a0e3291a73d232c4725902b829cd40b2b}
+\-Bayesian skin color classifier. 
+
+\-Definition at line 105 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a164b614083d44aac085c856674170506}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Head\-Tracking\-Node\-::\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a164b614083d44aac085c856674170506}
+\-Skin heuristic enabled flag \-O\-P. 
+
+\-Definition at line 73 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a9dda8ff66eca7d0622a438b6c3b77fe9}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}}
+\index{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Head\-Tracking\-Node\-::\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a9dda8ff66eca7d0622a438b6c3b77fe9}
+\-Minimum skin likelihood ratio for \-Bayesian skin classifier. 
+
+\-Definition at line 70 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_acd8f3bddcd0db71ecda21f4b5a1858ee}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Head\-Tracking\-Node\-::\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_acd8f3bddcd0db71ecda21f4b5a1858ee}
+\-Depth smoothing filter enabled flag \-O\-P. 
+
+\-Definition at line 77 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a0735dfefd230deabd81cc96d145205ed}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S@{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S}}
+\index{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S@{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Head\-Tracking\-Node\-::\-S\-M\-O\-O\-T\-H\-I\-N\-G\-\_\-\-R\-A\-D\-I\-U\-S}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a0735dfefd230deabd81cc96d145205ed}
+\-Depth smoothing radius \-O\-P. 
+
+\-Definition at line 79 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_abb89a5e3747c9ce5c046381c2e02b226}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!state@{state}}
+\index{state@{state}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}\-Head\-Tracking\-State {\bf \-R\-P\-Head\-Tracking\-Node\-::state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_abb89a5e3747c9ce5c046381c2e02b226}
+\-Node's state. 
+
+\-Definition at line 87 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a2d99f169c031cc19c178c74b462c8c43}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!state\-\_\-publisher@{state\-\_\-publisher}}
+\index{state\-\_\-publisher@{state\-\_\-publisher}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{state\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Head\-Tracking\-Node\-::state\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a2d99f169c031cc19c178c74b462c8c43}
+\hyperlink{struct_head}{\-Head} tracking state publisher. 
+
+\-Definition at line 108 of file head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_head_tracking_node_a55c8d0690666fd8ed95b0b8352cca591}{\index{\-R\-P\-Head\-Tracking\-Node@{\-R\-P\-Head\-Tracking\-Node}!\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E@{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}}
+\index{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E@{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}!RPHeadTrackingNode@{\-R\-P\-Head\-Tracking\-Node}}
+\subsubsection[{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-R\-P\-Head\-Tracking\-Node\-::\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_head_tracking_node_a55c8d0690666fd8ed95b0b8352cca591}
+\-Output window's name (if \-G\-U\-I output is enabled). 
+
+\-Definition at line 54 of file head\-\_\-tracking.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/head\-\_\-tracking.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/head\-\_\-tracking.\-cpp\end{DoxyCompactItemize}

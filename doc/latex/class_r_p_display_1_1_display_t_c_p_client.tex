@@ -1,0 +1,113 @@
+\hypertarget{class_r_p_display_1_1_display_t_c_p_client}{\section{\-R\-P\-Display.\-Display\-T\-C\-P\-Client \-Class \-Reference}
+\label{class_r_p_display_1_1_display_t_c_p_client}\index{\-R\-P\-Display.\-Display\-T\-C\-P\-Client@{\-R\-P\-Display.\-Display\-T\-C\-P\-Client}}
+}
+
+
+\-Synchronous \-T\-C\-P client which connects to a given server and returns received string messages.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_display_1_1_display_t_c_p_client_a05213a618c07c6ab55f250d66314f02c}{\-Display\-T\-C\-P\-Client} ()
+\begin{DoxyCompactList}\small\item\em \-Default constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_r_p_display_1_1_display_t_c_p_client_a668fe756b24c1f9bc7c83a75a43269e9}{\-Connect} (string ip\-Address, int port)
+\begin{DoxyCompactList}\small\item\em \-Opens a \-T\-C\-P connection to a given server. \end{DoxyCompactList}\item 
+string \hyperlink{class_r_p_display_1_1_display_t_c_p_client_a4890cc8d164e578f8de68181fd16559f}{\-Receive} ()
+\begin{DoxyCompactList}\small\item\em \-Synchronously receives a string from the server. \end{DoxyCompactList}\item 
+void \hyperlink{class_r_p_display_1_1_display_t_c_p_client_a1a9f3eb84e0335afcd7c221c80e510dd}{\-Close} ()
+\begin{DoxyCompactList}\small\item\em \-Closes the \-T\-C\-P connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Synchronous \-T\-C\-P client which connects to a given server and returns received string messages. 
+
+
+
+\-Definition at line 26 of file \-Display\-T\-C\-P\-Client.\-cs.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_display_1_1_display_t_c_p_client_a05213a618c07c6ab55f250d66314f02c}{\index{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}!\-Display\-T\-C\-P\-Client@{\-Display\-T\-C\-P\-Client}}
+\index{\-Display\-T\-C\-P\-Client@{\-Display\-T\-C\-P\-Client}!RPDisplay::DisplayTCPClient@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}}
+\subsubsection[{\-Display\-T\-C\-P\-Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Display.\-Display\-T\-C\-P\-Client.\-Display\-T\-C\-P\-Client} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_display_1_1_display_t_c_p_client_a05213a618c07c6ab55f250d66314f02c}
+
+
+\-Default constructor. 
+
+
+
+\-Definition at line 41 of file \-Display\-T\-C\-P\-Client.\-cs.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_display_1_1_display_t_c_p_client_a1a9f3eb84e0335afcd7c221c80e510dd}{\index{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}!\-Close@{\-Close}}
+\index{\-Close@{\-Close}!RPDisplay::DisplayTCPClient@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}}
+\subsubsection[{\-Close}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Display.\-Display\-T\-C\-P\-Client.\-Close} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_display_1_1_display_t_c_p_client_a1a9f3eb84e0335afcd7c221c80e510dd}
+
+
+\-Closes the \-T\-C\-P connection. 
+
+
+
+\-Definition at line 119 of file \-Display\-T\-C\-P\-Client.\-cs.
+
+\hypertarget{class_r_p_display_1_1_display_t_c_p_client_a668fe756b24c1f9bc7c83a75a43269e9}{\index{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}!\-Connect@{\-Connect}}
+\index{\-Connect@{\-Connect}!RPDisplay::DisplayTCPClient@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}}
+\subsubsection[{\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Display.\-Display\-T\-C\-P\-Client.\-Connect} (
+\begin{DoxyParamCaption}
+\item[{string}]{ip\-Address, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_display_1_1_display_t_c_p_client_a668fe756b24c1f9bc7c83a75a43269e9}
+
+
+\-Opens a \-T\-C\-P connection to a given server. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em ip\-Address} & \-Server's \-I\-P address.\\
+\hline
+{\em port} & \-Server's port.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Connection's success status.
+\end{DoxyReturn}
+
+
+\-Definition at line 51 of file \-Display\-T\-C\-P\-Client.\-cs.
+
+\hypertarget{class_r_p_display_1_1_display_t_c_p_client_a4890cc8d164e578f8de68181fd16559f}{\index{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}!\-Receive@{\-Receive}}
+\index{\-Receive@{\-Receive}!RPDisplay::DisplayTCPClient@{\-R\-P\-Display\-::\-Display\-T\-C\-P\-Client}}
+\subsubsection[{\-Receive}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-R\-P\-Display.\-Display\-T\-C\-P\-Client.\-Receive} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_display_1_1_display_t_c_p_client_a4890cc8d164e578f8de68181fd16559f}
+
+
+\-Synchronously receives a string from the server. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Received string.
+\end{DoxyReturn}
+
+
+\-Definition at line 74 of file \-Display\-T\-C\-P\-Client.\-cs.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/manfred/catkin\-\_\-ws/src/rp\-\_\-display\-\_\-windows\-\_\-phone/\-R\-P\-Display/\-Display\-T\-C\-P\-Client.\-cs\end{DoxyCompactItemize}

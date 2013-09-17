@@ -1,0 +1,574 @@
+\hypertarget{class_r_p_framing_node}{\section{\-R\-P\-Framing\-Node \-Class \-Reference}
+\label{class_r_p_framing_node}\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}}
+}
+
+
+\-Robot photographer's photographic composition node, which uses the human head locations provided by the head tracking node to calculate the most aesthetically pleasing framing for the picture.  
+
+
+
+
+{\ttfamily \#include $<$framing.\-hpp$>$}
+
+
+
+\-Collaboration diagram for \-R\-P\-Framing\-Node\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_r_p_framing_node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_r_p_framing_node_1_1_r_p_rectangle_comparator}{\-R\-P\-Rectangle\-Comparator}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_framing_node_a673807f4faa477371ed702853867d696}{\-R\-P\-Framing\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_framing_node_ada7424816ecc44a22fc3f96eb32ed51d}{node})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_framing_node_a0382670cfd83cd3002623e8969907ea7}{head\-Tracker\-Message\-Callback} (const rp\-\_\-head\-\_\-tracking\-::\-Heads \&tracked\-\_\-heads)
+\item 
+void \hyperlink{class_r_p_framing_node_a296105b2c174c8d616d6d05d889f22f9}{depth\-Image\-Callback} (const sensor\-\_\-msgs\-::\-Image\-::\-Const\-Ptr \&depth\-\_\-input\-\_\-image)
+\item 
+void \hyperlink{class_r_p_framing_node_ac5324e2882cac58d1bae6b82eb08a145}{initialize\-Rotation\-Vector} ()
+\item 
+void \hyperlink{class_r_p_framing_node_aa53b691c9287fc4435fc0ec4d3ac0127}{initialize\-Translation\-Vector} ()
+\item 
+void \hyperlink{class_r_p_framing_node_a8309f74244cb885c2538a33b10cc518d}{convert\-To\-Kinect\-Camera\-Coordinates} (const rp\-\_\-head\-\_\-tracking\-::\-Heads \&tracked\-\_\-heads, std\-::vector$<$ cv\-::\-Point3f $>$ \&projected\-\_\-points)
+\item 
+void \hyperlink{class_r_p_framing_node_a6d5f20f9074b914f657a038cd325272d}{convert\-To\-Camera\-Image\-Coordinates} (const std\-::vector$<$ cv\-::\-Point3f $>$ \&head\-\_\-points, std\-::vector$<$ cv\-::\-Rect $>$ \&projected\-\_\-head\-\_\-rectangles)
+\item 
+int \hyperlink{class_r_p_framing_node_aa2db07c46763d4b9e00ef82d56a11c5b}{centermost\-Head\-Rectangle\-Index} (const std\-::vector$<$ cv\-::\-Rect $>$ \&head\-\_\-rectangles)
+\item 
+void \hyperlink{class_r_p_framing_node_a978fc35a57bcab9aa873756d27a6c54a}{get\-Candidates\-In\-Frame} (const std\-::vector$<$ cv\-::\-Rect $>$ \&candidate\-\_\-head\-\_\-rectangles, const cv\-::\-Rect \&\hyperlink{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}{frame}, std\-::set$<$ cv\-::\-Rect, \hyperlink{struct_r_p_framing_node_1_1_r_p_rectangle_comparator}{\-R\-P\-Rectangle\-Comparator} $>$ \&candidates\-\_\-in\-\_\-frame)
+\item 
+void \hyperlink{class_r_p_framing_node_a7d7448265127cd1082f124a2bbd7e7e7}{frame\-Single\-Person} (const cv\-::\-Rect \&head\-\_\-rectangle, bool off\-\_\-center\-\_\-left, cv\-::\-Rect \&\hyperlink{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}{frame})
+\item 
+void \hyperlink{class_r_p_framing_node_af30fa6293069c2f2748702920c92c885}{frame\-Wide\-Group} (const cv\-::\-Rect \&bounding\-\_\-rectangle, cv\-::\-Rect \&\hyperlink{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}{frame})
+\item 
+void \hyperlink{class_r_p_framing_node_a0f8ddf2c1893f4bcc36414948a179a83}{frame\-Narrow\-Group} (const cv\-::\-Rect \&bounding\-\_\-rectangle, cv\-::\-Rect \&\hyperlink{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}{frame})
+\item 
+void \hyperlink{class_r_p_framing_node_a77640fd8d50fd4b075e8ef3be2e8e7bd}{publish\-Framing\-Status} (const std\-::vector$<$ cv\-::\-Rect $>$ $\ast$head\-\_\-rectangles)
+\item 
+void \hyperlink{class_r_p_framing_node_ae09715b4156667c15f5ca9123f77865a}{publish\-Driving\-Direction} ()
+\item 
+void \hyperlink{class_r_p_framing_node_aeb153d1d84d2698669375139b9277ead}{refresh\-Node\-Enabled\-Status} ()
+\item 
+void \hyperlink{class_r_p_framing_node_a666e1534a89c6096a5539f95efc49dd1}{get\-Overridable\-Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_framing_node_ada7424816ecc44a22fc3f96eb32ed51d}{node}
+\item 
+bool \hyperlink{class_r_p_framing_node_a59242d677df9d2ef09ac222c98203a2d}{node\-\_\-enabled}
+\item 
+ros\-::\-Wall\-Time \hyperlink{class_r_p_framing_node_ac14e461ed967dd726303ff86c7f065e2}{enable\-\_\-time}
+\item 
+\-Framing\-Status \hyperlink{class_r_p_framing_node_adcfd6823bc9579a1deb6ca6640f44b93}{framing\-\_\-status}
+\item 
+cv\-::\-Rect \hyperlink{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}{frame}
+\item 
+\-Driving\-Direction \hyperlink{class_r_p_framing_node_a6a5e5171d0d882e21e9caee5977917ed}{driving\-\_\-direction}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_framing_node_a790bcf735ba2a573f27be72ad2c0f1b3}{driving\-\_\-direction\-\_\-publisher}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_framing_node_ae72d8d6735b444261bcb202f928404cc}{frame\-\_\-publisher}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_framing_node_ae1c216c2215db5cebcf18e1f7a51ae3f}{head\-\_\-tracker\-\_\-subscriber}
+\item 
+const cv\-::\-Rect \hyperlink{class_r_p_framing_node_a6773f17e9534cc005d5a3f2b749e3e72}{\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_framing_node_af473bf98f3e2f4653e5aaaec8a11a726}{depth\-\_\-subscriber}
+\item 
+\hyperlink{class_r_p_depth_image_processor}{\-R\-P\-Depth\-Image\-Processor} \hyperlink{class_r_p_framing_node_a40add69b2b615d2293c8c100606146b6}{depth\-\_\-processor}
+\item 
+ros\-::\-Service\-Client \hyperlink{class_r_p_framing_node_aedaa9ec0ee3cf711f893fbe242ebc5a8}{camera\-\_\-client}
+\item 
+cv\-::\-Mat \hyperlink{class_r_p_framing_node_a4a7d5d460e11aece880b5e9836d149dc}{camera\-\_\-matrix}
+\item 
+cv\-::\-Mat \hyperlink{class_r_p_framing_node_a312c193fe5662a8062a4f6d0918962f8}{distortion\-\_\-coefficients}
+\item 
+cv\-::\-Mat \hyperlink{class_r_p_framing_node_a118f00fa5a583971493536d0374a1a80}{rotation\-\_\-vector}
+\item 
+cv\-::\-Mat \hyperlink{class_r_p_framing_node_a69f636be3f1cc2793e48596a1da71909}{translation\-\_\-vector}
+\item 
+const std\-::string \hyperlink{class_r_p_framing_node_a144c66f7dcab4a463222f44d48128a5d}{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}
+\item 
+double \hyperlink{class_r_p_framing_node_a583866e6d7361f07a7fdd5e0d357b251}{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X}
+\item 
+double \hyperlink{class_r_p_framing_node_a64ee86907af0fccc401e72fcbfac8df4}{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y}
+\item 
+double \hyperlink{class_r_p_framing_node_a6b93f87ce0907cf58a5d24456ab9ccb4}{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z}
+\item 
+double \hyperlink{class_r_p_framing_node_a66f21072e0ca3190decc590933a83cdb}{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X}
+\item 
+double \hyperlink{class_r_p_framing_node_a9aad5136e8873e8b15012db9e2b56ec6}{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y}
+\item 
+double \hyperlink{class_r_p_framing_node_a2f7f848008e9c555f17fc418c65c0fb1}{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z}
+\item 
+bool \hyperlink{class_r_p_framing_node_a8c5a4411117ae10fe4ff69c0fa3fb465}{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's photographic composition node, which uses the human head locations provided by the head tracking node to calculate the most aesthetically pleasing framing for the picture. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 70 of file framing.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_framing_node_a673807f4faa477371ed702853867d696}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}}
+\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-R\-P\-Framing\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Framing\-Node\-::\-R\-P\-Framing\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_framing_node_a673807f4faa477371ed702853867d696}
+\-Default composition and framing node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 39 of file framing.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_framing_node_aa2db07c46763d4b9e00ef82d56a11c5b}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!centermost\-Head\-Rectangle\-Index@{centermost\-Head\-Rectangle\-Index}}
+\index{centermost\-Head\-Rectangle\-Index@{centermost\-Head\-Rectangle\-Index}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{centermost\-Head\-Rectangle\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Framing\-Node\-::centermost\-Head\-Rectangle\-Index} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ cv\-::\-Rect $>$ \&}]{head\-\_\-rectangles}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_aa2db07c46763d4b9e00ef82d56a11c5b}
+\-Finds the index of the rectangle closest to the camera frame center. 
+\begin{DoxyParams}{\-Parameters}
+{\em head\-\_\-rectangles} & \-Detected head rectangles. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 537 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a6d5f20f9074b914f657a038cd325272d}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!convert\-To\-Camera\-Image\-Coordinates@{convert\-To\-Camera\-Image\-Coordinates}}
+\index{convert\-To\-Camera\-Image\-Coordinates@{convert\-To\-Camera\-Image\-Coordinates}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{convert\-To\-Camera\-Image\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::convert\-To\-Camera\-Image\-Coordinates} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ cv\-::\-Point3f $>$ \&}]{head\-\_\-points, }
+\item[{std\-::vector$<$ cv\-::\-Rect $>$ \&}]{projected\-\_\-head\-\_\-rectangles}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a6d5f20f9074b914f657a038cd325272d}
+\-Converts top-\/left/bottom-\/right head rectangle points in the \-Kinect camera coordinates to head rectangles in the photographic camera's image plane. 
+\begin{DoxyParams}{\-Parameters}
+{\em head\-\_\-points} & 3\-D top-\/left/bottom-\/right head rectangle points in \-Kinect's coordinate system. \\
+\hline
+{\em projected\-\_\-head\-\_\-rectangles} & \-Projected head rectangles in the photographic camera's image plane. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 561 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a8309f74244cb885c2538a33b10cc518d}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!convert\-To\-Kinect\-Camera\-Coordinates@{convert\-To\-Kinect\-Camera\-Coordinates}}
+\index{convert\-To\-Kinect\-Camera\-Coordinates@{convert\-To\-Kinect\-Camera\-Coordinates}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{convert\-To\-Kinect\-Camera\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::convert\-To\-Kinect\-Camera\-Coordinates} (
+\begin{DoxyParamCaption}
+\item[{const rp\-\_\-head\-\_\-tracking\-::\-Heads \&}]{tracked\-\_\-heads, }
+\item[{std\-::vector$<$ cv\-::\-Point3f $>$ \&}]{projected\-\_\-points}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a8309f74244cb885c2538a33b10cc518d}
+\-Converts tracked heads to top-\/left/bottom-\/right head rectangle points in the \-Kinect's camera coordinates. 
+\begin{DoxyParams}{\-Parameters}
+{\em tracked\-\_\-heads} & \-Tracked head rectangles in \-Kinect's image plane. \\
+\hline
+{\em projected\-\_\-points} & \-Projected top-\/left/bottom-\/right head rectangle points in \-Kinect's world coordinate system. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 583 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a296105b2c174c8d616d6d05d889f22f9}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!depth\-Image\-Callback@{depth\-Image\-Callback}}
+\index{depth\-Image\-Callback@{depth\-Image\-Callback}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{depth\-Image\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::depth\-Image\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image\-::\-Const\-Ptr \&}]{depth\-\_\-input\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a296105b2c174c8d616d6d05d889f22f9}
+\-Depth image callback. 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-input\-\_\-image} & \-Pointer to depth input image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 167 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a0f8ddf2c1893f4bcc36414948a179a83}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!frame\-Narrow\-Group@{frame\-Narrow\-Group}}
+\index{frame\-Narrow\-Group@{frame\-Narrow\-Group}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{frame\-Narrow\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::frame\-Narrow\-Group} (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Rect \&}]{bounding\-\_\-rectangle, }
+\item[{cv\-::\-Rect \&}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a0f8ddf2c1893f4bcc36414948a179a83}
+\-Calculates the best frame for a narrow group of heads. 
+\begin{DoxyParams}{\-Parameters}
+{\em bounding\-\_\-rectangle} & \-Bounding rectangle for a candidate set of heads. \\
+\hline
+{\em frame} & \-Resulting frame. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 503 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a7d7448265127cd1082f124a2bbd7e7e7}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!frame\-Single\-Person@{frame\-Single\-Person}}
+\index{frame\-Single\-Person@{frame\-Single\-Person}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{frame\-Single\-Person}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::frame\-Single\-Person} (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Rect \&}]{head\-\_\-rectangle, }
+\item[{bool}]{off\-\_\-center\-\_\-left, }
+\item[{cv\-::\-Rect \&}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a7d7448265127cd1082f124a2bbd7e7e7}
+\-Calculates the best frame for a single person. 
+\begin{DoxyParams}{\-Parameters}
+{\em head\-\_\-rectangle} & \hyperlink{struct_head}{\-Head} rectangle for a candidate head. \\
+\hline
+{\em off\-\_\-center\-\_\-left} & \-Flag describing whether the face should be slightly off-\/centered to the left or to the right. \\
+\hline
+{\em frame} & \-Resulting frame. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 518 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_af30fa6293069c2f2748702920c92c885}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!frame\-Wide\-Group@{frame\-Wide\-Group}}
+\index{frame\-Wide\-Group@{frame\-Wide\-Group}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{frame\-Wide\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::frame\-Wide\-Group} (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Rect \&}]{bounding\-\_\-rectangle, }
+\item[{cv\-::\-Rect \&}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_af30fa6293069c2f2748702920c92c885}
+\-Calculates the best frame for a wide group of heads. 
+\begin{DoxyParams}{\-Parameters}
+{\em bounding\-\_\-rectangle} & \-Bounding rectangle for a candidate set of heads. \\
+\hline
+{\em frame} & \-Resulting frame. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 487 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a978fc35a57bcab9aa873756d27a6c54a}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!get\-Candidates\-In\-Frame@{get\-Candidates\-In\-Frame}}
+\index{get\-Candidates\-In\-Frame@{get\-Candidates\-In\-Frame}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{get\-Candidates\-In\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::get\-Candidates\-In\-Frame} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ cv\-::\-Rect $>$ \&}]{candidate\-\_\-head\-\_\-rectangles, }
+\item[{const cv\-::\-Rect \&}]{frame, }
+\item[{std\-::set$<$ cv\-::\-Rect, {\bf \-R\-P\-Rectangle\-Comparator} $>$ \&}]{candidates\-\_\-in\-\_\-frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a978fc35a57bcab9aa873756d27a6c54a}
+\-Finds the candidates whose head rectangles at least partially intersect with a given frame. 
+\begin{DoxyParams}{\-Parameters}
+{\em candidate\-\_\-head\-\_\-rectangles} & \-Detected head rectangles. \\
+\hline
+{\em frame} & \-Current ideal frame. \\
+\hline
+{\em candidates\-\_\-in\-\_\-frame} & \-Resulting candidates in the frame. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 475 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a666e1534a89c6096a5539f95efc49dd1}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a666e1534a89c6096a5539f95efc49dd1}
+\-Gets the overridable parameters from the parameter server. 
+
+\-Definition at line 153 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a0382670cfd83cd3002623e8969907ea7}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!head\-Tracker\-Message\-Callback@{head\-Tracker\-Message\-Callback}}
+\index{head\-Tracker\-Message\-Callback@{head\-Tracker\-Message\-Callback}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{head\-Tracker\-Message\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::head\-Tracker\-Message\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const rp\-\_\-head\-\_\-tracking\-::\-Heads \&}]{tracked\-\_\-heads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a0382670cfd83cd3002623e8969907ea7}
+\-Head-\/tracker callback. 
+\begin{DoxyParams}{\-Parameters}
+{\em tracked\-\_\-heads} & \-Message containing detected/tracked heads. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 258 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_ac5324e2882cac58d1bae6b82eb08a145}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!initialize\-Rotation\-Vector@{initialize\-Rotation\-Vector}}
+\index{initialize\-Rotation\-Vector@{initialize\-Rotation\-Vector}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{initialize\-Rotation\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::initialize\-Rotation\-Vector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_ac5324e2882cac58d1bae6b82eb08a145}
+\-Initializes rotation vector as set by the overridable parameters (in \-Rodrigues representation). 
+
+\-Definition at line 117 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_aa53b691c9287fc4435fc0ec4d3ac0127}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!initialize\-Translation\-Vector@{initialize\-Translation\-Vector}}
+\index{initialize\-Translation\-Vector@{initialize\-Translation\-Vector}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{initialize\-Translation\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::initialize\-Translation\-Vector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_aa53b691c9287fc4435fc0ec4d3ac0127}
+\-Initializes translation vector as set by the overridable parameters. 
+
+\-Definition at line 146 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_ae09715b4156667c15f5ca9123f77865a}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!publish\-Driving\-Direction@{publish\-Driving\-Direction}}
+\index{publish\-Driving\-Direction@{publish\-Driving\-Direction}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{publish\-Driving\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::publish\-Driving\-Direction} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_ae09715b4156667c15f5ca9123f77865a}
+\-Publishes the stored driving direction. 
+
+\-Definition at line 440 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_a77640fd8d50fd4b075e8ef3be2e8e7bd}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!publish\-Framing\-Status@{publish\-Framing\-Status}}
+\index{publish\-Framing\-Status@{publish\-Framing\-Status}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{publish\-Framing\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::publish\-Framing\-Status} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ cv\-::\-Rect $>$ $\ast$}]{head\-\_\-rectangles}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a77640fd8d50fd4b075e8ef3be2e8e7bd}
+\-Publishes the framing status including the ideal frame and the detected head rectangles in the photographic camera's image plane. 
+\begin{DoxyParams}{\-Parameters}
+{\em head\-\_\-rectangles} & \-Detected head rectangles reprojected into the photographic camera's image plane. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 449 of file framing.\-cpp.
+
+\hypertarget{class_r_p_framing_node_aeb153d1d84d2698669375139b9277ead}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!refresh\-Node\-Enabled\-Status@{refresh\-Node\-Enabled\-Status}}
+\index{refresh\-Node\-Enabled\-Status@{refresh\-Node\-Enabled\-Status}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{refresh\-Node\-Enabled\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Framing\-Node\-::refresh\-Node\-Enabled\-Status} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_aeb153d1d84d2698669375139b9277ead}
+\-Retrieves the \char`\"{}node enabled\char`\"{} status from the parameter server and marks the time of the \char`\"{}enable the node\char`\"{} command issue. 
+
+\-Definition at line 238 of file framing.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_framing_node_aedaa9ec0ee3cf711f893fbe242ebc5a8}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!camera\-\_\-client@{camera\-\_\-client}}
+\index{camera\-\_\-client@{camera\-\_\-client}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{camera\-\_\-client}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Client {\bf \-R\-P\-Framing\-Node\-::camera\-\_\-client}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_aedaa9ec0ee3cf711f893fbe242ebc5a8}
+\-Camera client (for debugging). 
+
+\-Definition at line 111 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a6773f17e9534cc005d5a3f2b749e3e72}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E@{\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E@{\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const cv\-::\-Rect {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-F\-R\-A\-M\-E\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a6773f17e9534cc005d5a3f2b749e3e72}
+\-Camera's frame rectangle. 
+
+\-Definition at line 102 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a4a7d5d460e11aece880b5e9836d149dc}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!camera\-\_\-matrix@{camera\-\_\-matrix}}
+\index{camera\-\_\-matrix@{camera\-\_\-matrix}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{camera\-\_\-matrix}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat {\bf \-R\-P\-Framing\-Node\-::camera\-\_\-matrix}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a4a7d5d460e11aece880b5e9836d149dc}
+\-Camera intrinsics matrix (for debugging). 
+
+\-Definition at line 113 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a66f21072e0ca3190decc590933a83cdb}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X@{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X@{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-X}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a66f21072e0ca3190decc590933a83cdb}
+\-Camera rotation around \-X axis \-O\-P. 
+
+\-Definition at line 129 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a9aad5136e8873e8b15012db9e2b56ec6}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y@{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y@{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a9aad5136e8873e8b15012db9e2b56ec6}
+\-Camera rotation around \-Y axis \-O\-P. 
+
+\-Definition at line 130 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a2f7f848008e9c555f17fc418c65c0fb1}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z@{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z@{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-R\-O\-T\-A\-T\-I\-O\-N\-\_\-\-Z}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a2f7f848008e9c555f17fc418c65c0fb1}
+\-Camera rotation around \-Z axis \-O\-P. 
+
+\-Definition at line 131 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a583866e6d7361f07a7fdd5e0d357b251}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X@{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X@{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-X}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a583866e6d7361f07a7fdd5e0d357b251}
+\-Camera translation in \-X direction \-O\-P. 
+
+\-Definition at line 125 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a64ee86907af0fccc401e72fcbfac8df4}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y@{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y@{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a64ee86907af0fccc401e72fcbfac8df4}
+\-Camera translation in \-Y direction \-O\-P. 
+
+\-Definition at line 126 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a6b93f87ce0907cf58a5d24456ab9ccb4}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z@{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z}}
+\index{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z@{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Framing\-Node\-::\-C\-A\-M\-E\-R\-A\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-I\-O\-N\-\_\-\-Z}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a6b93f87ce0907cf58a5d24456ab9ccb4}
+\-Camera translation in \-Z direction \-O\-P. 
+
+\-Definition at line 127 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a40add69b2b615d2293c8c100606146b6}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!depth\-\_\-processor@{depth\-\_\-processor}}
+\index{depth\-\_\-processor@{depth\-\_\-processor}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{depth\-\_\-processor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Depth\-Image\-Processor} {\bf \-R\-P\-Framing\-Node\-::depth\-\_\-processor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a40add69b2b615d2293c8c100606146b6}
+\-Kinect depth image processor (for debugging). 
+
+\-Definition at line 108 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_af473bf98f3e2f4653e5aaaec8a11a726}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!depth\-\_\-subscriber@{depth\-\_\-subscriber}}
+\index{depth\-\_\-subscriber@{depth\-\_\-subscriber}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{depth\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Framing\-Node\-::depth\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_af473bf98f3e2f4653e5aaaec8a11a726}
+\-Kinect depth input subscriber (for debugging). 
+
+\-Definition at line 105 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a312c193fe5662a8062a4f6d0918962f8}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!distortion\-\_\-coefficients@{distortion\-\_\-coefficients}}
+\index{distortion\-\_\-coefficients@{distortion\-\_\-coefficients}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{distortion\-\_\-coefficients}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat {\bf \-R\-P\-Framing\-Node\-::distortion\-\_\-coefficients}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a312c193fe5662a8062a4f6d0918962f8}
+\-Camera distortion coefficients (for debugging). 
+
+\-Definition at line 115 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a6a5e5171d0d882e21e9caee5977917ed}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!driving\-\_\-direction@{driving\-\_\-direction}}
+\index{driving\-\_\-direction@{driving\-\_\-direction}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{driving\-\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}\-Driving\-Direction {\bf \-R\-P\-Framing\-Node\-::driving\-\_\-direction}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a6a5e5171d0d882e21e9caee5977917ed}
+\-Produced driving direction suggestion. 
+
+\-Definition at line 95 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a790bcf735ba2a573f27be72ad2c0f1b3}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!driving\-\_\-direction\-\_\-publisher@{driving\-\_\-direction\-\_\-publisher}}
+\index{driving\-\_\-direction\-\_\-publisher@{driving\-\_\-direction\-\_\-publisher}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{driving\-\_\-direction\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Framing\-Node\-::driving\-\_\-direction\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a790bcf735ba2a573f27be72ad2c0f1b3}
+\-Driving direction publisher. 
+
+\-Definition at line 97 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_ac14e461ed967dd726303ff86c7f065e2}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!enable\-\_\-time@{enable\-\_\-time}}
+\index{enable\-\_\-time@{enable\-\_\-time}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{enable\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Wall\-Time {\bf \-R\-P\-Framing\-Node\-::enable\-\_\-time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_ac14e461ed967dd726303ff86c7f065e2}
+\-Node's last enable time. 
+
+\-Definition at line 90 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!frame@{frame}}
+\index{frame@{frame}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Rect {\bf \-R\-P\-Framing\-Node\-::frame}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a1e4cba34d01b81db86ae54435d98ec76}
+\-Produced ideal frame. 
+
+\-Definition at line 94 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_ae72d8d6735b444261bcb202f928404cc}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!frame\-\_\-publisher@{frame\-\_\-publisher}}
+\index{frame\-\_\-publisher@{frame\-\_\-publisher}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{frame\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Framing\-Node\-::frame\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_ae72d8d6735b444261bcb202f928404cc}
+\-Produced ideal frame publisher. 
+
+\-Definition at line 98 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_adcfd6823bc9579a1deb6ca6640f44b93}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!framing\-\_\-status@{framing\-\_\-status}}
+\index{framing\-\_\-status@{framing\-\_\-status}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{framing\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}\-Framing\-Status {\bf \-R\-P\-Framing\-Node\-::framing\-\_\-status}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_adcfd6823bc9579a1deb6ca6640f44b93}
+\-Framing status. 
+
+\-Definition at line 92 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a8c5a4411117ae10fe4ff69c0fa3fb465}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Framing\-Node\-::\-G\-U\-I\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a8c5a4411117ae10fe4ff69c0fa3fb465}
+\-G\-U\-I output enabled flag \-O\-P. 
+
+\-Definition at line 133 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_ae1c216c2215db5cebcf18e1f7a51ae3f}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!head\-\_\-tracker\-\_\-subscriber@{head\-\_\-tracker\-\_\-subscriber}}
+\index{head\-\_\-tracker\-\_\-subscriber@{head\-\_\-tracker\-\_\-subscriber}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{head\-\_\-tracker\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Framing\-Node\-::head\-\_\-tracker\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_ae1c216c2215db5cebcf18e1f7a51ae3f}
+\-Head-\/tracking input subscriber. 
+
+\-Definition at line 100 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_ada7424816ecc44a22fc3f96eb32ed51d}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!node@{node}}
+\index{node@{node}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Framing\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_ada7424816ecc44a22fc3f96eb32ed51d}
+\-Node's handle. 
+
+\-Definition at line 87 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a59242d677df9d2ef09ac222c98203a2d}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!node\-\_\-enabled@{node\-\_\-enabled}}
+\index{node\-\_\-enabled@{node\-\_\-enabled}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{node\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Framing\-Node\-::node\-\_\-enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a59242d677df9d2ef09ac222c98203a2d}
+\-Node's enabled/disabled flag. 
+
+\-Definition at line 88 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a118f00fa5a583971493536d0374a1a80}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!rotation\-\_\-vector@{rotation\-\_\-vector}}
+\index{rotation\-\_\-vector@{rotation\-\_\-vector}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{rotation\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat {\bf \-R\-P\-Framing\-Node\-::rotation\-\_\-vector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a118f00fa5a583971493536d0374a1a80}
+\-Camera rotation vector (w.\-r.\-t. robot's base; for debugging). 
+
+\-Definition at line 117 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a69f636be3f1cc2793e48596a1da71909}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!translation\-\_\-vector@{translation\-\_\-vector}}
+\index{translation\-\_\-vector@{translation\-\_\-vector}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{translation\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Mat {\bf \-R\-P\-Framing\-Node\-::translation\-\_\-vector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a69f636be3f1cc2793e48596a1da71909}
+\-Camera translation vector (w.\-r.\-t. robot's base; for debugging). 
+
+\-Definition at line 119 of file framing.\-hpp.
+
+\hypertarget{class_r_p_framing_node_a144c66f7dcab4a463222f44d48128a5d}{\index{\-R\-P\-Framing\-Node@{\-R\-P\-Framing\-Node}!\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E@{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}}
+\index{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E@{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}!RPFramingNode@{\-R\-P\-Framing\-Node}}
+\subsubsection[{\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-R\-P\-Framing\-Node\-::\-W\-I\-N\-D\-O\-W\-\_\-\-N\-A\-M\-E}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_framing_node_a144c66f7dcab4a463222f44d48128a5d}
+\-Output window name (if \-G\-U\-I output is enabled). 
+
+\-Definition at line 122 of file framing.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-framing/include/framing.\-hpp\item 
+rp\-\_\-framing/src/framing.\-cpp\end{DoxyCompactItemize}

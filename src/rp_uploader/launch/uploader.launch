@@ -1,0 +1,10 @@
+<launch>
+  <node ns="rp" name="uploader_node" pkg="rp_uploader" type="rp_uploader_node.py" output="screen">
+    <param name="flickr_api_key" value="FLICKR API KEY" type="string"/>
+    <param name="flickr_api_secret" value="FLICKR API SECRET" type="string"/>
+    
+    <param name="photo_title" value="Robot Photographer's Picture" type="string"/>
+    <param name="photo_description" value="Some description about some event..." type="string"/>    
+    <param name="photo_tags" value="robot photographer" type="string"/>
+  </node>
+</launch>

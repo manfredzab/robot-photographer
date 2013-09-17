@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_r_p_color_face_detector.html" title="Face detector in colour images, based on Viola and Jones (2001) face detector implementation in OpenC..." alt="" coords="568,5,717,35"/>
+<area shape="rect" id="node4" href="$class_r_p_color_image_processor.html" title="Color image processor class, which provides implementations for simple color image manipulation tasks..." alt="" coords="560,59,725,88"/>
+<area shape="rect" id="node6" href="$class_r_p_depth_head_detector.html" title="Head detector from depth images." alt="" coords="564,112,721,141"/>
+<area shape="rect" id="node8" href="$class_r_p_kernel_logistic_regression_classifier.html" title="Kernel logistic regression classifier class." alt="" coords="521,165,764,195"/>
+<area shape="rect" id="node10" href="$class_r_p_k_l_r_classifier_gaussian_kernel.html" title="Kernel logistic regression classifier Gaussian (radial basis function, RBF) kernel class..." alt="" coords="217,165,431,195"/>
+<area shape="rect" id="node12" href="$class_r_p_k_l_r_classifier_kernel.html" title="Kernel logistic regression classifier kernel class." alt="" coords="7,165,164,195"/>
+<area shape="rect" id="node14" href="$class_r_p_depth_image_processor.html" title="Depth image processor class, which provides implementations for simple depth image manipulation tasks..." alt="" coords="557,219,728,248"/>
+<area shape="rect" id="node16" href="$class_r_p_bayesian_skin_classifier.html" title="Hue&#45;histogram based Bayesian skin classifier." alt="" coords="555,272,731,301"/>
+<area shape="rect" id="node18" href="$class_r_p_depth_head_tracker.html" title="Head tracker in depth images." alt="" coords="568,325,717,355"/>
+</map>

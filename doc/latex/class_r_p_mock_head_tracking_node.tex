@@ -1,0 +1,192 @@
+\hypertarget{class_r_p_mock_head_tracking_node}{\section{\-R\-P\-Mock\-Head\-Tracking\-Node \-Class \-Reference}
+\label{class_r_p_mock_head_tracking_node}\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+}
+
+
+\-Mock head tracking node that publishes randomly generated head detections, which evolve using a random walk over the scene. \-Useful for framing/composition algorithm testing.  
+
+
+
+
+{\ttfamily \#include $<$mock\-\_\-head\-\_\-tracking.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_mock_head_tracking_node_aa4543f859850e3b59dd452b6130cae30}{\-R\-P\-Mock\-Head\-Tracking\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_mock_head_tracking_node_a2294de9d2f407990783725f89aca9f43}{node})
+\item 
+void \hyperlink{class_r_p_mock_head_tracking_node_aba24032613272b902fa46de867036b36}{get\-Overridable\-Parameters} ()
+\item 
+void \hyperlink{class_r_p_mock_head_tracking_node_aa565b90163780a4a5c8602e006020603}{generate\-And\-Publish\-Mock\-Heads} ()
+\item 
+void \hyperlink{class_r_p_mock_head_tracking_node_ab9b38d32668df19b25b247ba560f5100}{generate\-Mock\-Head} (cv\-::\-Rect \&generated\-\_\-head)
+\item 
+void \hyperlink{class_r_p_mock_head_tracking_node_a6da2db9e3d11a3edf49d3ddfe43c2def}{publish\-Heads} ()
+\item 
+void \hyperlink{class_r_p_mock_head_tracking_node_a0a8464108241e61fdd56c8a92354a8b6}{initialize\-Random\-Depth\-Image} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&\hyperlink{class_r_p_mock_head_tracking_node_a94d8f99ef984c889f722bc6da057df5f}{depth\-\_\-image})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_mock_head_tracking_node_a2294de9d2f407990783725f89aca9f43}{node}
+\item 
+unsigned int \hyperlink{class_r_p_mock_head_tracking_node_a00ba80d3ca138d7d586242a5655136f6}{frame\-\_\-count}
+\item 
+int \hyperlink{class_r_p_mock_head_tracking_node_a7397e364d5dec3ad0068e26dbb50e173}{\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T}
+\item 
+std\-::vector$<$ \hyperlink{struct_head}{\-Head} $>$ \hyperlink{class_r_p_mock_head_tracking_node_a9eb51fd17b3436f4d4058be0e1a204d8}{heads}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_mock_head_tracking_node_a4d78d8388d295ef1120818d2e8f2954e}{heads\-\_\-publisher}
+\item 
+cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \hyperlink{class_r_p_mock_head_tracking_node_a94d8f99ef984c889f722bc6da057df5f}{depth\-\_\-image}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Mock head tracking node that publishes randomly generated head detections, which evolve using a random walk over the scene. \-Useful for framing/composition algorithm testing. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 28 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_mock_head_tracking_node_aa4543f859850e3b59dd452b6130cae30}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{\-R\-P\-Mock\-Head\-Tracking\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::\-R\-P\-Mock\-Head\-Tracking\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_mock_head_tracking_node_aa4543f859850e3b59dd452b6130cae30}
+\-Default mock head tracking node constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Node's handle. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 33 of file mock\-\_\-head\-\_\-tracking.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_mock_head_tracking_node_aa565b90163780a4a5c8602e006020603}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!generate\-And\-Publish\-Mock\-Heads@{generate\-And\-Publish\-Mock\-Heads}}
+\index{generate\-And\-Publish\-Mock\-Heads@{generate\-And\-Publish\-Mock\-Heads}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{generate\-And\-Publish\-Mock\-Heads}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::generate\-And\-Publish\-Mock\-Heads} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_mock_head_tracking_node_aa565b90163780a4a5c8602e006020603}
+\-Generates and publishes mock heads. 
+
+\-Definition at line 74 of file mock\-\_\-head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_ab9b38d32668df19b25b247ba560f5100}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!generate\-Mock\-Head@{generate\-Mock\-Head}}
+\index{generate\-Mock\-Head@{generate\-Mock\-Head}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{generate\-Mock\-Head}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::generate\-Mock\-Head} (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Rect \&}]{generated\-\_\-head}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_mock_head_tracking_node_ab9b38d32668df19b25b247ba560f5100}
+\-Generates a single mock head. 
+\begin{DoxyParams}{\-Parameters}
+{\em generated\-\_\-head} & \-Resulting generated mock head rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 136 of file mock\-\_\-head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_aba24032613272b902fa46de867036b36}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_mock_head_tracking_node_aba24032613272b902fa46de867036b36}
+\-Gets overridable parameters from the parameter server. 
+
+\-Definition at line 154 of file mock\-\_\-head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a0a8464108241e61fdd56c8a92354a8b6}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!initialize\-Random\-Depth\-Image@{initialize\-Random\-Depth\-Image}}
+\index{initialize\-Random\-Depth\-Image@{initialize\-Random\-Depth\-Image}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{initialize\-Random\-Depth\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::initialize\-Random\-Depth\-Image} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&}]{depth\-\_\-image}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_mock_head_tracking_node_a0a8464108241e61fdd56c8a92354a8b6}
+\-Initializes a random depth image. 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-image} & \-Generated random depth image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 56 of file mock\-\_\-head\-\_\-tracking.\-cpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a6da2db9e3d11a3edf49d3ddfe43c2def}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!publish\-Heads@{publish\-Heads}}
+\index{publish\-Heads@{publish\-Heads}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{publish\-Heads}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::publish\-Heads} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_mock_head_tracking_node_a6da2db9e3d11a3edf49d3ddfe43c2def}
+\-Publishes simulated heads. 
+
+\-Definition at line 122 of file mock\-\_\-head\-\_\-tracking.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_mock_head_tracking_node_a94d8f99ef984c889f722bc6da057df5f}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!depth\-\_\-image@{depth\-\_\-image}}
+\index{depth\-\_\-image@{depth\-\_\-image}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{depth\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::depth\-\_\-image}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_mock_head_tracking_node_a94d8f99ef984c889f722bc6da057df5f}
+\-Simulated depth image. 
+
+\-Definition at line 39 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a00ba80d3ca138d7d586242a5655136f6}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!frame\-\_\-count@{frame\-\_\-count}}
+\index{frame\-\_\-count@{frame\-\_\-count}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{frame\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::frame\-\_\-count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_mock_head_tracking_node_a00ba80d3ca138d7d586242a5655136f6}
+\-Frame count. 
+
+\-Definition at line 33 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a7397e364d5dec3ad0068e26dbb50e173}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T@{\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T}}
+\index{\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T@{\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::\-H\-E\-A\-D\-\_\-\-C\-O\-U\-N\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_mock_head_tracking_node_a7397e364d5dec3ad0068e26dbb50e173}
+\-Simulated head count overridable parameter. 
+
+\-Definition at line 35 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a9eb51fd17b3436f4d4058be0e1a204d8}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!heads@{heads}}
+\index{heads@{heads}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{heads}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Head}$>$ {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::heads}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_mock_head_tracking_node_a9eb51fd17b3436f4d4058be0e1a204d8}
+\-Simulated heads. 
+
+\-Definition at line 36 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a4d78d8388d295ef1120818d2e8f2954e}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!heads\-\_\-publisher@{heads\-\_\-publisher}}
+\index{heads\-\_\-publisher@{heads\-\_\-publisher}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{heads\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::heads\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_mock_head_tracking_node_a4d78d8388d295ef1120818d2e8f2954e}
+\-Simulated heads publisher. 
+
+\-Definition at line 37 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+\hypertarget{class_r_p_mock_head_tracking_node_a2294de9d2f407990783725f89aca9f43}{\index{\-R\-P\-Mock\-Head\-Tracking\-Node@{\-R\-P\-Mock\-Head\-Tracking\-Node}!node@{node}}
+\index{node@{node}!RPMockHeadTrackingNode@{\-R\-P\-Mock\-Head\-Tracking\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Mock\-Head\-Tracking\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_mock_head_tracking_node_a2294de9d2f407990783725f89aca9f43}
+\-R\-O\-S node's handle. 
+
+\-Definition at line 31 of file mock\-\_\-head\-\_\-tracking.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/mock\-\_\-head\-\_\-tracking.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/mock\-\_\-head\-\_\-tracking.\-cpp\end{DoxyCompactItemize}

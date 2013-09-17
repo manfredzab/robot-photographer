@@ -1,0 +1,17 @@
+<launch>
+  <node ns="rp" name="framing_node" pkg="rp_framing" type="rp_framing_node" respawn="true">
+    <param name="enabled" value="true" type="bool"/>
+    <param name="gui_output_enabled" value="false" type="bool"/>
+    <param name="debug_mode_enabled" value="false" type="bool"/>
+
+    <!-- Meters -->
+    <param name="camera_translation_x" value="0.0" type="double"/>
+    <param name="camera_translation_y" value="0.65" type="double"/>
+    <param name="camera_translation_z" value="-0.01" type="double"/>
+
+    <!-- Degrees -->
+    <param name="camera_rotation_x" value="12.0" type="double"/>
+    <param name="camera_rotation_y" value="-0.3" type="double"/>
+    <param name="camera_rotation_z" value="1.4" type="double"/>
+  </node>
+</launch>

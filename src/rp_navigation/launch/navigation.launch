@@ -1,0 +1,4 @@
+<launch>
+  <node ns="rp" name="navigation_node" pkg="rp_navigation" type="rp_navigation_node" output="screen">
+  </node>
+</launch>

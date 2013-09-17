@@ -1,0 +1,3 @@
+<launch>
+  <node ns="rp" name="speech_node" pkg="rp_speech" type="rp_speech_node"/>
+</launch>

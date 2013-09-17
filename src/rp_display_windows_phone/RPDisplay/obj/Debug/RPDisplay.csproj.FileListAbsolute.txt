@@ -1,0 +1,13 @@
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\Bin\Debug\ApplicationIcon.png
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\Bin\Debug\Background.png
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\Bin\Debug\RPDisplay.dll
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\Bin\Debug\RPDisplay.pdb
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\Bin\Debug\AppManifest.xaml
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\Bin\Debug\RPDisplay.xap
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\ResolveAssemblyReference.cache
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\App.g.i.cs
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\MainPage.g.i.cs
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\RPDisplay.g.resources
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\RPDisplay.dll
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\RPDisplay.pdb
+c:\users\manfred\documents\visual studio 2010\Projects\RPDisplay\RPDisplay\obj\Debug\XapCacheFile.xml

@@ -1,0 +1,419 @@
+\hypertarget{class_r_p_state_externalization_node}{\section{\-R\-P\-State\-Externalization\-Node \-Class \-Reference}
+\label{class_r_p_state_externalization_node}\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}}
+}
+
+
+\-Robot photographer's node responsible for generating vocal/visual status messages about the internal state of the robot.  
+
+
+
+
+{\ttfamily \#include $<$state\-\_\-externalization.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_state_externalization_node_a161a6850769c1f20cf2bd0fc7ca29d3d}{\-R\-P\-State\-Externalization\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_state_externalization_node_a54542d877247b1de7128918dc9face84}{node})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a72403c142739da98d758f6b809dc86bf}{locomotion\-State\-Callback} (const std\-\_\-msgs\-::\-U\-Int8 \&locomotion\-\_\-state\-\_\-message)
+\item 
+void \hyperlink{class_r_p_state_externalization_node_ac37120caee1bb806ecd671af709dbe61}{head\-Tracking\-State\-Callback} (const std\-\_\-msgs\-::\-U\-Int8 \&head\-\_\-tracking\-\_\-state\-\_\-message)
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a84016e2e0334523723b988a55ec29052}{framing\-Message\-Callback} (const rp\-\_\-framing\-::\-Frame \&frame\-\_\-message)
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a88b0e64adbc549a70e4dce23dad23043}{autonomous\-Photography\-State\-Callback} (const std\-\_\-msgs\-::\-U\-Int8 \&autonomous\-\_\-photography\-\_\-state\-\_\-message)
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a12e4f0e139c07024cc4563873263007c}{choose\-Two\-Messages} (std\-::string $\ast$in\-\_\-strings, int in\-\_\-strings\-\_\-size, std\-::string $\ast$out\-\_\-first\-\_\-string, std\-::string $\ast$out\-\_\-second\-\_\-string)
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a67e0f9ec2cd49bcd07263acf70e5a2cc}{publish\-Text\-Message} ()
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a7f3dd3f0d600d4042195346d82a26988}{publish\-Vocal\-Message} ()
+\item 
+void \hyperlink{class_r_p_state_externalization_node_a82a72e8054dfa4260e5c5d14a95560d5}{get\-Current\-State} (\-Locomotion\-State $\ast$out\-\_\-locomotion\-\_\-state, \-Head\-Tracking\-State $\ast$out\-\_\-head\-\_\-tracking\-\_\-state, \-Framing\-Status $\ast$out\-\_\-framing\-\_\-state, \-Autonomous\-Photography\-State $\ast$out\-\_\-autonomous\-\_\-photography\-\_\-state)
+\item 
+std\-::string \hyperlink{class_r_p_state_externalization_node_a7dd21f6a61bdce4f0a0722771baf53b0}{update\-State\-Messages} (\-Locomotion\-State in\-\_\-locomotion\-\_\-state, \-Head\-Tracking\-State in\-\_\-head\-\_\-tracking\-\_\-state, \-Framing\-Status in\-\_\-framing\-\_\-state, \-Autonomous\-Photography\-State in\-\_\-autonomous\-\_\-photography\-\_\-state)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_state_externalization_node_a54542d877247b1de7128918dc9face84}{node}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_state_externalization_node_a83a0b5013aaa3f576a66f5fdb0cd496e}{locomotion\-\_\-state\-\_\-subscriber}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_state_externalization_node_a198f8d63e01773bf468a72a291078ef2}{head\-\_\-tracking\-\_\-state\-\_\-subscriber}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_state_externalization_node_ae898595354bbe232f948f323a2b34f18}{framing\-\_\-status\-\_\-subscriber}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_state_externalization_node_ac79ccc93b04f57e17d5e1f0e225a5210}{autonomous\-\_\-photography\-\_\-state\-\_\-subscriber}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_state_externalization_node_a7fb1584c32931b9d61d3f2f85a12ed8d}{text\-\_\-message\-\_\-publisher}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_state_externalization_node_a78d2e05f5ef3b194b719a27b44db91d3}{vocal\-\_\-message\-\_\-publisher}
+\item 
+\-Locomotion\-State \hyperlink{class_r_p_state_externalization_node_ae89a6c952f36c49d866003753abd715f}{locomotion\-\_\-state}
+\item 
+boost\-::mutex \hyperlink{class_r_p_state_externalization_node_a85537f2d4c8e0f0da1992b609a9ac3cf}{locomotion\-\_\-state\-\_\-mutex}
+\item 
+\-Head\-Tracking\-State \hyperlink{class_r_p_state_externalization_node_acc0c8e8552825d4a9303cf59307c71af}{head\-\_\-tracking\-\_\-state}
+\item 
+boost\-::mutex \hyperlink{class_r_p_state_externalization_node_a2b35dbb15cc044ca7d0847d46569b234}{head\-\_\-tracking\-\_\-state\-\_\-mutex}
+\item 
+\-Framing\-Status \hyperlink{class_r_p_state_externalization_node_ad435064482aa0df8a11a8b52d9e2e503}{framing\-\_\-state}
+\item 
+boost\-::mutex \hyperlink{class_r_p_state_externalization_node_aeb8321c04369d904cdb73b4f8b86c30d}{framing\-\_\-state\-\_\-mutex}
+\item 
+\-Autonomous\-Photography\-State \hyperlink{class_r_p_state_externalization_node_abed06c00a68454ce196768a1e5078cee}{autonomous\-\_\-photography\-\_\-state}
+\item 
+boost\-::mutex \hyperlink{class_r_p_state_externalization_node_a3c18a6613c260be6d1d770c4553de508}{autonomous\-\_\-photography\-\_\-state\-\_\-mutex}
+\item 
+std\-::string \hyperlink{class_r_p_state_externalization_node_a9d9c064277958b5f4027e62caf85079c}{text\-\_\-message}
+\item 
+std\-::string \hyperlink{class_r_p_state_externalization_node_a81cda9545dd12f64e184c6b6ebb82368}{vocal\-\_\-message}
+\item 
+std\-::string \hyperlink{class_r_p_state_externalization_node_a011fc67b3d66b4421136e33837674f6f}{published\-\_\-message\-\_\-type}
+\item 
+ros\-::\-Time \hyperlink{class_r_p_state_externalization_node_ad1fa73fa64e5dd3488a5d9075c7d1de4}{last\-\_\-publish\-\_\-time}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's node responsible for generating vocal/visual status messages about the internal state of the robot. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 39 of file state\-\_\-externalization.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_state_externalization_node_a161a6850769c1f20cf2bd0fc7ca29d3d}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}}
+\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{\-R\-P\-State\-Externalization\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-State\-Externalization\-Node\-::\-R\-P\-State\-Externalization\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_state_externalization_node_a161a6850769c1f20cf2bd0fc7ca29d3d}
+\-Default state externalization node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 25 of file state\-\_\-externalization.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_state_externalization_node_a88b0e64adbc549a70e4dce23dad23043}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!autonomous\-Photography\-State\-Callback@{autonomous\-Photography\-State\-Callback}}
+\index{autonomous\-Photography\-State\-Callback@{autonomous\-Photography\-State\-Callback}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{autonomous\-Photography\-State\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::autonomous\-Photography\-State\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const std\-\_\-msgs\-::\-U\-Int8 \&}]{autonomous\-\_\-photography\-\_\-state\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a88b0e64adbc549a70e4dce23dad23043}
+\-Callback for autonomous photography state message. 
+\begin{DoxyParams}{\-Parameters}
+{\em autonomous\-\_\-photography\-\_\-state\-\_\-message} & \-Autonomous photography state message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 280 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a12e4f0e139c07024cc4563873263007c}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!choose\-Two\-Messages@{choose\-Two\-Messages}}
+\index{choose\-Two\-Messages@{choose\-Two\-Messages}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{choose\-Two\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::choose\-Two\-Messages} (
+\begin{DoxyParamCaption}
+\item[{std\-::string $\ast$}]{in\-\_\-strings, }
+\item[{int}]{in\-\_\-strings\-\_\-size, }
+\item[{std\-::string $\ast$}]{out\-\_\-first\-\_\-string, }
+\item[{std\-::string $\ast$}]{out\-\_\-second\-\_\-string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a12e4f0e139c07024cc4563873263007c}
+\-Chooses two strings uniformly at random from a given string array. 
+\begin{DoxyParams}{\-Parameters}
+{\em in\-\_\-strings} & \-Input string array. \\
+\hline
+{\em in\-\_\-strings\-\_\-size} & \-Input string array size. \\
+\hline
+{\em out\-\_\-first\-\_\-string} & \-First chosen string. \\
+\hline
+{\em out\-\_\-second\-\_\-string} & \-Second chosen string. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 220 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a84016e2e0334523723b988a55ec29052}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!framing\-Message\-Callback@{framing\-Message\-Callback}}
+\index{framing\-Message\-Callback@{framing\-Message\-Callback}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{framing\-Message\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::framing\-Message\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const rp\-\_\-framing\-::\-Frame \&}]{frame\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a84016e2e0334523723b988a55ec29052}
+\-Callback for framing state message. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame\-\_\-message} & \-Framing state message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 268 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a82a72e8054dfa4260e5c5d14a95560d5}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!get\-Current\-State@{get\-Current\-State}}
+\index{get\-Current\-State@{get\-Current\-State}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{get\-Current\-State}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::get\-Current\-State} (
+\begin{DoxyParamCaption}
+\item[{\-Locomotion\-State $\ast$}]{out\-\_\-locomotion\-\_\-state, }
+\item[{\-Head\-Tracking\-State $\ast$}]{out\-\_\-head\-\_\-tracking\-\_\-state, }
+\item[{\-Framing\-Status $\ast$}]{out\-\_\-framing\-\_\-state, }
+\item[{\-Autonomous\-Photography\-State $\ast$}]{out\-\_\-autonomous\-\_\-photography\-\_\-state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a82a72e8054dfa4260e5c5d14a95560d5}
+\-Returns a snapshot of the cumulative robot's state. 
+\begin{DoxyParams}{\-Parameters}
+{\em out\-\_\-locomotion\-\_\-state} & \-Output locomotion state. \\
+\hline
+{\em out\-\_\-head\-\_\-tracking\-\_\-state} & \-Output head tracking state. \\
+\hline
+{\em out\-\_\-framing\-\_\-state} & \-Output framing state. \\
+\hline
+{\em out\-\_\-autonomous\-\_\-photography\-\_\-state} & \-Output autonomous photography state. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 96 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_ac37120caee1bb806ecd671af709dbe61}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!head\-Tracking\-State\-Callback@{head\-Tracking\-State\-Callback}}
+\index{head\-Tracking\-State\-Callback@{head\-Tracking\-State\-Callback}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{head\-Tracking\-State\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::head\-Tracking\-State\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const std\-\_\-msgs\-::\-U\-Int8 \&}]{head\-\_\-tracking\-\_\-state\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_ac37120caee1bb806ecd671af709dbe61}
+\-Callback for head tracker's state message. 
+\begin{DoxyParams}{\-Parameters}
+{\em head\-\_\-tracking\-\_\-state\-\_\-message} & \hyperlink{struct_head}{\-Head} tracker's state message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 258 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a72403c142739da98d758f6b809dc86bf}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!locomotion\-State\-Callback@{locomotion\-State\-Callback}}
+\index{locomotion\-State\-Callback@{locomotion\-State\-Callback}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{locomotion\-State\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::locomotion\-State\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const std\-\_\-msgs\-::\-U\-Int8 \&}]{locomotion\-\_\-state\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a72403c142739da98d758f6b809dc86bf}
+\-Callback for locomotion state message. 
+\begin{DoxyParams}{\-Parameters}
+{\em locomotion\-\_\-state\-\_\-message} & \-Locomotion state message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 248 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a67e0f9ec2cd49bcd07263acf70e5a2cc}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!publish\-Text\-Message@{publish\-Text\-Message}}
+\index{publish\-Text\-Message@{publish\-Text\-Message}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{publish\-Text\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::publish\-Text\-Message} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a67e0f9ec2cd49bcd07263acf70e5a2cc}
+\-Publishes the stored text status message. 
+
+\-Definition at line 76 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a7f3dd3f0d600d4042195346d82a26988}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!publish\-Vocal\-Message@{publish\-Vocal\-Message}}
+\index{publish\-Vocal\-Message@{publish\-Vocal\-Message}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{publish\-Vocal\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-State\-Externalization\-Node\-::publish\-Vocal\-Message} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a7f3dd3f0d600d4042195346d82a26988}
+\-Publishes the stored vocal status message. 
+
+\-Definition at line 86 of file state\-\_\-externalization.\-cpp.
+
+\hypertarget{class_r_p_state_externalization_node_a7dd21f6a61bdce4f0a0722771baf53b0}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!update\-State\-Messages@{update\-State\-Messages}}
+\index{update\-State\-Messages@{update\-State\-Messages}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{update\-State\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-State\-Externalization\-Node\-::update\-State\-Messages} (
+\begin{DoxyParamCaption}
+\item[{\-Locomotion\-State}]{in\-\_\-locomotion\-\_\-state, }
+\item[{\-Head\-Tracking\-State}]{in\-\_\-head\-\_\-tracking\-\_\-state, }
+\item[{\-Framing\-Status}]{in\-\_\-framing\-\_\-state, }
+\item[{\-Autonomous\-Photography\-State}]{in\-\_\-autonomous\-\_\-photography\-\_\-state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a7dd21f6a61bdce4f0a0722771baf53b0}
+\-Updates the status messages (text and vocal) based on the cumulative robot's state and returns the message type string. 
+\begin{DoxyParams}{\-Parameters}
+{\em in\-\_\-locomotion\-\_\-state} & \-Input locomotion state. \\
+\hline
+{\em in\-\_\-head\-\_\-tracking\-\_\-state} & \-Input head tracking state. \\
+\hline
+{\em in\-\_\-framing\-\_\-state} & \-Input framing state. \\
+\hline
+{\em in\-\_\-autonomous\-\_\-photography\-\_\-state} & \-Input autonomous photography state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Current message type string. 
+\end{DoxyReturn}
+
+
+\-Definition at line 125 of file state\-\_\-externalization.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_state_externalization_node_abed06c00a68454ce196768a1e5078cee}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!autonomous\-\_\-photography\-\_\-state@{autonomous\-\_\-photography\-\_\-state}}
+\index{autonomous\-\_\-photography\-\_\-state@{autonomous\-\_\-photography\-\_\-state}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{autonomous\-\_\-photography\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}\-Autonomous\-Photography\-State {\bf \-R\-P\-State\-Externalization\-Node\-::autonomous\-\_\-photography\-\_\-state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_abed06c00a68454ce196768a1e5078cee}
+\-Autonomous photography status. 
+
+\-Definition at line 61 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a3c18a6613c260be6d1d770c4553de508}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!autonomous\-\_\-photography\-\_\-state\-\_\-mutex@{autonomous\-\_\-photography\-\_\-state\-\_\-mutex}}
+\index{autonomous\-\_\-photography\-\_\-state\-\_\-mutex@{autonomous\-\_\-photography\-\_\-state\-\_\-mutex}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{autonomous\-\_\-photography\-\_\-state\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-State\-Externalization\-Node\-::autonomous\-\_\-photography\-\_\-state\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a3c18a6613c260be6d1d770c4553de508}
+\-Autonomous photography status' mutex. 
+
+\-Definition at line 62 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_ac79ccc93b04f57e17d5e1f0e225a5210}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!autonomous\-\_\-photography\-\_\-state\-\_\-subscriber@{autonomous\-\_\-photography\-\_\-state\-\_\-subscriber}}
+\index{autonomous\-\_\-photography\-\_\-state\-\_\-subscriber@{autonomous\-\_\-photography\-\_\-state\-\_\-subscriber}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{autonomous\-\_\-photography\-\_\-state\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-State\-Externalization\-Node\-::autonomous\-\_\-photography\-\_\-state\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_ac79ccc93b04f57e17d5e1f0e225a5210}
+\-Autonomous photography state subscriber. 
+
+\-Definition at line 47 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_ad435064482aa0df8a11a8b52d9e2e503}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!framing\-\_\-state@{framing\-\_\-state}}
+\index{framing\-\_\-state@{framing\-\_\-state}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{framing\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}\-Framing\-Status {\bf \-R\-P\-State\-Externalization\-Node\-::framing\-\_\-state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_ad435064482aa0df8a11a8b52d9e2e503}
+\-Framing status. 
+
+\-Definition at line 58 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_aeb8321c04369d904cdb73b4f8b86c30d}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!framing\-\_\-state\-\_\-mutex@{framing\-\_\-state\-\_\-mutex}}
+\index{framing\-\_\-state\-\_\-mutex@{framing\-\_\-state\-\_\-mutex}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{framing\-\_\-state\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-State\-Externalization\-Node\-::framing\-\_\-state\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_aeb8321c04369d904cdb73b4f8b86c30d}
+\-Framing status' mutex. 
+
+\-Definition at line 59 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_ae898595354bbe232f948f323a2b34f18}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!framing\-\_\-status\-\_\-subscriber@{framing\-\_\-status\-\_\-subscriber}}
+\index{framing\-\_\-status\-\_\-subscriber@{framing\-\_\-status\-\_\-subscriber}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{framing\-\_\-status\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-State\-Externalization\-Node\-::framing\-\_\-status\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_ae898595354bbe232f948f323a2b34f18}
+\-Framing status subscriber. 
+
+\-Definition at line 46 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_acc0c8e8552825d4a9303cf59307c71af}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!head\-\_\-tracking\-\_\-state@{head\-\_\-tracking\-\_\-state}}
+\index{head\-\_\-tracking\-\_\-state@{head\-\_\-tracking\-\_\-state}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{head\-\_\-tracking\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}\-Head\-Tracking\-State {\bf \-R\-P\-State\-Externalization\-Node\-::head\-\_\-tracking\-\_\-state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_acc0c8e8552825d4a9303cf59307c71af}
+\-Head-\/tracking state. 
+
+\-Definition at line 55 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a2b35dbb15cc044ca7d0847d46569b234}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!head\-\_\-tracking\-\_\-state\-\_\-mutex@{head\-\_\-tracking\-\_\-state\-\_\-mutex}}
+\index{head\-\_\-tracking\-\_\-state\-\_\-mutex@{head\-\_\-tracking\-\_\-state\-\_\-mutex}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{head\-\_\-tracking\-\_\-state\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-State\-Externalization\-Node\-::head\-\_\-tracking\-\_\-state\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a2b35dbb15cc044ca7d0847d46569b234}
+\-Head-\/tracking state's mutex. 
+
+\-Definition at line 56 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a198f8d63e01773bf468a72a291078ef2}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!head\-\_\-tracking\-\_\-state\-\_\-subscriber@{head\-\_\-tracking\-\_\-state\-\_\-subscriber}}
+\index{head\-\_\-tracking\-\_\-state\-\_\-subscriber@{head\-\_\-tracking\-\_\-state\-\_\-subscriber}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{head\-\_\-tracking\-\_\-state\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-State\-Externalization\-Node\-::head\-\_\-tracking\-\_\-state\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a198f8d63e01773bf468a72a291078ef2}
+\hyperlink{struct_head}{\-Head} tracker state subscriber. 
+
+\-Definition at line 45 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_ad1fa73fa64e5dd3488a5d9075c7d1de4}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!last\-\_\-publish\-\_\-time@{last\-\_\-publish\-\_\-time}}
+\index{last\-\_\-publish\-\_\-time@{last\-\_\-publish\-\_\-time}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{last\-\_\-publish\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Time {\bf \-R\-P\-State\-Externalization\-Node\-::last\-\_\-publish\-\_\-time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_ad1fa73fa64e5dd3488a5d9075c7d1de4}
+\-Last published message time. 
+
+\-Definition at line 69 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_ae89a6c952f36c49d866003753abd715f}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!locomotion\-\_\-state@{locomotion\-\_\-state}}
+\index{locomotion\-\_\-state@{locomotion\-\_\-state}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{locomotion\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}\-Locomotion\-State {\bf \-R\-P\-State\-Externalization\-Node\-::locomotion\-\_\-state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_ae89a6c952f36c49d866003753abd715f}
+\-Locomotion state. 
+
+\-Definition at line 52 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a85537f2d4c8e0f0da1992b609a9ac3cf}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!locomotion\-\_\-state\-\_\-mutex@{locomotion\-\_\-state\-\_\-mutex}}
+\index{locomotion\-\_\-state\-\_\-mutex@{locomotion\-\_\-state\-\_\-mutex}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{locomotion\-\_\-state\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-State\-Externalization\-Node\-::locomotion\-\_\-state\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a85537f2d4c8e0f0da1992b609a9ac3cf}
+\-Locomotion state's mutex. 
+
+\-Definition at line 53 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a83a0b5013aaa3f576a66f5fdb0cd496e}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!locomotion\-\_\-state\-\_\-subscriber@{locomotion\-\_\-state\-\_\-subscriber}}
+\index{locomotion\-\_\-state\-\_\-subscriber@{locomotion\-\_\-state\-\_\-subscriber}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{locomotion\-\_\-state\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-State\-Externalization\-Node\-::locomotion\-\_\-state\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a83a0b5013aaa3f576a66f5fdb0cd496e}
+\-Locomotion state subscriber. 
+
+\-Definition at line 44 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a54542d877247b1de7128918dc9face84}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!node@{node}}
+\index{node@{node}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-State\-Externalization\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a54542d877247b1de7128918dc9face84}
+\-Node's handle. 
+
+\-Definition at line 42 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a011fc67b3d66b4421136e33837674f6f}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!published\-\_\-message\-\_\-type@{published\-\_\-message\-\_\-type}}
+\index{published\-\_\-message\-\_\-type@{published\-\_\-message\-\_\-type}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{published\-\_\-message\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-State\-Externalization\-Node\-::published\-\_\-message\-\_\-type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a011fc67b3d66b4421136e33837674f6f}
+\-Last published message type. 
+
+\-Definition at line 68 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a9d9c064277958b5f4027e62caf85079c}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!text\-\_\-message@{text\-\_\-message}}
+\index{text\-\_\-message@{text\-\_\-message}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{text\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-State\-Externalization\-Node\-::text\-\_\-message}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a9d9c064277958b5f4027e62caf85079c}
+\-Text message to publish. 
+
+\-Definition at line 65 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a7fb1584c32931b9d61d3f2f85a12ed8d}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!text\-\_\-message\-\_\-publisher@{text\-\_\-message\-\_\-publisher}}
+\index{text\-\_\-message\-\_\-publisher@{text\-\_\-message\-\_\-publisher}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{text\-\_\-message\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-State\-Externalization\-Node\-::text\-\_\-message\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a7fb1584c32931b9d61d3f2f85a12ed8d}
+\-Text message publisher. 
+
+\-Definition at line 49 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a81cda9545dd12f64e184c6b6ebb82368}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!vocal\-\_\-message@{vocal\-\_\-message}}
+\index{vocal\-\_\-message@{vocal\-\_\-message}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{vocal\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-State\-Externalization\-Node\-::vocal\-\_\-message}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a81cda9545dd12f64e184c6b6ebb82368}
+\-Vocal message to publish. 
+
+\-Definition at line 66 of file state\-\_\-externalization.\-hpp.
+
+\hypertarget{class_r_p_state_externalization_node_a78d2e05f5ef3b194b719a27b44db91d3}{\index{\-R\-P\-State\-Externalization\-Node@{\-R\-P\-State\-Externalization\-Node}!vocal\-\_\-message\-\_\-publisher@{vocal\-\_\-message\-\_\-publisher}}
+\index{vocal\-\_\-message\-\_\-publisher@{vocal\-\_\-message\-\_\-publisher}!RPStateExternalizationNode@{\-R\-P\-State\-Externalization\-Node}}
+\subsubsection[{vocal\-\_\-message\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-State\-Externalization\-Node\-::vocal\-\_\-message\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_state_externalization_node_a78d2e05f5ef3b194b719a27b44db91d3}
+\-Vocal message publisher. 
+
+\-Definition at line 50 of file state\-\_\-externalization.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-state\-\_\-externalization/include/state\-\_\-externalization.\-hpp\item 
+rp\-\_\-state\-\_\-externalization/src/state\-\_\-externalization.\-cpp\end{DoxyCompactItemize}

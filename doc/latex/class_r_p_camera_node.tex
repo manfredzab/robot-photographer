@@ -1,0 +1,184 @@
+\hypertarget{class_r_p_camera_node}{\section{\-R\-P\-Camera\-Node \-Class \-Reference}
+\label{class_r_p_camera_node}\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}}
+}
+
+
+\-Robot photographer's node which takes the pictures using the photographic camera via the gphoto2 library.  
+
+
+
+
+{\ttfamily \#include $<$camera.\-hpp$>$}
+
+
+
+\-Collaboration diagram for \-R\-P\-Camera\-Node\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{class_r_p_camera_node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_camera_node_a760e6e4ca3230f8c1e74a326a1f3b790}{\-R\-P\-Camera\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_camera_node_a258bd2f067f146b88e9f7463f3ef9f3d}{node})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_r_p_camera_node_af1cef4948433c283d26e0aaaf33523bd}{take\-Photo} (rp\-\_\-camera\-::\-Photo\-Service\-::\-Request \&request, rp\-\_\-camera\-::\-Photo\-Service\-::\-Response \&response)
+\item 
+void \hyperlink{class_r_p_camera_node_a20039ac6f9da622c04ca54bb68fd99f3}{get\-Overridable\-Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_camera_node_a258bd2f067f146b88e9f7463f3ef9f3d}{node}
+\item 
+ros\-::\-Service\-Server \hyperlink{class_r_p_camera_node_ac8cd380063cf5cc9db19a74845e3f008}{photo\-\_\-service}
+\item 
+\hyperlink{class_g_photo2_handler}{\-G\-Photo2\-Handler} \hyperlink{class_r_p_camera_node_a15ea1a7dedfc8bca967f1dfd67dc544f}{gphoto2\-\_\-handler}
+\item 
+\hyperlink{class_usb_handler}{\-Usb\-Handler} \hyperlink{class_r_p_camera_node_aba586a055ce660b850a578150aae1eb7}{usb\-\_\-handler}
+\item 
+bool \hyperlink{class_r_p_camera_node_ad7b447a8e9d4de116d8407da10750a93}{\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C}
+\item 
+bool \hyperlink{class_r_p_camera_node_af56a202a81ef4884fb5ce455bb288f42}{\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+std\-::string \hyperlink{class_r_p_camera_node_a5d6be82d1ecbd5cd8dab19c863c8df05}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E}
+\item 
+bool \hyperlink{class_r_p_camera_node_a48ca485f3692b562413f1be1c6fa4952}{\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's node which takes the pictures using the photographic camera via the gphoto2 library. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 24 of file camera.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_camera_node_a760e6e4ca3230f8c1e74a326a1f3b790}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}}
+\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{\-R\-P\-Camera\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Camera\-Node\-::\-R\-P\-Camera\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_camera_node_a760e6e4ca3230f8c1e74a326a1f3b790}
+\-Default photographic camera node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 20 of file camera.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_camera_node_a20039ac6f9da622c04ca54bb68fd99f3}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Camera\-Node\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_a20039ac6f9da622c04ca54bb68fd99f3}
+\-Gets overridable parameters from the parameter server. 
+
+\-Definition at line 46 of file camera.\-cpp.
+
+\hypertarget{class_r_p_camera_node_af1cef4948433c283d26e0aaaf33523bd}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!take\-Photo@{take\-Photo}}
+\index{take\-Photo@{take\-Photo}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{take\-Photo}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Camera\-Node\-::take\-Photo} (
+\begin{DoxyParamCaption}
+\item[{rp\-\_\-camera\-::\-Photo\-Service\-::\-Request \&}]{request, }
+\item[{rp\-\_\-camera\-::\-Photo\-Service\-::\-Response \&}]{response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_af1cef4948433c283d26e0aaaf33523bd}
+\-Callback for the \char`\"{}photograph taking\char`\"{} \-R\-O\-S service request. 
+\begin{DoxyParams}{\-Parameters}
+{\em request} & \-Empty \-R\-O\-S service request. \\
+\hline
+{\em response} & \-R\-O\-S photo service response, containing the file name of the taken picture. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Operation's success status. 
+\end{DoxyReturn}
+
+
+\-Definition at line 55 of file camera.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_camera_node_ad7b447a8e9d4de116d8407da10750a93}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C@{\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C}}
+\index{\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C@{\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Camera\-Node\-::\-F\-L\-A\-S\-H\-\_\-\-A\-U\-T\-O\-M\-A\-T\-I\-C}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_ad7b447a8e9d4de116d8407da10750a93}
+\-Automatic flash overridable parameter (\-O\-P). 
+
+\-Definition at line 34 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_af56a202a81ef4884fb5ce455bb288f42}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Camera\-Node\-::\-F\-L\-A\-S\-H\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_af56a202a81ef4884fb5ce455bb288f42}
+\-Flash enabled/disabled flag \-O\-P. 
+
+\-Definition at line 35 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_a15ea1a7dedfc8bca967f1dfd67dc544f}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!gphoto2\-\_\-handler@{gphoto2\-\_\-handler}}
+\index{gphoto2\-\_\-handler@{gphoto2\-\_\-handler}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{gphoto2\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-G\-Photo2\-Handler} {\bf \-R\-P\-Camera\-Node\-::gphoto2\-\_\-handler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_a15ea1a7dedfc8bca967f1dfd67dc544f}
+\-G\-Photo2 handler. 
+
+\-Definition at line 31 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_a258bd2f067f146b88e9f7463f3ef9f3d}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!node@{node}}
+\index{node@{node}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Camera\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_a258bd2f067f146b88e9f7463f3ef9f3d}
+\-Node's handle. 
+
+\-Definition at line 27 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_ac8cd380063cf5cc9db19a74845e3f008}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!photo\-\_\-service@{photo\-\_\-service}}
+\index{photo\-\_\-service@{photo\-\_\-service}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{photo\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server {\bf \-R\-P\-Camera\-Node\-::photo\-\_\-service}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_ac8cd380063cf5cc9db19a74845e3f008}
+\-Advertised photo service. 
+
+\-Definition at line 29 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_a5d6be82d1ecbd5cd8dab19c863c8df05}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Camera\-Node\-::\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_a5d6be82d1ecbd5cd8dab19c863c8df05}
+\-U\-S\-B device path \-O\-P. 
+
+\-Definition at line 36 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_aba586a055ce660b850a578150aae1eb7}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!usb\-\_\-handler@{usb\-\_\-handler}}
+\index{usb\-\_\-handler@{usb\-\_\-handler}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{usb\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Usb\-Handler} {\bf \-R\-P\-Camera\-Node\-::usb\-\_\-handler}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_aba586a055ce660b850a578150aae1eb7}
+\-U\-S\-B reset handler. 
+
+\-Definition at line 32 of file camera.\-hpp.
+
+\hypertarget{class_r_p_camera_node_a48ca485f3692b562413f1be1c6fa4952}{\index{\-R\-P\-Camera\-Node@{\-R\-P\-Camera\-Node}!\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPCameraNode@{\-R\-P\-Camera\-Node}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Camera\-Node\-::\-U\-S\-B\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_camera_node_a48ca485f3692b562413f1be1c6fa4952}
+\-U\-S\-B device reset enabled/disabled flag \-O\-P. 
+
+\-Definition at line 37 of file camera.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-camera/include/camera.\-hpp\item 
+rp\-\_\-camera/src/camera.\-cpp\end{DoxyCompactItemize}

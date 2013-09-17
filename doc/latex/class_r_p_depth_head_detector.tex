@@ -1,0 +1,277 @@
+\hypertarget{class_r_p_depth_head_detector}{\section{\-R\-P\-Depth\-Head\-Detector \-Class \-Reference}
+\label{class_r_p_depth_head_detector}\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}}
+}
+
+
+\hyperlink{struct_head}{\-Head} detector from depth images.  
+
+
+
+
+{\ttfamily \#include $<$depth\-\_\-head\-\_\-detector.\-hpp$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_r_p_depth_head_detector_1_1_r_p_detected_head}{\-R\-P\-Detected\-Head}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_depth_head_detector_a7c975c2c80ca9bbf35f79957dc492075}{\-R\-P\-Depth\-Head\-Detector} (const ros\-::\-Node\-Handle \&\hyperlink{class_r_p_depth_head_detector_a53fd04b35998c8b45ca766ea2d3235c3}{node})
+\item 
+void \hyperlink{class_r_p_depth_head_detector_ad34a3f19133add261f04ad730a601deb}{detect\-Heads} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&depth\-\_\-image, const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&color\-\_\-image, \hyperlink{class_r_p_bayesian_skin_classifier}{\-R\-P\-Bayesian\-Skin\-Classifier} \&skin\-\_\-classifier, \hyperlink{class_r_p_kernel_logistic_regression_classifier}{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier} \&klr\-\_\-hue\-\_\-classifier, std\-::vector$<$ cv\-::\-Rect $>$ \&heads, cv\-::\-Mat \&render\-\_\-image, bool gui\-\_\-output\-\_\-enabled)
+\item 
+void \hyperlink{class_r_p_depth_head_detector_a4c61c7e303d4d71f3eeeec65052013a6}{get\-Pixels\-Satisfying\-Head\-Bounds} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&depth\-\_\-image)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_r_p_depth_head_detector_a784cfd1c3b1593ba40005c1e9b084481}{is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound} \mbox{[}\-F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T\mbox{]}\mbox{[}\-F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_r_p_depth_head_detector_a5da9a2b247dd2b1abf5d9aade1db7e7a}{is\-Skin\-Pixel} (\hyperlink{class_r_p_bayesian_skin_classifier}{\-R\-P\-Bayesian\-Skin\-Classifier} \&skin\-\_\-classifier, cv\-::\-Vec3b \&pixel)
+\item 
+void \hyperlink{class_r_p_depth_head_detector_a81457e68bdb5dec9649e7c396feb1807}{render\-Pixels\-Satisfying\-Head\-Bounds} (cv\-::\-Mat \&render\-\_\-image)
+\item 
+void \hyperlink{class_r_p_depth_head_detector_aae8aa7f4630ec38ef8a5eb43fb266dca}{get\-Static\-Parameters} ()
+\item 
+void \hyperlink{class_r_p_depth_head_detector_a550c1f761bf0c9d5136c63fa859f8ab0}{get\-Dynamic\-Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const ros\-::\-Node\-Handle \& \hyperlink{class_r_p_depth_head_detector_a53fd04b35998c8b45ca766ea2d3235c3}{node}
+\item 
+bool \hyperlink{class_r_p_depth_head_detector_a5d5d149a596a53a1f71be1c7d21376af}{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+double \hyperlink{class_r_p_depth_head_detector_a19f0f94c588230091a2803f144ddc279}{\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M}
+\item 
+double \hyperlink{class_r_p_depth_head_detector_ab63e81e4e717743a28710494824e7eea}{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}
+\item 
+double \hyperlink{class_r_p_depth_head_detector_a20dc0ad6b0d1d58e59a5a1f948929679}{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M}
+\item 
+bool \hyperlink{class_r_p_depth_head_detector_ad8cdcef7633eef892c4524afd6019f93}{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}
+\item 
+bool \hyperlink{class_r_p_depth_head_detector_a915a166fa953b63240c5f3010aa999b8}{\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S}
+\item 
+double \hyperlink{class_r_p_depth_head_detector_a51ef553cbc6ed05f2d2c379d9e6ce503}{\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{struct_head}{\-Head} detector from depth images. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 58 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_depth_head_detector_a7c975c2c80ca9bbf35f79957dc492075}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}}
+\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-R\-P\-Depth\-Head\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Depth\-Head\-Detector\-::\-R\-P\-Depth\-Head\-Detector} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_depth_head_detector_a7c975c2c80ca9bbf35f79957dc492075}
+\-Default constructor of head detector in depth images. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-R\-O\-S node's handle. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 25 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_depth_head_detector_ad34a3f19133add261f04ad730a601deb}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!detect\-Heads@{detect\-Heads}}
+\index{detect\-Heads@{detect\-Heads}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{detect\-Heads}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Depth\-Head\-Detector\-::detect\-Heads} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{depth\-\_\-image, }
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Ptr \&}]{color\-\_\-image, }
+\item[{{\bf \-R\-P\-Bayesian\-Skin\-Classifier} \&}]{skin\-\_\-classifier, }
+\item[{{\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier} \&}]{klr\-\_\-hue\-\_\-classifier, }
+\item[{std\-::vector$<$ cv\-::\-Rect $>$ \&}]{heads, }
+\item[{cv\-::\-Mat \&}]{render\-\_\-image, }
+\item[{bool}]{gui\-\_\-output\-\_\-enabled = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_depth_head_detector_ad34a3f19133add261f04ad730a601deb}
+\-Detects the heads in a given depth image (potentially using heuristics from the color image). 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-image} & \-Depth image. \\
+\hline
+{\em color\-\_\-image} & \-Color image. \\
+\hline
+{\em skin\-\_\-classifier} & \-Bayesian skin classifier. \\
+\hline
+{\em klr\-\_\-hue\-\_\-classifier} & \-K\-L\-R skin hue classifier. \\
+\hline
+{\em heads} & \-Detected heads. \\
+\hline
+{\em render\-\_\-image} & \-Image to which the \-G\-U\-I information should be rendered. \\
+\hline
+{\em gui\-\_\-output\-\_\-enabled} & \-G\-U\-I output enabled/disabled flag. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 57 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_depth_head_detector_a550c1f761bf0c9d5136c63fa859f8ab0}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!get\-Dynamic\-Parameters@{get\-Dynamic\-Parameters}}
+\index{get\-Dynamic\-Parameters@{get\-Dynamic\-Parameters}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{get\-Dynamic\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Depth\-Head\-Detector\-::get\-Dynamic\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a550c1f761bf0c9d5136c63fa859f8ab0}
+\-Gets dynamic overridable parameters from the parameter server. 
+
+\-Definition at line 46 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_depth_head_detector_a4c61c7e303d4d71f3eeeec65052013a6}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!get\-Pixels\-Satisfying\-Head\-Bounds@{get\-Pixels\-Satisfying\-Head\-Bounds}}
+\index{get\-Pixels\-Satisfying\-Head\-Bounds@{get\-Pixels\-Satisfying\-Head\-Bounds}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{get\-Pixels\-Satisfying\-Head\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Depth\-Head\-Detector\-::get\-Pixels\-Satisfying\-Head\-Bounds} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{depth\-\_\-image}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_depth_head_detector_a4c61c7e303d4d71f3eeeec65052013a6}
+\-Gets pixels satisfying the head bounds (result is stored in \char`\"{}is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound\char`\"{} array). 
+\begin{DoxyParams}{\-Parameters}
+{\em depth\-\_\-image} & \-Input depth image. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 310 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_depth_head_detector_aae8aa7f4630ec38ef8a5eb43fb266dca}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!get\-Static\-Parameters@{get\-Static\-Parameters}}
+\index{get\-Static\-Parameters@{get\-Static\-Parameters}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{get\-Static\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Depth\-Head\-Detector\-::get\-Static\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_aae8aa7f4630ec38ef8a5eb43fb266dca}
+\-Gets static overridable parameters from the parameter server. 
+
+\-Definition at line 40 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_depth_head_detector_a5da9a2b247dd2b1abf5d9aade1db7e7a}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!is\-Skin\-Pixel@{is\-Skin\-Pixel}}
+\index{is\-Skin\-Pixel@{is\-Skin\-Pixel}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{is\-Skin\-Pixel}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Depth\-Head\-Detector\-::is\-Skin\-Pixel} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-R\-P\-Bayesian\-Skin\-Classifier} \&}]{skin\-\_\-classifier, }
+\item[{cv\-::\-Vec3b \&}]{pixel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}\label{class_r_p_depth_head_detector_a5da9a2b247dd2b1abf5d9aade1db7e7a}
+\-Checks whether a given pixel is a skin pixel. 
+\begin{DoxyParams}{\-Parameters}
+{\em skin\-\_\-classifier} & \-Skin hue histogram-\/based skin classifier. \\
+\hline
+{\em pixel} & \-Pixel to classify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-True, if a given pixel is a skin pixel, and false otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 406 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_depth_head_detector_a81457e68bdb5dec9649e7c396feb1807}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!render\-Pixels\-Satisfying\-Head\-Bounds@{render\-Pixels\-Satisfying\-Head\-Bounds}}
+\index{render\-Pixels\-Satisfying\-Head\-Bounds@{render\-Pixels\-Satisfying\-Head\-Bounds}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{render\-Pixels\-Satisfying\-Head\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Depth\-Head\-Detector\-::render\-Pixels\-Satisfying\-Head\-Bounds} (
+\begin{DoxyParamCaption}
+\item[{cv\-::\-Mat \&}]{render\-\_\-image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a81457e68bdb5dec9649e7c396feb1807}
+\-Renders the pixels that satisfy head bounds. 
+\begin{DoxyParams}{\-Parameters}
+{\em render\-\_\-image} & \-Image in which to render the pixels satisfying the head bounds. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 391 of file depth\-\_\-head\-\_\-detector.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_depth_head_detector_a20dc0ad6b0d1d58e59a5a1f948929679}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M}}
+\index{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Depth\-Head\-Detector\-::\-F\-A\-C\-E\-\_\-\-H\-U\-E\-\_\-\-P\-R\-O\-B\-A\-B\-I\-L\-I\-T\-Y\-\_\-\-M\-I\-N\-I\-M\-U\-M}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a20dc0ad6b0d1d58e59a5a1f948929679}
+\-Minimum face hue probability \-O\-P. 
+
+\-Definition at line 108 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_a51ef553cbc6ed05f2d2c379d9e6ce503}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D@{\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D}}
+\index{\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D@{\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Depth\-Head\-Detector\-::\-H\-E\-A\-D\-\_\-\-M\-I\-N\-\_\-\-V\-E\-R\-T\-I\-C\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-G\-R\-O\-U\-N\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a51ef553cbc6ed05f2d2c379d9e6ce503}
+\-O\-P for minimum head's vertical distance from the ground not to be ignored. 
+
+\-Definition at line 112 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_a915a166fa953b63240c5f3010aa999b8}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S@{\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S}}
+\index{\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S@{\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Depth\-Head\-Detector\-::\-I\-G\-N\-O\-R\-E\-\_\-\-L\-O\-W\-\_\-\-C\-A\-N\-D\-I\-D\-A\-T\-E\-\_\-\-H\-E\-A\-D\-S}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a915a166fa953b63240c5f3010aa999b8}
+\-O\-P to ignore low candidate heads. 
+
+\-Definition at line 111 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_a784cfd1c3b1593ba40005c1e9b084481}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound@{is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound}}
+\index{is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound@{is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Depth\-Head\-Detector\-::is\-\_\-pixel\-\_\-satisfying\-\_\-head\-\_\-size\-\_\-bound}\mbox{[}\-F\-R\-A\-M\-E\-\_\-\-H\-E\-I\-G\-H\-T\mbox{]}\mbox{[}\-F\-R\-A\-M\-E\-\_\-\-W\-I\-D\-T\-H\mbox{]}}}\label{class_r_p_depth_head_detector_a784cfd1c3b1593ba40005c1e9b084481}
+\-Flag array indicating whether a given pixel satisfies a head bound. 
+
+\-Definition at line 140 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_ad8cdcef7633eef892c4524afd6019f93}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Depth\-Head\-Detector\-::\-K\-L\-R\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_ad8cdcef7633eef892c4524afd6019f93}
+\-K\-L\-R skin classifier enabled flag \-O\-P. 
+
+\-Definition at line 109 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_a53fd04b35998c8b45ca766ea2d3235c3}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!node@{node}}
+\index{node@{node}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}const ros\-::\-Node\-Handle\& {\bf \-R\-P\-Depth\-Head\-Detector\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a53fd04b35998c8b45ca766ea2d3235c3}
+\-Node's handle. 
+
+\-Definition at line 102 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_a19f0f94c588230091a2803f144ddc279}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M}}
+\index{\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Depth\-Head\-Detector\-::\-S\-K\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-M\-I\-N\-I\-M\-U\-M}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a19f0f94c588230091a2803f144ddc279}
+\-Minimum skin area \-O\-P. 
+
+\-Definition at line 106 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_a5d5d149a596a53a1f71be1c7d21376af}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Depth\-Head\-Detector\-::\-S\-K\-I\-N\-\_\-\-H\-E\-U\-R\-I\-S\-T\-I\-C\-\_\-\-E\-N\-A\-B\-L\-E\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_a5d5d149a596a53a1f71be1c7d21376af}
+\-Skin heuristic overridable parameter. 
+
+\-Definition at line 104 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_depth_head_detector_ab63e81e4e717743a28710494824e7eea}{\index{\-R\-P\-Depth\-Head\-Detector@{\-R\-P\-Depth\-Head\-Detector}!\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}}
+\index{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M@{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}!RPDepthHeadDetector@{\-R\-P\-Depth\-Head\-Detector}}
+\subsubsection[{\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Depth\-Head\-Detector\-::\-S\-K\-I\-N\-\_\-\-L\-I\-K\-E\-L\-I\-H\-O\-O\-D\-\_\-\-R\-A\-T\-I\-O\-\_\-\-M\-I\-N\-I\-M\-U\-M}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_depth_head_detector_ab63e81e4e717743a28710494824e7eea}
+\-Minimum skin likelihood ratio \-O\-P. 
+
+\-Definition at line 107 of file depth\-\_\-head\-\_\-detector.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/depth\-\_\-head\-\_\-detector.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/depth\-\_\-head\-\_\-detector.\-cpp\end{DoxyCompactItemize}

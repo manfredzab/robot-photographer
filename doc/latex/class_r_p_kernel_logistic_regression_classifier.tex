@@ -1,0 +1,267 @@
+\hypertarget{class_r_p_kernel_logistic_regression_classifier}{\section{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier \-Class \-Reference}
+\label{class_r_p_kernel_logistic_regression_classifier}\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+}
+
+
+\-Kernel logistic regression classifier class.  
+
+
+
+
+{\ttfamily \#include $<$kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp$>$}
+
+
+
+\-Collaboration diagram for \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_r_p_kernel_logistic_regression_classifier__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_kernel_logistic_regression_classifier_adfefd03cb8914d0223eab1d874d01966}{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier} ()
+\item 
+void \hyperlink{class_r_p_kernel_logistic_regression_classifier_a76e06607099d33da606753c347dab738}{add\-Training\-Sample} (std\-::vector$<$ double $>$ \&features, bool is\-\_\-positive)
+\item 
+void \hyperlink{class_r_p_kernel_logistic_regression_classifier_a1e14b7daeb2fb65768c991b8d8837245}{train} (double time\-\_\-limit\-\_\-s)
+\item 
+bool \hyperlink{class_r_p_kernel_logistic_regression_classifier_aba1607052f771fe0951842a07b0ab2f4}{classify} (const std\-::vector$<$ double $>$ \&x)
+\item 
+double \hyperlink{class_r_p_kernel_logistic_regression_classifier_ad0e48344b6b6f4385752e55b51e98f4e}{probability} (const std\-::vector$<$ double $>$ \&x)
+\item 
+void \hyperlink{class_r_p_kernel_logistic_regression_classifier_a5bed4779fa0d28fca1d06627293d3070}{reset} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_r_p_kernel_logistic_regression_classifier_aebdb3d0fd4689a5bfbd5cdb14ff6a0bb}{sigmoid} (double z)
+\item 
+int \hyperlink{class_r_p_kernel_logistic_regression_classifier_a60ad808101bb5de47f531158aa97cd6b}{sgn} (double z)
+\item 
+double \hyperlink{class_r_p_kernel_logistic_regression_classifier_a705f8e34ac01d78f9e7d5b9f323548ad}{gradient\-Step} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{struct_r_p_training_point}{\-R\-P\-Training\-Point} $>$ \hyperlink{class_r_p_kernel_logistic_regression_classifier_acbfcf7c3dc66d0bd1e1b1a11fc05f2b5}{training\-\_\-points}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{class_r_p_kernel_logistic_regression_classifier_a0c1b9e50db833060a56d2bbeddcaac6b}{weights}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{class_r_p_kernel_logistic_regression_classifier_a74b5ba4f13e20dbfe86ee0fd972d648a}{gradient}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{class_r_p_kernel_logistic_regression_classifier_a9da47f0a98cf88d670eb3458c778f50a}{step\-\_\-sizes}
+\item 
+\hyperlink{class_r_p_k_l_r_classifier_gaussian_kernel}{\-R\-P\-K\-L\-R\-Classifier\-Gaussian\-Kernel} \hyperlink{class_r_p_kernel_logistic_regression_classifier_ae88d931ebd067f4a290913447a493962}{kernel}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Kernel logistic regression classifier class. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 27 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_adfefd03cb8914d0223eab1d874d01966}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::\-R\-P\-Kernel\-Logistic\-Regression\-Classifier} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_adfefd03cb8914d0223eab1d874d01966}
+\-Default kernel logistic regression classifier's constructor. 
+
+\-Definition at line 67 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a76e06607099d33da606753c347dab738}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!add\-Training\-Sample@{add\-Training\-Sample}}
+\index{add\-Training\-Sample@{add\-Training\-Sample}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{add\-Training\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::add\-Training\-Sample} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ \&}]{features, }
+\item[{bool}]{is\-\_\-positive}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_kernel_logistic_regression_classifier_a76e06607099d33da606753c347dab738}
+\-Adds a training sample. 
+\begin{DoxyParams}{\-Parameters}
+{\em features} & \-Input training sample. \\
+\hline
+{\em is\-\_\-positive} & \-Training sample positive/negative flag.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 11 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_aba1607052f771fe0951842a07b0ab2f4}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!classify@{classify}}
+\index{classify@{classify}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{classify}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::classify} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ double $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_kernel_logistic_regression_classifier_aba1607052f771fe0951842a07b0ab2f4}
+\-Classifies a given input vector as positive/negative. 
+\begin{DoxyParams}{\-Parameters}
+{\em x} & \-Input vector to be classified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Classification of a given input (true -\/ positive, false -\/ negative). 
+\end{DoxyReturn}
+
+
+\-Definition at line 25 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a705f8e34ac01d78f9e7d5b9f323548ad}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!gradient\-Step@{gradient\-Step}}
+\index{gradient\-Step@{gradient\-Step}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{gradient\-Step}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::gradient\-Step} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_a705f8e34ac01d78f9e7d5b9f323548ad}
+\-Performs a single gradient training step using an \-R\-Prop variance algorithm. 
+
+\-Definition at line 43 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_ad0e48344b6b6f4385752e55b51e98f4e}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!probability@{probability}}
+\index{probability@{probability}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{probability}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::probability} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ double $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_kernel_logistic_regression_classifier_ad0e48344b6b6f4385752e55b51e98f4e}
+\-Calculates the probability for a given input vector to be positive. 
+\begin{DoxyParams}{\-Parameters}
+{\em x} & \-Input vector whose probability to be positive needs to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Probability that a given input vector is positive. 
+\end{DoxyReturn}
+
+
+\-Definition at line 31 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a5bed4779fa0d28fca1d06627293d3070}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!reset@{reset}}
+\index{reset@{reset}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::reset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_kernel_logistic_regression_classifier_a5bed4779fa0d28fca1d06627293d3070}
+\-Resets the state of the kernel logistic regression classifier. 
+
+\-Definition at line 110 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a60ad808101bb5de47f531158aa97cd6b}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!sgn@{sgn}}
+\index{sgn@{sgn}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{sgn}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::sgn} (
+\begin{DoxyParamCaption}
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_a60ad808101bb5de47f531158aa97cd6b}
+\-Calculates sign function. 
+\begin{DoxyParams}{\-Parameters}
+{\em z} & \-Input for sign function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Sign function applied to the input. 
+\end{DoxyReturn}
+
+
+\-Definition at line 53 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_aebdb3d0fd4689a5bfbd5cdb14ff6a0bb}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{sigmoid}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::sigmoid} (
+\begin{DoxyParamCaption}
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_aebdb3d0fd4689a5bfbd5cdb14ff6a0bb}
+\-Calculates sigmoid function. 
+\begin{DoxyParams}{\-Parameters}
+{\em z} & \-Input for sigmoid function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Sigmoid function applied to the input. 
+\end{DoxyReturn}
+
+
+\-Definition at line 43 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a1e14b7daeb2fb65768c991b8d8837245}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!train@{train}}
+\index{train@{train}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::train} (
+\begin{DoxyParamCaption}
+\item[{double}]{time\-\_\-limit\-\_\-s}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_kernel_logistic_regression_classifier_a1e14b7daeb2fb65768c991b8d8837245}
+\-Trains the \-K\-L\-R classifier using an \-R\-Prop variance algorithm for a given period of time. 
+\begin{DoxyParams}{\-Parameters}
+{\em time\-\_\-limit\-\_\-s} & \-Training time limit in secods. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 96 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a74b5ba4f13e20dbfe86ee0fd972d648a}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!gradient@{gradient}}
+\index{gradient@{gradient}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{gradient}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::gradient}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_a74b5ba4f13e20dbfe86ee0fd972d648a}
+\-Current gradient. 
+
+\-Definition at line 33 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_ae88d931ebd067f4a290913447a493962}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!kernel@{kernel}}
+\index{kernel@{kernel}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{kernel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-K\-L\-R\-Classifier\-Gaussian\-Kernel} {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::kernel}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_ae88d931ebd067f4a290913447a493962}
+\-Classifier's kernel function. 
+
+\-Definition at line 36 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a9da47f0a98cf88d670eb3458c778f50a}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!step\-\_\-sizes@{step\-\_\-sizes}}
+\index{step\-\_\-sizes@{step\-\_\-sizes}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{step\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::step\-\_\-sizes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_a9da47f0a98cf88d670eb3458c778f50a}
+\-Current step sizes. 
+
+\-Definition at line 34 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_acbfcf7c3dc66d0bd1e1b1a11fc05f2b5}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!training\-\_\-points@{training\-\_\-points}}
+\index{training\-\_\-points@{training\-\_\-points}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{training\-\_\-points}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-R\-P\-Training\-Point}$>$ {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::training\-\_\-points}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_acbfcf7c3dc66d0bd1e1b1a11fc05f2b5}
+\-Training points. 
+
+\-Definition at line 30 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_kernel_logistic_regression_classifier_a0c1b9e50db833060a56d2bbeddcaac6b}{\index{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}!weights@{weights}}
+\index{weights@{weights}!RPKernelLogisticRegressionClassifier@{\-R\-P\-Kernel\-Logistic\-Regression\-Classifier}}
+\subsubsection[{weights}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ {\bf \-R\-P\-Kernel\-Logistic\-Regression\-Classifier\-::weights}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_kernel_logistic_regression_classifier_a0c1b9e50db833060a56d2bbeddcaac6b}
+\-Current weights. 
+
+\-Definition at line 32 of file kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/kernel\-\_\-logistic\-\_\-regression\-\_\-classifier.\-cpp\end{DoxyCompactItemize}

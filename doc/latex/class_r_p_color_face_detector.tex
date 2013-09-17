@@ -1,0 +1,174 @@
+\hypertarget{class_r_p_color_face_detector}{\section{\-R\-P\-Color\-Face\-Detector \-Class \-Reference}
+\label{class_r_p_color_face_detector}\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}}
+}
+
+
+\-Face detector in colour images, based on \-Viola and \-Jones (2001) face detector implementation in \-Open\-C\-V.  
+
+
+
+
+{\ttfamily \#include $<$color\-\_\-face\-\_\-detector.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_color_face_detector_a2822056221a0a6dd1d5e387c71e0a7dc}{\-R\-P\-Color\-Face\-Detector} (const ros\-::\-Node\-Handle \&node)
+\item 
+void \hyperlink{class_r_p_color_face_detector_a80d45d6a227ad41f31483a7d85a9bc9a}{detect\-Faces} (const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&input\-\_\-image, std\-::vector$<$ cv\-::\-Rect $>$ \&faces)
+\item 
+void \hyperlink{class_r_p_color_face_detector_aa156cf14c4cf0f2fe2f58d1c9ce297a7}{detect\-Faces} (const cv\-::\-Mat \&input\-\_\-image, std\-::vector$<$ cv\-::\-Rect $>$ \&faces)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_color_face_detector_ab730fa54b6c1ef6224d6577736970ecc}{get\-Overridable\-Parameters} (const ros\-::\-Node\-Handle \&node)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\-::\-Cascade\-Classifier \hyperlink{class_r_p_color_face_detector_a4ab7e99e6da2768d2005d573a43d1f30}{frontal\-\_\-cascade}
+\item 
+cv\-::\-Cascade\-Classifier \hyperlink{class_r_p_color_face_detector_a27f973deeb52ebaa3c9a49a8eace16a5}{profile\-\_\-cascade}
+\item 
+std\-::string \hyperlink{class_r_p_color_face_detector_a22af60d876ae98cf57f73cdf6ff24d82}{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}
+\item 
+std\-::string \hyperlink{class_r_p_color_face_detector_a21186fee954aa109b73910875f60f7f0}{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}
+\item 
+int \hyperlink{class_r_p_color_face_detector_ae86967285f09aa17afa81dce94642aff}{\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Face detector in colour images, based on \-Viola and \-Jones (2001) face detector implementation in \-Open\-C\-V. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 32 of file color\-\_\-face\-\_\-detector.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_color_face_detector_a2822056221a0a6dd1d5e387c71e0a7dc}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}}
+\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{\-R\-P\-Color\-Face\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Color\-Face\-Detector\-::\-R\-P\-Color\-Face\-Detector} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_face_detector_a2822056221a0a6dd1d5e387c71e0a7dc}
+\-Default autonomous photography node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 12 of file color\-\_\-face\-\_\-detector.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_color_face_detector_a80d45d6a227ad41f31483a7d85a9bc9a}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!detect\-Faces@{detect\-Faces}}
+\index{detect\-Faces@{detect\-Faces}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{detect\-Faces}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Face\-Detector\-::detect\-Faces} (
+\begin{DoxyParamCaption}
+\item[{const cv\-\_\-bridge\-::\-Cv\-Image\-::\-Const\-Ptr \&}]{input\-\_\-image, }
+\item[{std\-::vector$<$ cv\-::\-Rect $>$ \&}]{faces}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_face_detector_a80d45d6a227ad41f31483a7d85a9bc9a}
+\-Detects faces in a given \-R\-G\-B image. 
+\begin{DoxyParams}{\-Parameters}
+{\em input\-\_\-image} & \-Input \-R\-G\-B image. \\
+\hline
+{\em faces} & \-Deteted faces. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 62 of file color\-\_\-face\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_color_face_detector_aa156cf14c4cf0f2fe2f58d1c9ce297a7}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!detect\-Faces@{detect\-Faces}}
+\index{detect\-Faces@{detect\-Faces}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{detect\-Faces}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Face\-Detector\-::detect\-Faces} (
+\begin{DoxyParamCaption}
+\item[{const cv\-::\-Mat \&}]{input\-\_\-image, }
+\item[{std\-::vector$<$ cv\-::\-Rect $>$ \&}]{faces}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_color_face_detector_aa156cf14c4cf0f2fe2f58d1c9ce297a7}
+\-Detects faces in a given \-Open\-C\-V matrix representation of an image (in \-C\-V\-\_\-8\-U\-C3 format, i.\-e. using 8 unsigned bits to represent each of the \-R, \-G and \-B color channels). 
+\begin{DoxyParams}{\-Parameters}
+{\em input\-\_\-image} & \-Input image matrix in \-C\-V\-\_\-8\-U\-C3 format. \\
+\hline
+{\em faces} & \-Deteted faces. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 40 of file color\-\_\-face\-\_\-detector.\-cpp.
+
+\hypertarget{class_r_p_color_face_detector_ab730fa54b6c1ef6224d6577736970ecc}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Color\-Face\-Detector\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_color_face_detector_ab730fa54b6c1ef6224d6577736970ecc}
+\-Gets the overridable parameters from the parameter server. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 32 of file color\-\_\-face\-\_\-detector.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_color_face_detector_a22af60d876ae98cf57f73cdf6ff24d82}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H@{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}}
+\index{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H@{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Color\-Face\-Detector\-::\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-F\-R\-O\-N\-T\-A\-L\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_color_face_detector_a22af60d876ae98cf57f73cdf6ff24d82}
+\-Frontal face detector cascade file path. 
+
+\-Definition at line 40 of file color\-\_\-face\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_color_face_detector_a21186fee954aa109b73910875f60f7f0}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H@{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}}
+\index{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H@{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Color\-Face\-Detector\-::\-F\-A\-C\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-P\-R\-O\-F\-I\-L\-E\-\_\-\-C\-A\-S\-C\-A\-D\-E\-\_\-\-P\-A\-T\-H}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_color_face_detector_a21186fee954aa109b73910875f60f7f0}
+\-Profile face detector cascade file path. 
+
+\-Definition at line 41 of file color\-\_\-face\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_color_face_detector_a4ab7e99e6da2768d2005d573a43d1f30}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!frontal\-\_\-cascade@{frontal\-\_\-cascade}}
+\index{frontal\-\_\-cascade@{frontal\-\_\-cascade}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{frontal\-\_\-cascade}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Cascade\-Classifier {\bf \-R\-P\-Color\-Face\-Detector\-::frontal\-\_\-cascade}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_color_face_detector_a4ab7e99e6da2768d2005d573a43d1f30}
+\-Frontal face detector cascade. 
+
+\-Definition at line 36 of file color\-\_\-face\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_color_face_detector_a27f973deeb52ebaa3c9a49a8eace16a5}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!profile\-\_\-cascade@{profile\-\_\-cascade}}
+\index{profile\-\_\-cascade@{profile\-\_\-cascade}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{profile\-\_\-cascade}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Cascade\-Classifier {\bf \-R\-P\-Color\-Face\-Detector\-::profile\-\_\-cascade}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_color_face_detector_a27f973deeb52ebaa3c9a49a8eace16a5}
+\-Profile face detector cascade. 
+
+\-Definition at line 37 of file color\-\_\-face\-\_\-detector.\-hpp.
+
+\hypertarget{class_r_p_color_face_detector_ae86967285f09aa17afa81dce94642aff}{\index{\-R\-P\-Color\-Face\-Detector@{\-R\-P\-Color\-Face\-Detector}!\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T@{\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T}}
+\index{\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T@{\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T}!RPColorFaceDetector@{\-R\-P\-Color\-Face\-Detector}}
+\subsubsection[{\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Color\-Face\-Detector\-::\-V\-I\-O\-L\-A\-\_\-\-J\-O\-N\-E\-S\-\_\-\-N\-E\-I\-G\-H\-B\-O\-R\-\_\-\-C\-O\-U\-N\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_color_face_detector_ae86967285f09aa17afa81dce94642aff}
+\-Minimal neighbor count required for \-Viola-\/\-Jones face detectors to register a face detection. 
+
+\-Definition at line 42 of file color\-\_\-face\-\_\-detector.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/color\-\_\-face\-\_\-detector.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/color\-\_\-face\-\_\-detector.\-cpp\end{DoxyCompactItemize}

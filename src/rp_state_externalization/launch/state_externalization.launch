@@ -1,0 +1,3 @@
+<launch>
+  <node ns="rp" name="state_externalization_node" pkg="rp_state_externalization" type="rp_state_externalization_node" output="screen"/>
+</launch>

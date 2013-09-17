@@ -1,0 +1,26 @@
+var class_r_p_obstacle_avoidance_node =
+[
+    [ "RPObstacleAvoidanceNode", "class_r_p_obstacle_avoidance_node.html#a3101d307c2ed19b282ff404cbc51f477", null ],
+    [ "cropPointCloud", "class_r_p_obstacle_avoidance_node.html#a07f936f129797f6651a8cbb94201e64d", null ],
+    [ "drivingDirectionFromFrontalPointCloud", "class_r_p_obstacle_avoidance_node.html#aa7f8e2b5949c3d6af800a80dfe3fc488", null ],
+    [ "getInvalidDepthDataProportion", "class_r_p_obstacle_avoidance_node.html#acd37a3e07562bdb791f18c113f45fbd8", null ],
+    [ "getOverridableParameters", "class_r_p_obstacle_avoidance_node.html#a2fb24e8a160ef9fed4813ca712c0fef0", null ],
+    [ "kinectInputCallback", "class_r_p_obstacle_avoidance_node.html#a0df3266495f63da9a7d1069b1708986e", null ],
+    [ "levelPointCloud", "class_r_p_obstacle_avoidance_node.html#a92820408bb828c8361dd194b74f53202", null ],
+    [ "publishDrivingDirection", "class_r_p_obstacle_avoidance_node.html#a8655bb559bb1482da40bbc2ed08b07a0", null ],
+    [ "reducePointCloudDensity", "class_r_p_obstacle_avoidance_node.html#ae8af3d8cee91dae5e0c22c6ae1f29533", null ],
+    [ "sensorAngleCallback", "class_r_p_obstacle_avoidance_node.html#a3cee49031b7590781f3654ace7de9be7", null ],
+    [ "CLOUD_FILTER_SIZE", "class_r_p_obstacle_avoidance_node.html#a03b429995334c5bc694296dc7d4e7c8f", null ],
+    [ "current_direction", "class_r_p_obstacle_avoidance_node.html#aa5e938ed834639efa94dd19939acdc59", null ],
+    [ "driving_direction_publisher", "class_r_p_obstacle_avoidance_node.html#a1cbdab74a6f919f479eb11bfe043992a", null ],
+    [ "FOCUS_FIELD_DEPTH", "class_r_p_obstacle_avoidance_node.html#a5d8b47cc4e9eb4a80a0bfd85d82dbb67", null ],
+    [ "FOCUS_FIELD_HEIGHT", "class_r_p_obstacle_avoidance_node.html#ada49702c116a61ccc237d19349805c82", null ],
+    [ "FOCUS_FIELD_WIDTH", "class_r_p_obstacle_avoidance_node.html#ad2fd3ecf37f7cb251a5beaf9f5bb44b8", null ],
+    [ "MAX_INVALID_DEPTH_DATA", "class_r_p_obstacle_avoidance_node.html#a577ee6e3b2d694e01e9e7d9e7ec2766d", null ],
+    [ "node", "class_r_p_obstacle_avoidance_node.html#acb163610c79438c473c4f8f8f7531ae2", null ],
+    [ "point_counts_ahead", "class_r_p_obstacle_avoidance_node.html#ad7c74afdb4f668cef629901defba0852", null ],
+    [ "sensor_angle", "class_r_p_obstacle_avoidance_node.html#a127cdfd4cd666862eababa52877a6a30", null ],
+    [ "sensor_angle_mutex", "class_r_p_obstacle_avoidance_node.html#a230a3dab379f4a70f38b45763f5e48bb", null ],
+    [ "SMOOTHING_FRAME_LIMIT", "class_r_p_obstacle_avoidance_node.html#aa8ba56ebe9cb6ad7865458a3be287b70", null ],
+    [ "VERBOSE_OUTPUT_ENABLED", "class_r_p_obstacle_avoidance_node.html#a16106e57285f417f8c883c3a882aaa45", null ]
+];

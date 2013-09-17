@@ -1,0 +1,17 @@
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\App.g.i.cs
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\MainPage.g.i.cs
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\MessagePage.g.i.cs
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\RPDisplay.g.resources
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\ApplicationIcon.png
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\Background.png
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\RPDisplay.dll
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\RPDisplay.pdb
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\AppManifest.xaml
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\RPDisplay.xap
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\zxing.wp7.1.dll
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\zxing.wp7.1.pdb
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\Bin\Release\zxing.wp7.1.xml
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\RPDisplay.dll
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\RPDisplay.pdb
+C:\Users\Manfred\Documents\Visual Studio 2010\Projects\RPDisplay\RPDisplay\obj\Release\XapCacheFile.xml

@@ -1,0 +1,9 @@
+uint8  framing_status
+uint16 frame_x
+uint16 frame_y
+uint16 frame_width
+uint16 frame_height
+uint16[] heads_x
+uint16[] heads_y
+uint16[] heads_width
+uint16[] heads_height

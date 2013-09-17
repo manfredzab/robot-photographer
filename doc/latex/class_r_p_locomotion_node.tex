@@ -1,0 +1,322 @@
+\hypertarget{class_r_p_locomotion_node}{\section{\-R\-P\-Locomotion\-Node \-Class \-Reference}
+\label{class_r_p_locomotion_node}\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}}
+}
+
+
+\-Robot photographer's locomotion node, which converts driving direction messages and bumper press events into linear/angular velocity messages.  
+
+
+
+
+{\ttfamily \#include $<$locomotion.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_locomotion_node_aec52b5a922fa41093d3b976123324134}{\-R\-P\-Locomotion\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_locomotion_node_ad07de383fa61683b6dd9c38944e4d33b}{node})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_locomotion_node_ae7b34004f4380cd69c005c880236e673}{clear\-Locomotion\-Message} ()
+\item 
+void \hyperlink{class_r_p_locomotion_node_a8dc03e77588c06484dbd5de534c0691a}{motors\-Enabled} (bool enabled)
+\item 
+void \hyperlink{class_r_p_locomotion_node_a7cae2e18baf2774457f81a6e103f8def}{set\-Processing\-Bumper\-Event} (bool processing)
+\item 
+void \hyperlink{class_r_p_locomotion_node_af2b3ece580cb48b4195709a33bbca9ef}{navigation\-Message\-Callback} (const std\-\_\-msgs\-::\-U\-Int16 \&direction\-\_\-and\-\_\-source\-\_\-code)
+\item 
+void \hyperlink{class_r_p_locomotion_node_ac82f2e8ea6dab4fa288293c0c51df671}{bumper\-Event\-Callback} (const kobuki\-\_\-msgs\-::\-Bumper\-Event\-Const\-Ptr bumper\-\_\-event)
+\item 
+void \hyperlink{class_r_p_locomotion_node_aca1892fd551a02799b4e60b8d82a0118}{bumper\-Timer\-Callback} (const ros\-::\-Wall\-Timer\-Event \&timer\-\_\-event)
+\item 
+void \hyperlink{class_r_p_locomotion_node_ac4ebecd8de7386c96aba8aebb15c3461}{get\-Overridable\-Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_locomotion_node_ad07de383fa61683b6dd9c38944e4d33b}{node}
+\item 
+geometry\-\_\-msgs\-::\-Twist\-Ptr \hyperlink{class_r_p_locomotion_node_ac9668ec315e5c8b9b45e6c1ee9cd18ee}{locomotion\-\_\-message}
+\item 
+boost\-::mutex \hyperlink{class_r_p_locomotion_node_aa852cb0599e4ad545d01339479d20121}{locomotion\-\_\-message\-\_\-mutex}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_locomotion_node_a1dca36a6b277f383b193f06c52936c08}{locomotion\-\_\-publisher}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_locomotion_node_aceea8151b1de15fbf9485e1f301db004}{state\-\_\-publisher}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_locomotion_node_a89e8536163d4d7b1f2c10f27dbb16724}{motor\-\_\-power\-\_\-publisher}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_locomotion_node_a653bdeea59dab13aa8b207ed726b055c}{navigation\-\_\-subscriber}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_locomotion_node_a7b70ee96f05b97044e14b81c383c671e}{bumper\-\_\-subscriber}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_locomotion_node_a90e0e6121d6eddacb4c7a4598f29b331}{cnc\-\_\-subscriber}
+\item 
+ros\-::\-Wall\-Timer \hyperlink{class_r_p_locomotion_node_ae8be6c08928b529659031829fb1f9d31}{bumper\-\_\-timer}
+\item 
+volatile bool \hyperlink{class_r_p_locomotion_node_acf41adc43410bff9116a493b42ffde87}{processing\-\_\-bumper\-\_\-event}
+\item 
+double \hyperlink{class_r_p_locomotion_node_a35b3c79ea9c02d5a8d7c01148187a95f}{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}
+\item 
+double \hyperlink{class_r_p_locomotion_node_aeed6c095a09f0e720615d21c247a7091}{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}
+\item 
+double \hyperlink{class_r_p_locomotion_node_acfdd2fb267d49557666d59d640f83bdd}{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}
+\item 
+double \hyperlink{class_r_p_locomotion_node_abbdfb4df3d7f36c1931d48d49a5ffc30}{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's locomotion node, which converts driving direction messages and bumper press events into linear/angular velocity messages. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 33 of file locomotion.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_locomotion_node_aec52b5a922fa41093d3b976123324134}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}}
+\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{\-R\-P\-Locomotion\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Locomotion\-Node\-::\-R\-P\-Locomotion\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_locomotion_node_aec52b5a922fa41093d3b976123324134}
+\-Default locomotion node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 30 of file locomotion.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_locomotion_node_ac82f2e8ea6dab4fa288293c0c51df671}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!bumper\-Event\-Callback@{bumper\-Event\-Callback}}
+\index{bumper\-Event\-Callback@{bumper\-Event\-Callback}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{bumper\-Event\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::bumper\-Event\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const kobuki\-\_\-msgs\-::\-Bumper\-Event\-Const\-Ptr}]{bumper\-\_\-event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_ac82f2e8ea6dab4fa288293c0c51df671}
+\-Callback for the received bumper event. 
+\begin{DoxyParams}{\-Parameters}
+{\em timer\-\_\-event} & \-Pointer to the bumper event object. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 99 of file locomotion.\-cpp.
+
+\hypertarget{class_r_p_locomotion_node_aca1892fd551a02799b4e60b8d82a0118}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!bumper\-Timer\-Callback@{bumper\-Timer\-Callback}}
+\index{bumper\-Timer\-Callback@{bumper\-Timer\-Callback}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{bumper\-Timer\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::bumper\-Timer\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Wall\-Timer\-Event \&}]{timer\-\_\-event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_aca1892fd551a02799b4e60b8d82a0118}
+\-Callback for the bumper timer event. 
+\begin{DoxyParams}{\-Parameters}
+{\em timer\-\_\-event} & \-Timer callback object. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 91 of file locomotion.\-cpp.
+
+\hypertarget{class_r_p_locomotion_node_ae7b34004f4380cd69c005c880236e673}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!clear\-Locomotion\-Message@{clear\-Locomotion\-Message}}
+\index{clear\-Locomotion\-Message@{clear\-Locomotion\-Message}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{clear\-Locomotion\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::clear\-Locomotion\-Message} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_ae7b34004f4380cd69c005c880236e673}
+\-Resets the locomotion message to stop the robot. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame\-\_\-message} & \-Input framing status message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 213 of file locomotion.\-cpp.
+
+\hypertarget{class_r_p_locomotion_node_ac4ebecd8de7386c96aba8aebb15c3461}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_ac4ebecd8de7386c96aba8aebb15c3461}
+\-Gets the overridable parameters from the parameter server. 
+
+\-Definition at line 71 of file locomotion.\-cpp.
+
+\hypertarget{class_r_p_locomotion_node_a8dc03e77588c06484dbd5de534c0691a}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!motors\-Enabled@{motors\-Enabled}}
+\index{motors\-Enabled@{motors\-Enabled}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{motors\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::motors\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a8dc03e77588c06484dbd5de534c0691a}
+\-Sets the motor enabled state. 
+\begin{DoxyParams}{\-Parameters}
+{\em enabled} & \-Desired motors state (enabled/disabled). \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 224 of file locomotion.\-cpp.
+
+\hypertarget{class_r_p_locomotion_node_af2b3ece580cb48b4195709a33bbca9ef}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!navigation\-Message\-Callback@{navigation\-Message\-Callback}}
+\index{navigation\-Message\-Callback@{navigation\-Message\-Callback}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{navigation\-Message\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::navigation\-Message\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const std\-\_\-msgs\-::\-U\-Int16 \&}]{direction\-\_\-and\-\_\-source\-\_\-code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_af2b3ece580cb48b4195709a33bbca9ef}
+\-Callback for the received navigation message. 
+\begin{DoxyParams}{\-Parameters}
+{\em direction\-\_\-and\-\_\-source\-\_\-code} & \-Driving direction and direction source message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 144 of file locomotion.\-cpp.
+
+\hypertarget{class_r_p_locomotion_node_a7cae2e18baf2774457f81a6e103f8def}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!set\-Processing\-Bumper\-Event@{set\-Processing\-Bumper\-Event}}
+\index{set\-Processing\-Bumper\-Event@{set\-Processing\-Bumper\-Event}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{set\-Processing\-Bumper\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Locomotion\-Node\-::set\-Processing\-Bumper\-Event} (
+\begin{DoxyParamCaption}
+\item[{bool}]{processing}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a7cae2e18baf2774457f81a6e103f8def}
+\-Sets/clears the \char`\"{}processing bumper event\char`\"{} flag. 
+\begin{DoxyParams}{\-Parameters}
+{\em processing} & \-Desired \char`\"{}processing bumper event\char`\"{} flag. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 80 of file locomotion.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_locomotion_node_a7b70ee96f05b97044e14b81c383c671e}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!bumper\-\_\-subscriber@{bumper\-\_\-subscriber}}
+\index{bumper\-\_\-subscriber@{bumper\-\_\-subscriber}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{bumper\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Locomotion\-Node\-::bumper\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a7b70ee96f05b97044e14b81c383c671e}
+\-Bumper events subscriber. 
+
+\-Definition at line 46 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_ae8be6c08928b529659031829fb1f9d31}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!bumper\-\_\-timer@{bumper\-\_\-timer}}
+\index{bumper\-\_\-timer@{bumper\-\_\-timer}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{bumper\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Wall\-Timer {\bf \-R\-P\-Locomotion\-Node\-::bumper\-\_\-timer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_ae8be6c08928b529659031829fb1f9d31}
+\-Timer for a turn-\/around motion when the bumper event is triggered. 
+
+\-Definition at line 50 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_a90e0e6121d6eddacb4c7a4598f29b331}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!cnc\-\_\-subscriber@{cnc\-\_\-subscriber}}
+\index{cnc\-\_\-subscriber@{cnc\-\_\-subscriber}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{cnc\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Locomotion\-Node\-::cnc\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a90e0e6121d6eddacb4c7a4598f29b331}
+\-C\&\-C input subscriber which determines the source of driving direction. 
+
+\-Definition at line 47 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_aeed6c095a09f0e720615d21c247a7091}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}}
+\index{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Locomotion\-Node\-::\-F\-R\-A\-M\-I\-N\-G\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_aeed6c095a09f0e720615d21c247a7091}
+\-Framing angular velocity \-O\-P. 
+
+\-Definition at line 56 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_a35b3c79ea9c02d5a8d7c01148187a95f}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}}
+\index{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Locomotion\-Node\-::\-F\-R\-A\-M\-I\-N\-G\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a35b3c79ea9c02d5a8d7c01148187a95f}
+\-Framing linear velocity \-O\-P. 
+
+\-Definition at line 55 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_ac9668ec315e5c8b9b45e6c1ee9cd18ee}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!locomotion\-\_\-message@{locomotion\-\_\-message}}
+\index{locomotion\-\_\-message@{locomotion\-\_\-message}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{locomotion\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}geometry\-\_\-msgs\-::\-Twist\-Ptr {\bf \-R\-P\-Locomotion\-Node\-::locomotion\-\_\-message}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_ac9668ec315e5c8b9b45e6c1ee9cd18ee}
+\-Pointer to locomotion message. 
+
+\-Definition at line 38 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_aa852cb0599e4ad545d01339479d20121}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!locomotion\-\_\-message\-\_\-mutex@{locomotion\-\_\-message\-\_\-mutex}}
+\index{locomotion\-\_\-message\-\_\-mutex@{locomotion\-\_\-message\-\_\-mutex}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{locomotion\-\_\-message\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-Locomotion\-Node\-::locomotion\-\_\-message\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_aa852cb0599e4ad545d01339479d20121}
+\-Locomotion message's mutex. 
+
+\-Definition at line 39 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_a1dca36a6b277f383b193f06c52936c08}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!locomotion\-\_\-publisher@{locomotion\-\_\-publisher}}
+\index{locomotion\-\_\-publisher@{locomotion\-\_\-publisher}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{locomotion\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Locomotion\-Node\-::locomotion\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a1dca36a6b277f383b193f06c52936c08}
+\-Locomotion publisher. 
+
+\-Definition at line 41 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_a89e8536163d4d7b1f2c10f27dbb16724}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!motor\-\_\-power\-\_\-publisher@{motor\-\_\-power\-\_\-publisher}}
+\index{motor\-\_\-power\-\_\-publisher@{motor\-\_\-power\-\_\-publisher}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{motor\-\_\-power\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Locomotion\-Node\-::motor\-\_\-power\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a89e8536163d4d7b1f2c10f27dbb16724}
+\-Motor power publisher. 
+
+\-Definition at line 43 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_a653bdeea59dab13aa8b207ed726b055c}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!navigation\-\_\-subscriber@{navigation\-\_\-subscriber}}
+\index{navigation\-\_\-subscriber@{navigation\-\_\-subscriber}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{navigation\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Locomotion\-Node\-::navigation\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_a653bdeea59dab13aa8b207ed726b055c}
+\-Navigation input subscriber. 
+
+\-Definition at line 45 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_ad07de383fa61683b6dd9c38944e4d33b}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!node@{node}}
+\index{node@{node}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Locomotion\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_ad07de383fa61683b6dd9c38944e4d33b}
+\-Node's handle. 
+
+\-Definition at line 36 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_abbdfb4df3d7f36c1931d48d49a5ffc30}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}}
+\index{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Locomotion\-Node\-::\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-A\-N\-G\-U\-L\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_abbdfb4df3d7f36c1931d48d49a5ffc30}
+\-Obstacle avoidance angular velocity \-O\-P. 
+
+\-Definition at line 59 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_acfdd2fb267d49557666d59d640f83bdd}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}}
+\index{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y@{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Locomotion\-Node\-::\-O\-B\-S\-T\-A\-C\-L\-E\-\_\-\-A\-V\-O\-I\-D\-A\-N\-C\-E\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-V\-E\-L\-O\-C\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_acfdd2fb267d49557666d59d640f83bdd}
+\-Obstacle avoidance linear velocity \-O\-P. 
+
+\-Definition at line 58 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_acf41adc43410bff9116a493b42ffde87}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!processing\-\_\-bumper\-\_\-event@{processing\-\_\-bumper\-\_\-event}}
+\index{processing\-\_\-bumper\-\_\-event@{processing\-\_\-bumper\-\_\-event}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{processing\-\_\-bumper\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Locomotion\-Node\-::processing\-\_\-bumper\-\_\-event}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_acf41adc43410bff9116a493b42ffde87}
+\-Bumper event flag. 
+
+\-Definition at line 53 of file locomotion.\-hpp.
+
+\hypertarget{class_r_p_locomotion_node_aceea8151b1de15fbf9485e1f301db004}{\index{\-R\-P\-Locomotion\-Node@{\-R\-P\-Locomotion\-Node}!state\-\_\-publisher@{state\-\_\-publisher}}
+\index{state\-\_\-publisher@{state\-\_\-publisher}!RPLocomotionNode@{\-R\-P\-Locomotion\-Node}}
+\subsubsection[{state\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Locomotion\-Node\-::state\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_locomotion_node_aceea8151b1de15fbf9485e1f301db004}
+\-Locomotion state publisher. 
+
+\-Definition at line 42 of file locomotion.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-locomotion/include/locomotion.\-hpp\item 
+rp\-\_\-locomotion/src/locomotion.\-cpp\end{DoxyCompactItemize}

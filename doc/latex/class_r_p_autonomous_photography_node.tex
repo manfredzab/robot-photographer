@@ -1,0 +1,434 @@
+\hypertarget{class_r_p_autonomous_photography_node}{\section{\-R\-P\-Autonomous\-Photography\-Node \-Class \-Reference}
+\label{class_r_p_autonomous_photography_node}\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}}
+}
+
+
+\-Robot photographer's picture-\/taking process coordinator node, which issues commands for taking and uploading the pictures.  
+
+
+
+
+{\ttfamily \#include $<$autonomous\-\_\-photography.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_autonomous_photography_node_a8b1c9845c2be288e7c19ac1bcb2a9e64}{\-R\-P\-Autonomous\-Photography\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_autonomous_photography_node_a76b5869d4c60b361445d78995569a0fa}{node})
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a8ca022430e1044128fd0a322a87f26d5}{framing\-Timer\-Callback} (const ros\-::\-Wall\-Timer\-Event \&timer\-\_\-event)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_aec82a219088e613768e554f5f9732a73}{camera\-Timer\-Callback} (const ros\-::\-Wall\-Timer\-Event \&timer\-\_\-event)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_aadd2a37eb8aafe4e6d3226f30f3dddb1}{framing\-Message\-Callback} (const rp\-\_\-framing\-::\-Frame \&frame\-\_\-message)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a6eb4620cfa451bf91407481bf5898978}{parse\-Framing\-Message} (const rp\-\_\-framing\-::\-Frame \&frame\-\_\-message)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a913f389a2689328a124b48cf76e7957b}{set\-Head\-Tracking\-Enabled} (const bool enabled)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a034a1abdb7ee3db392765daf1a02fe9f}{set\-Framing\-Enabled} (const bool enabled)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a1f23e163e120a22fba06df8c33f65c82}{set\-Locomotion\-Enabled} (const bool enabled)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_aa34587f086d366945e448e44d8777a15}{publish\-Direction\-Source} (\-Direction\-Source direction\-\_\-source)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a843101a891a0e7cb94cc21caa1b505bc}{take\-And\-Upload\-Picture} ()
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a8226e74139900fa61dbb7181f5f5a932}{set\-State} (\-Autonomous\-Photography\-State input\-\_\-state)
+\item 
+void \hyperlink{class_r_p_autonomous_photography_node_a2d6df6e8820b5a587967adffb1a9be6e}{get\-Overridable\-Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_autonomous_photography_node_a76b5869d4c60b361445d78995569a0fa}{node}
+\item 
+\-Autonomous\-Photography\-State \hyperlink{class_r_p_autonomous_photography_node_ac089c5ccbee966592436a2975b8a2403}{state}
+\item 
+boost\-::mutex \hyperlink{class_r_p_autonomous_photography_node_af419f69958f392bea348dbd05bc8d401}{state\-\_\-mutex}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_autonomous_photography_node_a562382a07e7c13dd0386e310979f54a5}{state\-\_\-publisher}
+\item 
+ros\-::\-Publisher \hyperlink{class_r_p_autonomous_photography_node_afa3919a478867fdc881ca978e10a2e24}{direction\-\_\-source\-\_\-publisher}
+\item 
+ros\-::\-Wall\-Timer \hyperlink{class_r_p_autonomous_photography_node_a91e869e881e77d50e9664fdc21809ed7}{framing\-\_\-timer}
+\item 
+ros\-::\-Wall\-Timer \hyperlink{class_r_p_autonomous_photography_node_abc5765930ab927f9046f77749c8c0e21}{camera\-\_\-timer}
+\item 
+ros\-::\-Wall\-Time \hyperlink{class_r_p_autonomous_photography_node_ae8ce7f1f61fbbcbfd1d92eeccfe8c214}{framing\-\_\-timer\-\_\-start\-\_\-time}
+\item 
+ros\-::\-Service\-Client \hyperlink{class_r_p_autonomous_photography_node_aeb6c71c4b1f44d56d3ef4a523c33c677}{camera\-\_\-client}
+\item 
+ros\-::\-Service\-Client \hyperlink{class_r_p_autonomous_photography_node_aaca249845b8cd8c5376fdb8d5ff3f544}{uploader\-\_\-client}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_autonomous_photography_node_a2a2bdd2d12fafa13bcb66b8f37279bcd}{framing\-\_\-status\-\_\-subscriber}
+\item 
+\-Framing\-Status \hyperlink{class_r_p_autonomous_photography_node_a8109c74e907e283cb06e66b4e9f3591f}{framing\-\_\-state}
+\item 
+boost\-::mutex \hyperlink{class_r_p_autonomous_photography_node_a52a7a8c95eff1f589091f679f3d57492}{framing\-\_\-state\-\_\-mutex}
+\item 
+cv\-::\-Rect \hyperlink{class_r_p_autonomous_photography_node_a796dec0abe6fc1728bd9577c2cea2116}{frame}
+\item 
+std\-::vector$<$ cv\-::\-Rect $>$ \hyperlink{class_r_p_autonomous_photography_node_a88f3a832bd13409ec9165aeffa502f16}{heads}
+\item 
+boost\-::mutex \hyperlink{class_r_p_autonomous_photography_node_a871a50679bc8d5792728f687de5f0817}{frame\-\_\-mutex}
+\item 
+volatile bool \hyperlink{class_r_p_autonomous_photography_node_afc90599505fdcb085495d06d7edbd293}{is\-\_\-taking\-\_\-picture}
+\item 
+volatile bool \hyperlink{class_r_p_autonomous_photography_node_a91af5773992cc4767fb0f2737449c6f0}{waiting\-\_\-for\-\_\-camera}
+\item 
+boost\-::thread \hyperlink{class_r_p_autonomous_photography_node_a21212629a7d966ca325c5ac6fad47c0e}{picture\-\_\-thread}
+\item 
+double \hyperlink{class_r_p_autonomous_photography_node_a707507f69bb3d4d5ea065fef6a611f56}{\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's picture-\/taking process coordinator node, which issues commands for taking and uploading the pictures. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 53 of file autonomous\-\_\-photography.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_autonomous_photography_node_a8b1c9845c2be288e7c19ac1bcb2a9e64}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}}
+\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{\-R\-P\-Autonomous\-Photography\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Autonomous\-Photography\-Node\-::\-R\-P\-Autonomous\-Photography\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_autonomous_photography_node_a8b1c9845c2be288e7c19ac1bcb2a9e64}
+\-Default autonomous photography node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 38 of file autonomous\-\_\-photography.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_autonomous_photography_node_aec82a219088e613768e554f5f9732a73}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!camera\-Timer\-Callback@{camera\-Timer\-Callback}}
+\index{camera\-Timer\-Callback@{camera\-Timer\-Callback}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{camera\-Timer\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::camera\-Timer\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Wall\-Timer\-Event \&}]{timer\-\_\-event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_aec82a219088e613768e554f5f9732a73}
+\-Callback for camera delay timer. 
+\begin{DoxyParams}{\-Parameters}
+{\em timer\-\_\-event} & \-Timer callback object. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 242 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_aadd2a37eb8aafe4e6d3226f30f3dddb1}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-Message\-Callback@{framing\-Message\-Callback}}
+\index{framing\-Message\-Callback@{framing\-Message\-Callback}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-Message\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-Message\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const rp\-\_\-framing\-::\-Frame \&}]{frame\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_aadd2a37eb8aafe4e6d3226f30f3dddb1}
+\-Callback for framing status message. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame\-\_\-message} & \-Framing status message (containing the ideal framing rectangle). \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 98 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a8ca022430e1044128fd0a322a87f26d5}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-Timer\-Callback@{framing\-Timer\-Callback}}
+\index{framing\-Timer\-Callback@{framing\-Timer\-Callback}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-Timer\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-Timer\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Wall\-Timer\-Event \&}]{timer\-\_\-event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a8ca022430e1044128fd0a322a87f26d5}
+\-Callback for framing timer. 
+\begin{DoxyParams}{\-Parameters}
+{\em timer\-\_\-event} & \-Timer callback object. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 254 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a2d6df6e8820b5a587967adffb1a9be6e}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a2d6df6e8820b5a587967adffb1a9be6e}
+\-Gets the overridable parameters from the parameter server. 
+
+\-Definition at line 285 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a6eb4620cfa451bf91407481bf5898978}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!parse\-Framing\-Message@{parse\-Framing\-Message}}
+\index{parse\-Framing\-Message@{parse\-Framing\-Message}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{parse\-Framing\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::parse\-Framing\-Message} (
+\begin{DoxyParamCaption}
+\item[{const rp\-\_\-framing\-::\-Frame \&}]{frame\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a6eb4620cfa451bf91407481bf5898978}
+\-Parses the frame message into frame/head rectangle vector. 
+\begin{DoxyParams}{\-Parameters}
+{\em frame\-\_\-message} & \-Input framing status message. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 145 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_aa34587f086d366945e448e44d8777a15}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!publish\-Direction\-Source@{publish\-Direction\-Source}}
+\index{publish\-Direction\-Source@{publish\-Direction\-Source}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{publish\-Direction\-Source}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::publish\-Direction\-Source} (
+\begin{DoxyParamCaption}
+\item[{\-Direction\-Source}]{direction\-\_\-source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_aa34587f086d366945e448e44d8777a15}
+\-Publishes a given direction source. 
+\begin{DoxyParams}{\-Parameters}
+{\em direction\-\_\-source} & \-Direction source to publish. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 233 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a034a1abdb7ee3db392765daf1a02fe9f}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!set\-Framing\-Enabled@{set\-Framing\-Enabled}}
+\index{set\-Framing\-Enabled@{set\-Framing\-Enabled}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{set\-Framing\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::set\-Framing\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{const bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a034a1abdb7ee3db392765daf1a02fe9f}
+\-Enables/disables framing node. 
+\begin{DoxyParams}{\-Parameters}
+{\em enabled} & \-Desired framing node status. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 86 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a913f389a2689328a124b48cf76e7957b}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!set\-Head\-Tracking\-Enabled@{set\-Head\-Tracking\-Enabled}}
+\index{set\-Head\-Tracking\-Enabled@{set\-Head\-Tracking\-Enabled}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{set\-Head\-Tracking\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::set\-Head\-Tracking\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{const bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a913f389a2689328a124b48cf76e7957b}
+\-Enables/disables head tracking node. 
+\begin{DoxyParams}{\-Parameters}
+{\em enabled} & \-Desired head tracking node status. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 92 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a1f23e163e120a22fba06df8c33f65c82}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!set\-Locomotion\-Enabled@{set\-Locomotion\-Enabled}}
+\index{set\-Locomotion\-Enabled@{set\-Locomotion\-Enabled}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{set\-Locomotion\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::set\-Locomotion\-Enabled} (
+\begin{DoxyParamCaption}
+\item[{const bool}]{enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a1f23e163e120a22fba06df8c33f65c82}
+\-Enables/disables locomotion node. 
+\begin{DoxyParams}{\-Parameters}
+{\em enabled} & \-Desired locomotion node status. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 80 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a8226e74139900fa61dbb7181f5f5a932}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!set\-State@{set\-State}}
+\index{set\-State@{set\-State}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{set\-State}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::set\-State} (
+\begin{DoxyParamCaption}
+\item[{\-Autonomous\-Photography\-State}]{input\-\_\-state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a8226e74139900fa61dbb7181f5f5a932}
+\-Sets the node's state. 
+\begin{DoxyParams}{\-Parameters}
+{\em input\-\_\-state} & \-Input node's state. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 268 of file autonomous\-\_\-photography.\-cpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a843101a891a0e7cb94cc21caa1b505bc}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!take\-And\-Upload\-Picture@{take\-And\-Upload\-Picture}}
+\index{take\-And\-Upload\-Picture@{take\-And\-Upload\-Picture}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{take\-And\-Upload\-Picture}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Autonomous\-Photography\-Node\-::take\-And\-Upload\-Picture} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a843101a891a0e7cb94cc21caa1b505bc}
+\-Takes a picture using \-R\-P\-Camera service and uploads it to \-Flickr using \-R\-P\-Uploader service. 
+
+\-Definition at line 162 of file autonomous\-\_\-photography.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_autonomous_photography_node_aeb6c71c4b1f44d56d3ef4a523c33c677}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!camera\-\_\-client@{camera\-\_\-client}}
+\index{camera\-\_\-client@{camera\-\_\-client}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{camera\-\_\-client}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Client {\bf \-R\-P\-Autonomous\-Photography\-Node\-::camera\-\_\-client}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_aeb6c71c4b1f44d56d3ef4a523c33c677}
+\-Camera client. 
+
+\-Definition at line 71 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_abc5765930ab927f9046f77749c8c0e21}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!camera\-\_\-timer@{camera\-\_\-timer}}
+\index{camera\-\_\-timer@{camera\-\_\-timer}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{camera\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Wall\-Timer {\bf \-R\-P\-Autonomous\-Photography\-Node\-::camera\-\_\-timer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_abc5765930ab927f9046f77749c8c0e21}
+\-Timer for camera (between the photo command issue and the picture taking). 
+
+\-Definition at line 65 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_afa3919a478867fdc881ca978e10a2e24}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!direction\-\_\-source\-\_\-publisher@{direction\-\_\-source\-\_\-publisher}}
+\index{direction\-\_\-source\-\_\-publisher@{direction\-\_\-source\-\_\-publisher}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{direction\-\_\-source\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Autonomous\-Photography\-Node\-::direction\-\_\-source\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_afa3919a478867fdc881ca978e10a2e24}
+\-Direction source publisher. 
+
+\-Definition at line 62 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a796dec0abe6fc1728bd9577c2cea2116}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!frame@{frame}}
+\index{frame@{frame}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}cv\-::\-Rect {\bf \-R\-P\-Autonomous\-Photography\-Node\-::frame}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a796dec0abe6fc1728bd9577c2cea2116}
+\-Received picture frame. 
+
+\-Definition at line 78 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a871a50679bc8d5792728f687de5f0817}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!frame\-\_\-mutex@{frame\-\_\-mutex}}
+\index{frame\-\_\-mutex@{frame\-\_\-mutex}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{frame\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-Autonomous\-Photography\-Node\-::frame\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a871a50679bc8d5792728f687de5f0817}
+\-Picture frame mutex. 
+
+\-Definition at line 80 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a8109c74e907e283cb06e66b4e9f3591f}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-\_\-state@{framing\-\_\-state}}
+\index{framing\-\_\-state@{framing\-\_\-state}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}\-Framing\-Status {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-\_\-state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a8109c74e907e283cb06e66b4e9f3591f}
+\-Framing state. 
+
+\-Definition at line 75 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a52a7a8c95eff1f589091f679f3d57492}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-\_\-state\-\_\-mutex@{framing\-\_\-state\-\_\-mutex}}
+\index{framing\-\_\-state\-\_\-mutex@{framing\-\_\-state\-\_\-mutex}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-\_\-state\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-\_\-state\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a52a7a8c95eff1f589091f679f3d57492}
+\-Framing state mutex. 
+
+\-Definition at line 76 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a2a2bdd2d12fafa13bcb66b8f37279bcd}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-\_\-status\-\_\-subscriber@{framing\-\_\-status\-\_\-subscriber}}
+\index{framing\-\_\-status\-\_\-subscriber@{framing\-\_\-status\-\_\-subscriber}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-\_\-status\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-\_\-status\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a2a2bdd2d12fafa13bcb66b8f37279bcd}
+\-Framing status subscriber. 
+
+\-Definition at line 74 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a91e869e881e77d50e9664fdc21809ed7}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-\_\-timer@{framing\-\_\-timer}}
+\index{framing\-\_\-timer@{framing\-\_\-timer}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Wall\-Timer {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-\_\-timer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a91e869e881e77d50e9664fdc21809ed7}
+\-Timer for framing. 
+
+\-Definition at line 64 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_ae8ce7f1f61fbbcbfd1d92eeccfe8c214}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!framing\-\_\-timer\-\_\-start\-\_\-time@{framing\-\_\-timer\-\_\-start\-\_\-time}}
+\index{framing\-\_\-timer\-\_\-start\-\_\-time@{framing\-\_\-timer\-\_\-start\-\_\-time}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{framing\-\_\-timer\-\_\-start\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Wall\-Time {\bf \-R\-P\-Autonomous\-Photography\-Node\-::framing\-\_\-timer\-\_\-start\-\_\-time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_ae8ce7f1f61fbbcbfd1d92eeccfe8c214}
+\-Last time when framing timer was enabled. 
+
+\-Definition at line 68 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a88f3a832bd13409ec9165aeffa502f16}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!heads@{heads}}
+\index{heads@{heads}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{heads}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$cv\-::\-Rect$>$ {\bf \-R\-P\-Autonomous\-Photography\-Node\-::heads}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a88f3a832bd13409ec9165aeffa502f16}
+\-Received detected head positions. 
+
+\-Definition at line 79 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_afc90599505fdcb085495d06d7edbd293}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!is\-\_\-taking\-\_\-picture@{is\-\_\-taking\-\_\-picture}}
+\index{is\-\_\-taking\-\_\-picture@{is\-\_\-taking\-\_\-picture}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{is\-\_\-taking\-\_\-picture}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Autonomous\-Photography\-Node\-::is\-\_\-taking\-\_\-picture}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_afc90599505fdcb085495d06d7edbd293}
+\-Flag indicating whether a picture is being taken. 
+
+\-Definition at line 82 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a76b5869d4c60b361445d78995569a0fa}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!node@{node}}
+\index{node@{node}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Autonomous\-Photography\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a76b5869d4c60b361445d78995569a0fa}
+\-Node's handle. 
+
+\-Definition at line 56 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a21212629a7d966ca325c5ac6fad47c0e}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!picture\-\_\-thread@{picture\-\_\-thread}}
+\index{picture\-\_\-thread@{picture\-\_\-thread}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{picture\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::thread {\bf \-R\-P\-Autonomous\-Photography\-Node\-::picture\-\_\-thread}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a21212629a7d966ca325c5ac6fad47c0e}
+\-Asynchronous picture taking thread. 
+
+\-Definition at line 86 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_ac089c5ccbee966592436a2975b8a2403}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!state@{state}}
+\index{state@{state}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}\-Autonomous\-Photography\-State {\bf \-R\-P\-Autonomous\-Photography\-Node\-::state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_ac089c5ccbee966592436a2975b8a2403}
+\-Node's state. 
+
+\-Definition at line 58 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_af419f69958f392bea348dbd05bc8d401}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!state\-\_\-mutex@{state\-\_\-mutex}}
+\index{state\-\_\-mutex@{state\-\_\-mutex}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{state\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-Autonomous\-Photography\-Node\-::state\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_af419f69958f392bea348dbd05bc8d401}
+\-Node's state mutex. 
+
+\-Definition at line 59 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a562382a07e7c13dd0386e310979f54a5}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!state\-\_\-publisher@{state\-\_\-publisher}}
+\index{state\-\_\-publisher@{state\-\_\-publisher}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{state\-\_\-publisher}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher {\bf \-R\-P\-Autonomous\-Photography\-Node\-::state\-\_\-publisher}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a562382a07e7c13dd0386e310979f54a5}
+\-Node's state publisher. 
+
+\-Definition at line 61 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a707507f69bb3d4d5ea065fef6a611f56}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S@{\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S}}
+\index{\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S@{\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Autonomous\-Photography\-Node\-::\-T\-I\-M\-E\-\_\-\-B\-E\-T\-W\-E\-E\-N\-\_\-\-P\-I\-C\-T\-U\-R\-E\-S}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a707507f69bb3d4d5ea065fef6a611f56}
+\-Overridable parameter for the time between pictures. 
+
+\-Definition at line 88 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_aaca249845b8cd8c5376fdb8d5ff3f544}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!uploader\-\_\-client@{uploader\-\_\-client}}
+\index{uploader\-\_\-client@{uploader\-\_\-client}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{uploader\-\_\-client}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Client {\bf \-R\-P\-Autonomous\-Photography\-Node\-::uploader\-\_\-client}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_aaca249845b8cd8c5376fdb8d5ff3f544}
+\-Uploader client. 
+
+\-Definition at line 72 of file autonomous\-\_\-photography.\-hpp.
+
+\hypertarget{class_r_p_autonomous_photography_node_a91af5773992cc4767fb0f2737449c6f0}{\index{\-R\-P\-Autonomous\-Photography\-Node@{\-R\-P\-Autonomous\-Photography\-Node}!waiting\-\_\-for\-\_\-camera@{waiting\-\_\-for\-\_\-camera}}
+\index{waiting\-\_\-for\-\_\-camera@{waiting\-\_\-for\-\_\-camera}!RPAutonomousPhotographyNode@{\-R\-P\-Autonomous\-Photography\-Node}}
+\subsubsection[{waiting\-\_\-for\-\_\-camera}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Autonomous\-Photography\-Node\-::waiting\-\_\-for\-\_\-camera}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_autonomous_photography_node_a91af5773992cc4767fb0f2737449c6f0}
+\-Flag indicating whether the node is waiting for the camera. 
+
+\-Definition at line 84 of file autonomous\-\_\-photography.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-autonomous\-\_\-photography/include/autonomous\-\_\-photography.\-hpp\item 
+rp\-\_\-autonomous\-\_\-photography/src/autonomous\-\_\-photography.\-cpp\end{DoxyCompactItemize}

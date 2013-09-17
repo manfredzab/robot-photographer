@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_usb_handler.html" title="Helper class for basic USB operations (like resetting the device)." alt="" coords="5,5,96,35"/>
+<area shape="rect" id="node4" href="$class_g_photo2_handler.html" title="Gphoto2 library wrapper for ROS framework." alt="" coords="120,5,237,35"/>
+</map>

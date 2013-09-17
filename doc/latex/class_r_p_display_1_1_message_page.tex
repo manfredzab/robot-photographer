@@ -1,0 +1,98 @@
+\hypertarget{class_r_p_display_1_1_message_page}{\section{\-R\-P\-Display.\-Message\-Page \-Class \-Reference}
+\label{class_r_p_display_1_1_message_page}\index{\-R\-P\-Display.\-Message\-Page@{\-R\-P\-Display.\-Message\-Page}}
+}
+
+
+\-Received message display page for the robot photographer's display app.  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_display_1_1_message_page_ab2514bc14135997bdb5ad82b96808b2e}{\-Message\-Page} ()
+\begin{DoxyCompactList}\small\item\em \-Default constructor. \end{DoxyCompactList}\item 
+\-Writeable\-Bitmap \hyperlink{class_r_p_display_1_1_message_page_ac682b4ffe16319decf7a77a154bd0913}{\-Generate\-Qr\-Code} (string message)
+\begin{DoxyCompactList}\small\item\em \-Generates a \-Q\-R code from a given string message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_r_p_display_1_1_message_page_aa945b7e6f95e38c847d305bbe0a73392}{\-On\-Navigated\-To} (\-System.\-Windows.\-Navigation.\-Navigation\-Event\-Args e)
+\begin{DoxyCompactList}\small\item\em \-Navigation to page handler, which opens a \-T\-C\-P connection to the robot and starts the background worker which polls the messages from the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Received message display page for the robot photographer's display app. 
+
+
+
+\-Definition at line 30 of file \-Message\-Page.\-xaml.\-cs.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_display_1_1_message_page_ab2514bc14135997bdb5ad82b96808b2e}{\index{\-R\-P\-Display\-::\-Message\-Page@{\-R\-P\-Display\-::\-Message\-Page}!\-Message\-Page@{\-Message\-Page}}
+\index{\-Message\-Page@{\-Message\-Page}!RPDisplay::MessagePage@{\-R\-P\-Display\-::\-Message\-Page}}
+\subsubsection[{\-Message\-Page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Display.\-Message\-Page.\-Message\-Page} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_display_1_1_message_page_ab2514bc14135997bdb5ad82b96808b2e}
+
+
+\-Default constructor. 
+
+
+
+\-Definition at line 45 of file \-Message\-Page.\-xaml.\-cs.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_display_1_1_message_page_ac682b4ffe16319decf7a77a154bd0913}{\index{\-R\-P\-Display\-::\-Message\-Page@{\-R\-P\-Display\-::\-Message\-Page}!\-Generate\-Qr\-Code@{\-Generate\-Qr\-Code}}
+\index{\-Generate\-Qr\-Code@{\-Generate\-Qr\-Code}!RPDisplay::MessagePage@{\-R\-P\-Display\-::\-Message\-Page}}
+\subsubsection[{\-Generate\-Qr\-Code}]{\setlength{\rightskip}{0pt plus 5cm}\-Writeable\-Bitmap {\bf \-R\-P\-Display.\-Message\-Page.\-Generate\-Qr\-Code} (
+\begin{DoxyParamCaption}
+\item[{string}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_display_1_1_message_page_ac682b4ffe16319decf7a77a154bd0913}
+
+
+\-Generates a \-Q\-R code from a given string message. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em message} & \-Message which should be encoded into \-Q\-R code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Generated \-Q\-R code bitmap.
+\end{DoxyReturn}
+
+
+\-Definition at line 82 of file \-Message\-Page.\-xaml.\-cs.
+
+\hypertarget{class_r_p_display_1_1_message_page_aa945b7e6f95e38c847d305bbe0a73392}{\index{\-R\-P\-Display\-::\-Message\-Page@{\-R\-P\-Display\-::\-Message\-Page}!\-On\-Navigated\-To@{\-On\-Navigated\-To}}
+\index{\-On\-Navigated\-To@{\-On\-Navigated\-To}!RPDisplay::MessagePage@{\-R\-P\-Display\-::\-Message\-Page}}
+\subsubsection[{\-On\-Navigated\-To}]{\setlength{\rightskip}{0pt plus 5cm}override void {\bf \-R\-P\-Display.\-Message\-Page.\-On\-Navigated\-To} (
+\begin{DoxyParamCaption}
+\item[{\-System.\-Windows.\-Navigation.\-Navigation\-Event\-Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}\label{class_r_p_display_1_1_message_page_aa945b7e6f95e38c847d305bbe0a73392}
+
+
+\-Navigation to page handler, which opens a \-T\-C\-P connection to the robot and starts the background worker which polls the messages from the robot. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em e} & \-Navigation arguments, containing an \-I\-P address (under the key \char`\"{}ip\char`\"{}) and the port (under the key \char`\"{}port\char`\"{}). \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 222 of file \-Message\-Page.\-xaml.\-cs.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/manfred/catkin\-\_\-ws/src/rp\-\_\-display\-\_\-windows\-\_\-phone/\-R\-P\-Display/\-Message\-Page.\-xaml.\-cs\end{DoxyCompactItemize}

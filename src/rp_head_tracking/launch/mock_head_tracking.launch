@@ -1,0 +1,5 @@
+<launch>
+  <node ns="rp" name="mock_head_tracking_node" pkg="rp_head_tracking" type="rp_mock_head_tracking_node" output="screen">
+    <param name="head_count" value="3" type="int"/>
+  </node>
+</launch>

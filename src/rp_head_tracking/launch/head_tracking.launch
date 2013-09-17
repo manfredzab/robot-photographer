@@ -1,0 +1,32 @@
+<launch>
+  <node ns="rp" name="head_tracking_node" pkg="rp_head_tracking" type="rp_head_tracking_node">
+    <param name="enabled" value="true" type="bool"/>
+    <param name="gui_output_enabled" value="false" type="bool"/>
+
+    <param name="number_of_frames_until_detector_reinitialization" value="3" type="int"/>
+    <param name="number_of_detection_misses_until_head_is_lost" value="2" type="int"/>
+
+	<param name="face_detector_frontal_cascade_path" value="/home/manfred/catkin_ws/src/rp_head_tracking/data/haarcascade_frontalface_default.xml" type="string"/>
+	<param name="face_detector_profile_cascade_path" value="/home/manfred/catkin_ws/src/rp_head_tracking/data/haarcascade_profileface.xml" type="string"/>
+	<param name="viola_jones_neighbor_count" value="3" type="int"/>
+    <param name="face_hue_samples_limit" value="10" type="int"/>    
+    
+    <!-- If KLR classifier is disabled then Bayesian classifier is enabled, and vice versa. -->
+    <param name="klr_classifier_enabled" value="false" type="bool"/> 
+	<param name="klr_classifier_training_time_limit" value="90.0" type="double"/>
+	<param name="face_hue_probability_minimum" value="0.33" type="double"/>
+
+	<param name="bayesian_classifier_skin_histogram_path" value="/home/manfred/catkin_ws/src/rp_head_tracking/data/skin_histogram.txt" type="string"/>
+	<param name="bayesian_classifier_non_skin_histogram_path" value="/home/manfred/catkin_ws/src/rp_head_tracking/data/non_skin_histogram.txt" type="string"/>
+    <param name="skin_likelihood_ratio_minimum" value="0.1" type="double"/>
+    <param name="skin_area_minimum" value="0.1" type="double"/>
+
+    <param name="skin_heuristic_enabled" value="true" type="bool"/>
+    <param name="depth_shadow_filter_enabled" value="true" type="bool"/>
+    <param name="smoothing_filter_enabled" value="true" type="bool"/>
+    <param name="smoothing_radius" value="2" type="int"/>
+    
+    <param name="ignore_low_candidate_heads" value="true" type="bool"/>
+    <param name="head_min_vertical_distance_from_ground" value="1.0" type="double"/>
+  </node>
+</launch>

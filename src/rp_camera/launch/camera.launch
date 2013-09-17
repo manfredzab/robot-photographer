@@ -1,0 +1,8 @@
+<launch>
+  <node ns="rp" name="camera_node" pkg="rp_camera" type="rp_camera_node" output="screen">
+    <param name="flash_automatic" value="false" type="bool"/>
+    <param name="flash_enabled" value="true" type="bool"/> <!-- if (automatic) flash_mode = AUTO else if (flash_enabled) flash_mode = ENABLED else flash_mode = DISABLED -->
+    <param name="usb_reset_enabled" value="true" type="bool"/>
+    <param name="usb_device" value="/dev/bus/usb/005/004"/>
+  </node>
+</launch>

@@ -1,0 +1,215 @@
+\hypertarget{class_r_p_display_node}{\section{\-R\-P\-Display\-Node \-Class \-Reference}
+\label{class_r_p_display_node}\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}}
+}
+
+
+\-Robot photographer's display node, which sends the status messages/hyperlinks via \-T\-C\-P to a corresponding client application that shows these messages.  
+
+
+
+
+{\ttfamily \#include $<$display.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_display_node_ac1bac67cfb93e968bbf59f8bb3208f51}{\-R\-P\-Display\-Node} (ros\-::\-Node\-Handle \&\hyperlink{class_r_p_display_node_ad6d8ebb35b06877b8fffe1a99f556c13}{node})
+\item 
+virtual \hyperlink{class_r_p_display_node_a17fd386c9f75d9b7fab628159e8ec07e}{$\sim$\-R\-P\-Display\-Node} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_display_node_aeb7d9993bbb57fdf4ed64e9184ba58dd}{display\-Message\-Callback} (const std\-\_\-msgs\-::\-String\-::\-Const\-Ptr \&\hyperlink{class_r_p_display_node_a67384dfa9a2bd68ef5e472fa3bec9d67}{display\-\_\-message})
+\item 
+void \hyperlink{class_r_p_display_node_ac745cf7a7a5c50451ab0ab4d5dac1f31}{publish\-Current\-Display\-Message} ()
+\item 
+void \hyperlink{class_r_p_display_node_a44117478f4d2c485fa5d6c4e2a9fe638}{get\-Overridable\-Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \& \hyperlink{class_r_p_display_node_ad6d8ebb35b06877b8fffe1a99f556c13}{node}
+\item 
+ros\-::\-Subscriber \hyperlink{class_r_p_display_node_a06fa613f49e68df3feb0a32aea5a6772}{display\-\_\-message\-\_\-subscriber}
+\item 
+std\-::string \hyperlink{class_r_p_display_node_a67384dfa9a2bd68ef5e472fa3bec9d67}{display\-\_\-message}
+\item 
+boost\-::mutex \hyperlink{class_r_p_display_node_a40cb006b8813082cce33e9b39fe06bd5}{display\-\_\-message\-\_\-mutex}
+\item 
+volatile bool \hyperlink{class_r_p_display_node_abc112853a66daeeb45152d29772a8679}{has\-\_\-display\-\_\-message}
+\item 
+boost\-::asio\-::io\-\_\-service \hyperlink{class_r_p_display_node_a4ab5252d168833e5e957ed6fe09b9ebb}{io\-\_\-service}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ boost\-::asio\-::ip\-::tcp\-::endpoint $>$ \hyperlink{class_r_p_display_node_a80dac975875a0312b0f813acce43ff0b}{endpoint}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ boost\-::asio\-::ip\-::tcp\-::acceptor $>$ \hyperlink{class_r_p_display_node_a644df4995d76298e4f237c5a62874ea5}{acceptor}
+\item 
+boost\-::asio\-::ip\-::tcp\-::iostream \hyperlink{class_r_p_display_node_ab6617bd56195bb1408852121de2cb838}{tcp\-\_\-stream}
+\item 
+int \hyperlink{class_r_p_display_node_a09114efa9723f29cee2b734c8ba2ec5e}{\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Robot photographer's display node, which sends the status messages/hyperlinks via \-T\-C\-P to a corresponding client application that shows these messages. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 23 of file display.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_display_node_ac1bac67cfb93e968bbf59f8bb3208f51}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}}
+\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{\-R\-P\-Display\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Display\-Node\-::\-R\-P\-Display\-Node} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_display_node_ac1bac67cfb93e968bbf59f8bb3208f51}
+\-Default display node's constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 20 of file display.\-cpp.
+
+\hypertarget{class_r_p_display_node_a17fd386c9f75d9b7fab628159e8ec07e}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!$\sim$\-R\-P\-Display\-Node@{$\sim$\-R\-P\-Display\-Node}}
+\index{$\sim$\-R\-P\-Display\-Node@{$\sim$\-R\-P\-Display\-Node}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{$\sim$\-R\-P\-Display\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Display\-Node\-::$\sim$\-R\-P\-Display\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_r_p_display_node_a17fd386c9f75d9b7fab628159e8ec07e}
+\-Default display node's destructor, which shuts down the \-T\-C\-P connection. 
+
+\-Definition at line 56 of file display.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_display_node_aeb7d9993bbb57fdf4ed64e9184ba58dd}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!display\-Message\-Callback@{display\-Message\-Callback}}
+\index{display\-Message\-Callback@{display\-Message\-Callback}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{display\-Message\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Display\-Node\-::display\-Message\-Callback} (
+\begin{DoxyParamCaption}
+\item[{const std\-\_\-msgs\-::\-String\-::\-Const\-Ptr \&}]{display\-\_\-message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_aeb7d9993bbb57fdf4ed64e9184ba58dd}
+\-Callback for display message. 
+\begin{DoxyParams}{\-Parameters}
+{\em display\-\_\-message} & \-Callback object, containing a pointer to display message string. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 71 of file display.\-cpp.
+
+\hypertarget{class_r_p_display_node_a44117478f4d2c485fa5d6c4e2a9fe638}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Display\-Node\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a44117478f4d2c485fa5d6c4e2a9fe638}
+\-Gets overridable parameters from the parameter server. 
+
+\-Definition at line 65 of file display.\-cpp.
+
+\hypertarget{class_r_p_display_node_ac745cf7a7a5c50451ab0ab4d5dac1f31}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!publish\-Current\-Display\-Message@{publish\-Current\-Display\-Message}}
+\index{publish\-Current\-Display\-Message@{publish\-Current\-Display\-Message}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{publish\-Current\-Display\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Display\-Node\-::publish\-Current\-Display\-Message} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_ac745cf7a7a5c50451ab0ab4d5dac1f31}
+\-Publishes the current display message over \-T\-C\-P. 
+
+\-Definition at line 83 of file display.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_display_node_a644df4995d76298e4f237c5a62874ea5}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!acceptor@{acceptor}}
+\index{acceptor@{acceptor}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{acceptor}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$boost\-::asio\-::ip\-::tcp\-::acceptor$>$ {\bf \-R\-P\-Display\-Node\-::acceptor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a644df4995d76298e4f237c5a62874ea5}
+\-T\-C\-P connection acceptor. 
+
+\-Definition at line 38 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_a09114efa9723f29cee2b734c8ba2ec5e}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T@{\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T}}
+\index{\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T@{\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-R\-P\-Display\-Node\-::\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-R\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a09114efa9723f29cee2b734c8ba2ec5e}
+\-T\-C\-P server's port overridable parameter. 
+
+\-Definition at line 42 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_a67384dfa9a2bd68ef5e472fa3bec9d67}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!display\-\_\-message@{display\-\_\-message}}
+\index{display\-\_\-message@{display\-\_\-message}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{display\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Display\-Node\-::display\-\_\-message}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a67384dfa9a2bd68ef5e472fa3bec9d67}
+\-Display message to show. 
+
+\-Definition at line 30 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_a40cb006b8813082cce33e9b39fe06bd5}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!display\-\_\-message\-\_\-mutex@{display\-\_\-message\-\_\-mutex}}
+\index{display\-\_\-message\-\_\-mutex@{display\-\_\-message\-\_\-mutex}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{display\-\_\-message\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-R\-P\-Display\-Node\-::display\-\_\-message\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a40cb006b8813082cce33e9b39fe06bd5}
+\-Display message's mutex. 
+
+\-Definition at line 31 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_a06fa613f49e68df3feb0a32aea5a6772}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!display\-\_\-message\-\_\-subscriber@{display\-\_\-message\-\_\-subscriber}}
+\index{display\-\_\-message\-\_\-subscriber@{display\-\_\-message\-\_\-subscriber}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{display\-\_\-message\-\_\-subscriber}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Subscriber {\bf \-R\-P\-Display\-Node\-::display\-\_\-message\-\_\-subscriber}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a06fa613f49e68df3feb0a32aea5a6772}
+\-Display message subscriber 
+
+\-Definition at line 28 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_a80dac975875a0312b0f813acce43ff0b}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!endpoint@{endpoint}}
+\index{endpoint@{endpoint}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{endpoint}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$boost\-::asio\-::ip\-::tcp\-::endpoint$>$ {\bf \-R\-P\-Display\-Node\-::endpoint}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a80dac975875a0312b0f813acce43ff0b}
+\-T\-C\-P connection endpoint. 
+
+\-Definition at line 37 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_abc112853a66daeeb45152d29772a8679}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!has\-\_\-display\-\_\-message@{has\-\_\-display\-\_\-message}}
+\index{has\-\_\-display\-\_\-message@{has\-\_\-display\-\_\-message}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{has\-\_\-display\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-R\-P\-Display\-Node\-::has\-\_\-display\-\_\-message}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_abc112853a66daeeb45152d29772a8679}
+\-Flag whether the display message is received and not yet displayed. 
+
+\-Definition at line 33 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_a4ab5252d168833e5e957ed6fe09b9ebb}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!io\-\_\-service@{io\-\_\-service}}
+\index{io\-\_\-service@{io\-\_\-service}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::asio\-::io\-\_\-service {\bf \-R\-P\-Display\-Node\-::io\-\_\-service}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_a4ab5252d168833e5e957ed6fe09b9ebb}
+\-T\-C\-P service. 
+
+\-Definition at line 36 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_ad6d8ebb35b06877b8fffe1a99f556c13}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!node@{node}}
+\index{node@{node}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{node}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle\& {\bf \-R\-P\-Display\-Node\-::node}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_ad6d8ebb35b06877b8fffe1a99f556c13}
+\-Node's handle. 
+
+\-Definition at line 26 of file display.\-hpp.
+
+\hypertarget{class_r_p_display_node_ab6617bd56195bb1408852121de2cb838}{\index{\-R\-P\-Display\-Node@{\-R\-P\-Display\-Node}!tcp\-\_\-stream@{tcp\-\_\-stream}}
+\index{tcp\-\_\-stream@{tcp\-\_\-stream}!RPDisplayNode@{\-R\-P\-Display\-Node}}
+\subsubsection[{tcp\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::asio\-::ip\-::tcp\-::iostream {\bf \-R\-P\-Display\-Node\-::tcp\-\_\-stream}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_display_node_ab6617bd56195bb1408852121de2cb838}
+\-T\-C\-P stream to the display device. 
+
+\-Definition at line 39 of file display.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-display/include/display.\-hpp\item 
+rp\-\_\-display/src/display.\-cpp\end{DoxyCompactItemize}

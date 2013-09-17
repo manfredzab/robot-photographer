@@ -1,0 +1,198 @@
+\hypertarget{class_r_p_bayesian_skin_classifier}{\section{\-R\-P\-Bayesian\-Skin\-Classifier \-Class \-Reference}
+\label{class_r_p_bayesian_skin_classifier}\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+}
+
+
+\-Hue-\/histogram based \-Bayesian skin classifier.  
+
+
+
+
+{\ttfamily \#include $<$bayesian\-\_\-skin\-\_\-classifier.\-hpp$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_r_p_bayesian_skin_classifier_a9a841d47a4dfcf95811ccb5a3c87bb4b}{\-R\-P\-Bayesian\-Skin\-Classifier} (const ros\-::\-Node\-Handle \&node)
+\item 
+double \hyperlink{class_r_p_bayesian_skin_classifier_a52bffb1354a2702a794468525fb6d944}{skin\-Probability} (int r, int g, int b)
+\item 
+double \hyperlink{class_r_p_bayesian_skin_classifier_a2c4f6355ca09d44768242a2bd7a43af7}{non\-Skin\-Probability} (int r, int g, int b)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_r_p_bayesian_skin_classifier_a58579596539d8648cd07cd8d00a0dee0}{initialize} (std\-::string skin\-\_\-histogram\-\_\-file\-\_\-name, std\-::string non\-\_\-skin\-\_\-histogram\-\_\-file\-\_\-name)
+\item 
+void \hyperlink{class_r_p_bayesian_skin_classifier_a07b671b2ddc06012eec42d78379fde95}{get\-Overridable\-Parameters} (const ros\-::\-Node\-Handle \&node)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_r_p_bayesian_skin_classifier_a8fc9e22b862078ebfb15f678a03b6e24}{skin\-\_\-histogram} \mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}
+\item 
+double \hyperlink{class_r_p_bayesian_skin_classifier_ae52ae113f5560fcee165cbeffc3e1892}{non\-\_\-skin\-\_\-histogram} \mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}
+\item 
+std\-::string \hyperlink{class_r_p_bayesian_skin_classifier_a09d5b969dc025f89b5b7765d5af5bea2}{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}
+\item 
+std\-::string \hyperlink{class_r_p_bayesian_skin_classifier_ae4ccd3d0c9db15a28c99eed60fcf95f7}{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Hue-\/histogram based \-Bayesian skin classifier. 
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 26 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_r_p_bayesian_skin_classifier_a9a841d47a4dfcf95811ccb5a3c87bb4b}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{\-R\-P\-Bayesian\-Skin\-Classifier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::\-R\-P\-Bayesian\-Skin\-Classifier} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{class_r_p_bayesian_skin_classifier_a9a841d47a4dfcf95811ccb5a3c87bb4b}
+\-Default \-Bayesian skin classifier constructor. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyCopyright}{\-Copyright}
+\-Manfredas \-Zabarauskas, 2013. \-All rights reserved. \-This project is released under \-C\-C \-B\-Y-\/\-N\-C-\/\-S\-A (\-Creative \-Commons \-Attribution-\/\-Non\-Commercial-\/\-Share\-Alike) license. 
+\end{DoxyCopyright}
+
+
+\-Definition at line 13 of file bayesian\-\_\-skin\-\_\-classifier.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_r_p_bayesian_skin_classifier_a07b671b2ddc06012eec42d78379fde95}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!get\-Overridable\-Parameters@{get\-Overridable\-Parameters}}
+\index{get\-Overridable\-Parameters@{get\-Overridable\-Parameters}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{get\-Overridable\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::get\-Overridable\-Parameters} (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Node\-Handle \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_a07b671b2ddc06012eec42d78379fde95}
+\-Gets the overridable parameters from the parameter server. 
+\begin{DoxyParams}{\-Parameters}
+{\em node} & \-Handle to \-R\-O\-S node. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 24 of file bayesian\-\_\-skin\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_bayesian_skin_classifier_a58579596539d8648cd07cd8d00a0dee0}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!initialize@{initialize}}
+\index{initialize@{initialize}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::initialize} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{skin\-\_\-histogram\-\_\-file\-\_\-name, }
+\item[{std\-::string}]{non\-\_\-skin\-\_\-histogram\-\_\-file\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_a58579596539d8648cd07cd8d00a0dee0}
+\-Initializes \-Bayesian hue classifier using skin/non-\/skin histograms. 
+\begin{DoxyParams}{\-Parameters}
+{\em skin\-\_\-histogram\-\_\-file\-\_\-name} & \-Skin histogram file path. \\
+\hline
+{\em non\-\_\-skin\-\_\-histogram\-\_\-file\-\_\-name} & \-Non-\/skin histogram file path. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 31 of file bayesian\-\_\-skin\-\_\-classifier.\-cpp.
+
+\hypertarget{class_r_p_bayesian_skin_classifier_a2c4f6355ca09d44768242a2bd7a43af7}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!non\-Skin\-Probability@{non\-Skin\-Probability}}
+\index{non\-Skin\-Probability@{non\-Skin\-Probability}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{non\-Skin\-Probability}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::non\-Skin\-Probability} (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_a2c4f6355ca09d44768242a2bd7a43af7}
+\-Gets the probability that a given color was generated from a non-\/skin image. 
+\begin{DoxyParams}{\-Parameters}
+{\em r} & \-Red component of the \-R\-G\-B pixel. \\
+\hline
+{\em g} & \-Green component of the \-R\-G\-B pixel. \\
+\hline
+{\em b} & \-Blue component of the \-R\-G\-B pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Probability that a given pixel was generated from a non-\/skin image. 
+\end{DoxyReturn}
+
+
+\-Definition at line 74 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_bayesian_skin_classifier_a52bffb1354a2702a794468525fb6d944}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!skin\-Probability@{skin\-Probability}}
+\index{skin\-Probability@{skin\-Probability}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{skin\-Probability}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::skin\-Probability} (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_a52bffb1354a2702a794468525fb6d944}
+\-Gets the probability that a given color was generated from a skin image. 
+\begin{DoxyParams}{\-Parameters}
+{\em r} & \-Red component of the \-R\-G\-B pixel. \\
+\hline
+{\em g} & \-Green component of the \-R\-G\-B pixel. \\
+\hline
+{\em b} & \-Blue component of the \-R\-G\-B pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Probability that a given pixel was generated from a skin image. 
+\end{DoxyReturn}
+
+
+\-Definition at line 62 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_r_p_bayesian_skin_classifier_ae4ccd3d0c9db15a28c99eed60fcf95f7}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H@{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}}
+\index{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H@{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-N\-O\-N\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_ae4ccd3d0c9db15a28c99eed60fcf95f7}
+\-Non-\/skin pixel \-R\-G\-B histogram file path. 
+
+\-Definition at line 33 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_bayesian_skin_classifier_a09d5b969dc025f89b5b7765d5af5bea2}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H@{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}}
+\index{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H@{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::\-B\-A\-Y\-E\-S\-I\-A\-N\-\_\-\-C\-L\-A\-S\-S\-I\-F\-I\-E\-R\-\_\-\-S\-K\-I\-N\-\_\-\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-P\-A\-T\-H}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_a09d5b969dc025f89b5b7765d5af5bea2}
+\-Skin pixel \-R\-G\-B histogram file path. 
+
+\-Definition at line 32 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_bayesian_skin_classifier_ae52ae113f5560fcee165cbeffc3e1892}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!non\-\_\-skin\-\_\-histogram@{non\-\_\-skin\-\_\-histogram}}
+\index{non\-\_\-skin\-\_\-histogram@{non\-\_\-skin\-\_\-histogram}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{non\-\_\-skin\-\_\-histogram}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::non\-\_\-skin\-\_\-histogram}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_ae52ae113f5560fcee165cbeffc3e1892}
+\-Non-\/skin pixel \-R\-G\-B histogram. 
+
+\-Definition at line 30 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+\hypertarget{class_r_p_bayesian_skin_classifier_a8fc9e22b862078ebfb15f678a03b6e24}{\index{\-R\-P\-Bayesian\-Skin\-Classifier@{\-R\-P\-Bayesian\-Skin\-Classifier}!skin\-\_\-histogram@{skin\-\_\-histogram}}
+\index{skin\-\_\-histogram@{skin\-\_\-histogram}!RPBayesianSkinClassifier@{\-R\-P\-Bayesian\-Skin\-Classifier}}
+\subsubsection[{skin\-\_\-histogram}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-R\-P\-Bayesian\-Skin\-Classifier\-::skin\-\_\-histogram}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\mbox{[}\-H\-I\-S\-T\-O\-G\-R\-A\-M\-\_\-\-B\-U\-C\-K\-E\-T\-\_\-\-C\-O\-U\-N\-T\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_r_p_bayesian_skin_classifier_a8fc9e22b862078ebfb15f678a03b6e24}
+\-Skin pixel \-R\-G\-B histogram. 
+
+\-Definition at line 29 of file bayesian\-\_\-skin\-\_\-classifier.\-hpp.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rp\-\_\-head\-\_\-tracking/include/bayesian\-\_\-skin\-\_\-classifier.\-hpp\item 
+rp\-\_\-head\-\_\-tracking/src/bayesian\-\_\-skin\-\_\-classifier.\-cpp\end{DoxyCompactItemize}
